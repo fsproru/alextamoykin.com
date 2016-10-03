@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>howtoprogrambetter.com</title>
+   
+   <link>http://howtoprogrambetter.com/</link>
+   <description>Learn How To Program and become a Better Software Engineer with Alex Tamoykin</description>
+   <language>en-us</language>
+   <managingEditor> Alex Tamoykin</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Start Programming Now Book is Released</title>
+	  <link>//start-programming-now-book-is-released/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-05-05T01:03:34-07:00</pubDate>
+	  <guid>//start-programming-now-book-is-released/</guid>
+	  <description><![CDATA[
+	     <h2 id="what">What</h2>
+<p>I’m super excited to annouce that the Start Programming Now book is released. If you would like to get into coding but you don’t know where to start, this book is for you. And you can read if for <em>FREE</em>.</p>
+
+<h2 id="why">Why</h2>
+<p>Technology is an important part of our live and we need more and better developers. The entry barrier to get to software development is still high. That’s why I decided to write a book that helps non technical people to get the ball rolling with programming. It’s great to hear from readers that everything start making sense after reading the book. It has been an absolute pleasure to work together with every reader towards understanding the basics of programming.</p>
+
+<h2 id="how">How</h2>
+<p>You can read the book for free online. Additionally, you can thank me by purchasing it and read it offline on your laptop, phone, tablet or kindle. Enjoy!</p>
+
+<p><a href="http://startprogrammingnowbook.com" target="_blank"><img src="/assets/images/start_programming_now_cover.png" alt="Start Programming Now Book" /></a></p>
+
+<p><a href="http://startprogrammingnowbook.com" target="_blank">Click here to check it out!</a></p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

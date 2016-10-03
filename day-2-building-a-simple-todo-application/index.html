@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [[! Page Meta ]] -->
+    <title>Day 2: Building a simple ToDo application</title>
+    <meta name="description" content="How To Program Better - Learn How To Program and become a Better Software Engineer with Alex Tamoykin" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+        <link rel="canonical" href="/" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="How To Program Better" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How To Program Better" />
+    <meta property="og:description" content="Learn How To Program and become a Better Software Engineer with Alex Tamoykin" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/assets/images/cover1.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How To Program Better" />
+    <meta name="twitter:description" content="Learn How To Program and become a Better Software Engineer with Alex Tamoykin" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image:src" content="/assets/images/cover1.jpg" />
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "How To Program Better",
+    "url": "/",
+    "image": "/assets/images/cover1.jpg",
+    "description": "Learn How To Program and become a Better Software Engineer with Alex Tamoykin"
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="How To Program Better" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+        <li class="nav-about " role="presentation"><a href="/about">About</a></li>
+        <li class="nav-fables " role="presentation"><a href="/tag/7-days-of-ruby">7 Days of Ruby</a></li>
+        <li class="nav-speeches " role="presentation"><a href="/tag/7-days-of-rails">Rails in 7 Days</a></li>
+        <li class="nav-speeches " role="presentation"><a href="/tag/book">Books</a></li>
+    </ul>
+    <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        <!-- < default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: url(/assets/images/todo_list.jpg) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/"><img src="/assets/images/logo.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-speeches">
+
+        <header class="post-header">
+            <h1 class="post-title">Day 2: Building a simple ToDo application</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>Alex Tamoykin</a> -->
+            <time class="post-date" datetime="2014-03-09">09 Mar 2014</time>
+                <!-- [[tags prefix=" on "]] -->
+                
+                on
+                
+                    
+                       <a href='/tag/7-days-of-rails'>7-days-of-rails</a>
+                    
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+
+            <p>In order to keep things simple, we’re going to create a simple todo list application. This application should display a list of tasks. We should be able to add new tasks. Delete and edit existing tasks. Also, there should be a way to mark a task as finished.</p>
+
+<h2 id="rails-new">rails new</h2>
+
+<p>We will start it off by executing several commands in the Terminal. The first command is <em>rails new</em>. It will generate us a skeleton for our new app.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span><span class="nb">cd</span> ~
+<span class="gp">$ </span>rails new todo --database<span class="o">=</span>postgresql</code></pre></figure>
+
+<p>It will take some time to generate files and install dependencies. After it’s done, you should see our newly generated project in the folder <em>todo</em>. Let’s go into this folder and setup the database.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span><span class="nb">cd </span>todo
+<span class="gp">$ </span>bundle <span class="nb">exec </span>rake db:create db:migrate db:schema:load
+<span class="gp">$ </span>bundle <span class="nb">exec </span>rails server</code></pre></figure>
+
+<p>That’s it! Four commands and we have a running website. Open up your browser, go to <a href="&quot;http://localhost:3000&quot;">http://localhost:3000</a> and you should see the Ruby on Rails welcome page.</p>
+
+<p><img src="/assets/images/ruby_on_rails_default_page.png" alt="Default Ruby on Rails page" /></p>
+
+<p>Let me explain what happened here.  First, we used the command called <em>cd</em>. It stands for “change directory”. It jumps to a directory you specified. Second command consist of 3 parts.</p>
+
+<p><img src="/assets/images/bundle_exec_rake_db_migrate_explained.png" alt="bundle exec rials db:migrate explained" /></p>
+
+<ol>
+  <li><em>bundle exec</em> tells a terminal to use libraries installed inside a current project. There might be a different version of rake installed but we tell it to use the one installed for our project.</li>
+  <li><em>rake</em> is a helper utility. It does a lot of helpful stuff. In our case it creates a new database. It also migrates the database so it has a proper schema.</li>
+  <li><em>db:create db:migrate db:schema:load</em> are the three tasks that we provide rake with. You can specify one or many tasks separated by a space.</li>
+</ol>
+
+<p>There are many useful rake tasks. If you want to see a full list of them, call rake with -T option.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>bundle <span class="nb">exec </span>rake -T
+rake about              <span class="c"># List versions of all Rails frameworks and the environment</span>
+rake assets:clean[keep] <span class="c"># Remove old compiled assets</span>
+...</code></pre></figure>
+
+<p><em>Note: For keeping it simple, just prefix every command with</em> <em>bundle exec</em> <em>if you’re inside your project directory.</em></p>
+
+<p>Everything that we’re going to run inside the terminal will consist of these three basic parts.</p>
+
+<p><strong>bundle exec</strong> someutility <em>parameters</em></p>
+
+<p>The last command that we ran is no exception. <em>bundle exec rails server</em> starts up a server locally.</p>
+
+<h2 id="create-edit-delete-tasks">Create, Edit, Delete tasks</h2>
+
+<p>We got our first rails app running in just four commands. How awesome it is? Now let’s add some features to our application.</p>
+
+<p>First, we want to be able to create, edit and delete our tasks. Rails has a code generator for exactly this purpose. It’s called <strong>scaffold generator</strong>. Let’s give it a shot. Go back to your terminal. I recommend to leave the server running in the current window and open a new terminal (Command-T if you’re on a mac).</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span><span class="nb">cd</span> ~/todo
+<span class="gp">$ </span>bundle <span class="nb">exec </span>rails generate scaffold task name:string
+<span class="gp">$ </span>bundle <span class="nb">exec </span>rake db:migrate</code></pre></figure>
+
+<p>Go back to your browser and go to <a href="http://localhost:3000/tasks">http://localhost:3000/tasks</a></p>
+
+<p><img src="/assets/images/ruby_on_rails_scaffold_generator.png" alt="Ruby on Rails scaffold generator" /></p>
+
+<p>This is a task listing. It looks very lonely, since there is no tasks. Let’s add a new task. Click on the <em>New Task</em> link. It should take you to the New Task screen.</p>
+
+<p><img src="/assets/images/ruby_on_rails_new_scaffold_new.png" alt="Ruby on Rails scaffold for new" /></p>
+
+<p>Enter “Learn how to program” in the Name field and click the Create Task button. Now you should see the screen representing our newly created task.</p>
+
+<p><img src="/assets/images/ruby_on_rails_scaffold_show.png" alt="Ruby on Rails scaffold for show" /></p>
+
+<p>Click the “Back” link and you should see the Task Listing screen with our newly created task. Yay!</p>
+
+<p><a href="/assets/images/ruby_on_rails_task_listing_with_a_task.png">Tast listing</a></p>
+
+<p>You see how easy it is to create a website with Ruby on Rails? Now that we a website running locally, let’s dive deeper. We’ll see how Rails works under the hood.</p>
+
+<p>Photo by <a href="&quot;http://www.flickr.com/photos/purpleslog/183842413/sizes/l/&quot;">purpleslog</a></p>
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/fsproru" style="background-image: url(/assets/images/alex_tamoykin_profile_pic_small.jpg)"><span class="hidden">Alex Tamoykin's Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/fsproru">Alex Tamoykin</a></h4>
+
+                
+                    <p> Alex started coding in 5th grade of elementary school. He is an award winning software engineer and a hands on technical leader with over a decade of industry experience.</p>
+                
+                <div class="author-meta">
+                    <span class="author-location icon-location"> Los Angeles, USA</span>
+                    <span class="author-link icon-link"><a href="http://howtoprogrambetter.com/"> howtoprogrambetter.com</a></span>
+                </div>
+            </section>
+
+            <!-- /author  -->
+
+            <!-- share -->
+            <!-- <section class="share"> -->
+            <!--     <h4>Share this post</h4> -->
+            <!--     <a class="icon-twitter" href="http://twitter.com/share?text=Day 2: Building a simple ToDo application&amp;url=http://howtoprogrambetter.com/day-2-building-a-simple-todo-application" -->
+            <!--         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"> -->
+            <!--         <span class="hidden">Twitter</span> -->
+            <!--     </a> -->
+            <!--     <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://howtoprogrambetter.com/day-2-building-a-simple-todo-application" -->
+            <!--         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"> -->
+            <!--         <span class="hidden">Facebook</span> -->
+            <!--     </a> -->
+            <!--     <a class="icon-google-plus" href="https://plus.google.com/share?url=http://howtoprogrambetter.com/day-2-building-a-simple-todo-application" -->
+            <!--        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"> -->
+            <!--         <span class="hidden">Google+</span> -->
+            <!--     </a> -->
+            <!-- </section> -->
+
+            <!-- subscribe -->
+            <section class="subscribe">
+              <a href="http://eepurl.com/OvBfP" target="_blank"><button>SUBSCRIBE</button></a>
+
+            </section>
+
+            <!-- add Disqus Comments -->
+            
+
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+        <a class="read-next-story " style="background-image: url(/assets/images/train_cover.jpg)" href="/day-3-how-rails-works-database-migrations">
+            <section class="post">
+                <h2>Day 3: How Rails Works &#8211; Database Migrations</h2>
+                <p>## How Rails works Here is what happens when you go to your browser and...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/setup-rails-locally.jpg)" href="/day-1-setup-rails">
+            <section class="post">
+                <h2>Day 1: Setup</h2>
+                <p>Mac OS X Ruby If you don’t have Ruby installed, follow these instructions from 7...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">How To Program Better</a> &copy; 2016</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-45185368-3', 'auto');
+	    ga('send', 'pageview');
+
+     </script>   
+</body>
+</html>

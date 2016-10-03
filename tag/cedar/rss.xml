@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>howtoprogrambetter.com</title>
+   
+   <link>http://howtoprogrambetter.com/</link>
+   <description>Learn How To Program and become a Better Software Engineer with Alex Tamoykin</description>
+   <language>en-us</language>
+   <managingEditor> Alex Tamoykin</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Running iOS tests on Travis CI</title>
+	  <link>//running-ios-tests-on-travis-ci/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-09-06T22:15:21-07:00</pubDate>
+	  <guid>//running-ios-tests-on-travis-ci/</guid>
+	  <description><![CDATA[
+	     <h2 id="why">Why</h2>
+
+<p>Did you ever ship buggy code in production ? If it is the case, you may consider setting up a CI server.</p>
+
+<h2 id="span-styleline-height-15whatspan"><span style="line-height: 1.5;">What</span></h2>
+
+<p>CI stands for <a title="CI explanation on Wikipedia" href="http://en.wikipedia.org/wiki/Continuous_integration" target="_blank">continuous integration</a>. CI Server is a machine that watches your main branch and runs your tests every time there are new commits. It ensures that you product is ready to ship from your main branch at any point in time.</p>
+
+<h2 id="how">How</h2>
+
+<p>Setting up and especially maintaining a CI server is pain in the neck. That’s why I prefer to use a CI service instead of hosting a server in house. They scale it, they maintain it, all I do is focus on development.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p><em>Note: The following tutorial works for Cedar testing framework as well as XCTest. Tests should be set up as a test target (not a separate app).</em></p>
+
+<ol>
+  <li>Sign up for an account with Travis CI.</li>
+</ol>
+
+<ul>
+  <li>Sign up <a title="Open Source Travis CI" href="https://travis-ci.org/" target="_blank">here</a> for a free account if your project is Open Source and it’s public.</li>
+  <li>Sign up <a title="Travis CI Pro" href="https://travis-ci.com/" target="_blank">here</a> is your project is private.</li>
+</ul>
+
+<ol>
+  <li>Enable the app.</li>
+</ol>
+
+<p>Sign into your account on Travis CI. Click on your profile on the top right and choose <em>accounts</em>. Choose the repo that you want to test and flip the switch to <em>on</em>.</p>
+
+<ol>
+  <li>Make sure that your scheme is shared.</li>
+</ol>
+
+<p>Open up your project in XCode. Go to Product-&gt;Scheme-&gt;Manage Schemes. Select the Target that you use for testing and check the <strong>Shared</strong> checkbox.</p>
+
+<p><a href="http://howtoprogrambetter.com/wp-content/uploads/2014/09/shared_schemes_in_xcode.png"><img class="aligncenter size-full wp-image-530" alt="Shared scheme in Xcode" src="http://howtoprogrambetter.com/wp-content/uploads/2014/09/shared_schemes_in_xcode.png" width="640" height="174" /></a></p>
+
+<ol>
+  <li>Create .travis.yml file</li>
+</ol>
+
+<p>.travis.yml is the configuration file for your build on Travis CI. Here is the minimal .travis.yml file.  Replace <em>MyAwesomeApp</em> with your app name and save it in the root of your project.</p>
+
+<pre class="lang:yaml decode:true" title="Minimal .travis.yml configuration file">language: objective-c
+xcode_workspace: MyAwesomeApp.xcworkspace # if you're using cocoapods
+# xcode_project: MyAwesomeApp.xcproject #if you're not using cocoapods
+xcode_scheme: MyAwesomeApp
+xcode_sdk: iphonesimulator7.1
+script: xcodebuild -workspace MyAwesomeApp.xcworkspace -scheme MyAwesomeApp -sdk iphonesimulator7.1 -configuration Debug build test</pre>
+
+<ol>
+  <li>Commit everything, push it up to github and check out you triggered build.</li>
+</ol>
+
+<p>Cheers,</p>
+
+<p>Alex</p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

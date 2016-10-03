@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>howtoprogrambetter.com</title>
+   
+   <link>http://howtoprogrambetter.com/</link>
+   <description>Learn How To Program and become a Better Software Engineer with Alex Tamoykin</description>
+   <language>en-us</language>
+   <managingEditor> Alex Tamoykin</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Interview at Swift Coders Podcast</title>
+	  <link>//interview-at-swift-coders-podcast/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2016-03-06T20:35:22-08:00</pubDate>
+	  <guid>//interview-at-swift-coders-podcast/</guid>
+	  <description><![CDATA[
+	     <p>We’re big proponents of <a href="https://swift.org/" target="_blank" rel="nofollow">Swift</a>, Apple’s new programing language at <a href="http://rightbalance.io/" target="_blank" rel="nofollow">The Right Balance</a>. It’s exciting to see the Swift community evolving. It was great to speak at the opening podcast dedicated to Swift Development called <a href="http://swiftcoders.org/" target="_blank" rel="nofollow">Swift Coders</a>. Kudos to <a href="https://twitter.com/garricn" target="_blank" rel="nofollow">Garric Nahapetian</a> for putting it together.</p>
+
+<p>Check out <a href="https://itunes.apple.com/us/podcast/swiftcoders/id1082937962?mt=2&amp;i=362557025" target="_blank" rel="nofollow">the first episode here</a>, we hope that you really like it.</p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

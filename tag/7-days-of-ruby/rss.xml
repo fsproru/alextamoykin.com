@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>howtoprogrambetter.com</title>
+   
+   <link>http://howtoprogrambetter.com/</link>
+   <description>Learn How To Program and become a Better Software Engineer with Alex Tamoykin</description>
+   <language>en-us</language>
+   <managingEditor> Alex Tamoykin</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Congratulations! You&#8217;ve just finished 7 Days of Ruby course.</title>
+	  <link>//congratulations-you-ve-just-finished-7-days-of-programming-course/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-02-20T18:13:20-08:00</pubDate>
+	  <guid>//congratulations-you-ve-just-finished-7-days-of-programming-course/</guid>
+	  <description><![CDATA[
+	     <p>If you made it to this point, you already know <strong>the basics of programming in Ruby</strong>. This is huge! We covered a lot of complicated concepts like variables, control structures, data types, methods, classes and inheritance.</p>
+
+<p>Now you understand the basics, it’s time to put it in real practice.</p>
+
+<p><a href="http://startprogrammingnowbook.com" target="_blank"><img src="/assets/images/start_programming_now_cover.png" alt="Start Programming Now Book" /></a></p>
+
+<p>In order to become a programmer you need to be able to create applications. It involves a lot more than just writing ruby code. I want to help you to get there with the book called <a href="http://startprogrammingnowbook.com">Start Programming Now</a>. It’s practical, simple and it’s FREE.</p>
+
+<p><a href="http://startprogrammingnowbook.com" target="_blank">Click here to check it out!</a></p>
+
+<p><em>Photo by <a href="https://www.flickr.com/photos/richardmoross">richardmoross</a></em></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Day 7: Iterators and Inheritance</title>
+	  <link>//day-7-iterators-and-inheritance/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-02-15T00:18:03-08:00</pubDate>
+	  <guid>//day-7-iterators-and-inheritance/</guid>
+	  <description><![CDATA[
+	     <h2 id="iterators">Iterators</h2>
+
+<p>Iterators make you life as a developer easier. It’s like while loop construct, but you don’t have to worry about an exiting condition. Isn’t it awesome? Check it out:</p>
+
+<p><img src="/assets/images/ruby-while-loop-and-iterators-comparison.png" alt="Loop vs Iterator" /></p>
+
+<p>Look at how we rewrote the example with an Olympic runner. Now we’ve used the most common Ruby iterator named <em>each</em>. This is a builtin method on any array or a hash.</p>
+
+<p>Iterator goes over each element of an array. It passes one element at the time through a block of code.</p>
+
+<blockquote>
+  <p>The code in between the keywords <em>do</em> and <em>end</em> is called a code block.</p>
+</blockquote>
+
+<p>In order to use an iterator, you need to call the method <em>each</em>. Then you start passing it a block using the keyword <em>do</em>. Next, you specify the variable name surrounded by two pipe signs. This variable will represent an individual element of the array. You can use this variable inside a code block. After you finish writing code inside the block, you can close it by using the keyword <em>end</em>.</p>
+
+<p>It’s important to note here is that you don’t need to track when to stop. Code inside the block will be automatically executed the same number of times as many elements we have in an array.</p>
+
+<h2 id="inheritance">Inheritance</h2>
+
+<p>Inheritance is a way to describe a relationship between classes. If one of <strong>parents</strong> is good at sports, their <strong>child</strong> might become good at sports too. It’s because the child <strong>inherited</strong> those skills from it’s parent. Let’s code it up:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Parent</span>
+  <span class="k">def</span> <span class="nf">play_sports</span>
+    <span class="nb">puts</span> <span class="s2">"Ready, set, go!"</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Here is our <em>Parent</em> class that has one method called <em>play_sports</em>. Any instance of Parent class has the method play_sports. You can try it in IRB.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;&gt;</span> <span class="n">parent_instance</span> <span class="o">=</span> <span class="no">Parent</span><span class="p">.</span><span class="nf">new</span>
+<span class="o">&gt;&gt;</span> <span class="n">parent_instance</span><span class="p">.</span><span class="nf">play_sports</span>
+<span class="no">Ready</span><span class="p">,</span> <span class="n">set</span><span class="p">,</span> <span class="n">go!</span></code></pre></figure>
+
+<p>Now we’re going to write the class called Child which inherits from our Parent.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Child</span> <span class="o">&lt;</span> <span class="no">Parent</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Use &lt; sign after the name of the child class followed by the parent class name. The class on the left side of &lt; sign is called a <strong>child class</strong>. The class on the right side is called a <strong>parent class</strong> or a <strong>base class</strong>. Let’s instantiate a Child class. Maybe it can play sports too.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="o">&gt;&gt;</span> <span class="n">child_class</span> <span class="o">=</span> <span class="no">Child</span><span class="p">.</span><span class="nf">new</span>
+<span class="o">&gt;&gt;</span> <span class="n">child_class</span><span class="p">.</span><span class="nf">play_sports</span>
+<span class="no">Ready</span><span class="p">,</span> <span class="n">set</span><span class="p">,</span> <span class="n">go!</span></code></pre></figure>
+
+<p>Yes, it can. Because it inherited play_sports method from it’s parent.</p>
+
+<p>Inheritance is very powerful. As soon as you inherit your child class from a base class, the parent class becomes a part of the child class. It is very useful if you want to reuse parent’s class methods in your child class.</p>
+
+<p><em>Photo by <a href="https://www.flickr.com/photos/fdecomite">fdecomite</a></em></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Day 6: Classes, Methods and Objects</title>
+	  <link>//day-6-classes-methods-and-objects/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-02-14T23:36:03-08:00</pubDate>
+	  <guid>//day-6-classes-methods-and-objects/</guid>
+	  <description><![CDATA[
+	     <h2 id="classes">Classes</h2>
+
+<p>You’ve made it to this point, congratulations! We’ve covered a lot of basics. Now we’re approaching Classes and Objects. It’s a cornerstone of the most common technique called Object Oriented Programming.</p>
+
+<p><img src="/assets/images/ruby-class-is-a-blueprint.jpg" alt="Ruby class is like a blueprint" />
+<em>Photo by <a href="http://www.flickr.com/photos/fdecomite/">fdecomite</a></em></p>
+
+<p>Here is what it is. <strong>Class</strong> is a blueprint. Individual <strong>objects</strong> or <strong>instances</strong> are created from the blueprint. See those yummy cookies at the picture? <strong>Class</strong> is the cookie cutter. Individual cookies are <strong>objects</strong>. As long as you have one cookie cutter, you can make as many cookies as you like. They all will be the same.</p>
+
+<p>Let’s write our simple Cookie class.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">Cookie</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>That’s it. Class declaration starts with the keyword <em>class</em> followed by a class name. The keyword <em>end</em> finishes the class declaration.</p>
+
+<blockquote>
+  <p>The convention for class names is what is called camel case. First character of a word is upper case. Following characters are lowercase. Examples: CookieCutter, SomeOtherClassName, etc</p>
+</blockquote>
+
+<p>Now we have our Cookie class, we can’t wait to create some instances of Cookie. In order to do it, we need to learn a little more about methods.</p>
+
+<h2 id="methods-aka-functions">Methods aka Functions</h2>
+
+<p><img src="/assets/images/mixer.jpg" alt="Mixer" />
+<em>Photo by <a href="http://www.flickr.com/photos/g2boojum/">g2boojum</a></em></p>
+
+<p>Method (aka function) is a unit of code that receives one or many <strong>parameters</strong>. It does some work and <strong>returns</strong> the result. Imagine a mixer. You load the ingredients into a mixer. It mixes it up. You have your cookie dough in <strong>return</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">def</span> <span class="nf">mix</span><span class="p">(</span><span class="n">butter</span><span class="p">,</span> <span class="n">sugar</span><span class="p">,</span> <span class="n">eggs</span><span class="p">,</span> <span class="n">flour</span><span class="p">)</span>
+  <span class="nb">puts</span> <span class="s2">"Mixing ingredients"</span>
+  <span class="n">final_mass</span> <span class="o">=</span> <span class="n">butter</span> <span class="o">+</span> <span class="n">sugar</span> <span class="o">+</span> <span class="n">eggs</span> <span class="o">+</span> <span class="n">flour</span>
+  <span class="k">return</span> <span class="n">final_mass</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>A method definition starts with the keyword <strong>def</strong>. Then you specify input parameters surrounded by a pair of parenthesis. The code in between the keywords def and end is called a <strong>function body</strong>. It usually does some useful work with input parameters. Given that each input parameter is an integer representing mass of each ingredient. The body of mix function simply adds up the ingredients. Now we have final_mass variable. Let’s return it using the keyword <strong>return</strong>.</p>
+
+<p>A method definition does not actually run any code. We need to <strong>call</strong> a method in order to use it.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">mix</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span></code></pre></figure>
+
+<p>Try it out in your IRB. You’ll need to define the function first. Then you can call it. You should get the return value of 8. Here is the terminal output:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;&gt;</span> <span class="k">def</span> <span class="nf">mix</span><span class="p">(</span><span class="n">butter</span><span class="p">,</span> <span class="n">sugar</span><span class="p">,</span> <span class="n">eggs</span><span class="p">,</span> <span class="n">flour</span><span class="p">)</span>
+<span class="o">&gt;&gt;</span>   <span class="nb">puts</span> <span class="s2">"Mixing ingredients"</span>
+<span class="o">&gt;&gt;</span>   <span class="n">final_mass</span> <span class="o">=</span> <span class="n">butter</span> <span class="o">+</span> <span class="n">sugar</span> <span class="o">+</span> <span class="n">eggs</span> <span class="o">+</span> <span class="n">flour</span>
+<span class="o">&gt;&gt;</span>   <span class="k">return</span> <span class="n">final_mass</span>
+<span class="o">&gt;&gt;</span>   <span class="k">end</span>
+<span class="o">&gt;&gt;</span> <span class="ss">:mix</span>
+<span class="o">&gt;&gt;</span> <span class="n">mix</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span>
+<span class="no">Mixing</span> <span class="n">ingredients</span>
+<span class="o">&gt;&gt;</span> <span class="mi">7</span></code></pre></figure>
+
+<blockquote>
+  <p>As you might’ve already noticed, <em>puts</em> is actually a method provided by Ruby by default. It takes a string of text as an input parameter and prints it out on a terminal.</p>
+</blockquote>
+
+<h2 id="objects">Objects</h2>
+
+<p>So far, we’ve defined methods outside of any class. Methods defined outside of any class are called <strong>global methods</strong>. They are available anywhere in our program.</p>
+
+<p>Methods can also be defined inside classes. If a method is defined inside a class, it can only be called on that class using <strong>dot notation</strong>. Every class has a number of builtin methods. One of those methods is called <strong>new</strong>. It’s very useful. Every single class has it by default. Let’s see how we can use it to create a new Cookie.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">yummy_cookie</span> <span class="o">=</span> <span class="no">Cookie</span><span class="p">.</span><span class="nf">new</span></code></pre></figure>
+
+<p>There are three things that happened here:</p>
+
+<ol>
+  <li>The method new was called on the class Cookie.</li>
+  <li>The method new returned a newly created <strong>object</strong>.</li>
+  <li>The newly created object has been assigned to yummy_cookie variable.</li>
+</ol>
+
+<p>Let’s talk about each of the things.</p>
+
+<p>First, <strong>dot notation</strong>. Dot notation is a way to write code by specifying a <strong>class</strong> name, followed by a <strong>dot</strong> and a <strong>function</strong> name.</p>
+
+<p><img src="/assets/images/ruby-dot-notation.png" alt="Dot notation in Ruby" /></p>
+
+<p>Second. The method new returns a newly created instance. You can use the method new as many times as you want. Every time you call it, it’s going to return a new, <strong>different object</strong> of the <strong>same class</strong>.</p>
+
+<p>Third. We’ve assigned the newly created object to yummy_cookie variable. From now on, we can refer to the object using this variable. How do we know if it’s an instance of the class Cookie? We’re going to call a method on it that returns the class of this instance. This method is called (guess how?) class.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">yummy_cookie</span><span class="p">.</span><span class="nf">class</span></code></pre></figure>
+
+<p>Every method returns a value. The class method is no exception from this rule. It returns you a class of a variable. Try it out in IRB.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;&gt;</span> <span class="k">class</span> <span class="nc">Cookie</span>
+<span class="o">&gt;&gt;</span> <span class="o">&amp;</span><span class="n">nbsp</span><span class="p">;</span> <span class="k">end</span>
+<span class="o">&gt;&gt;</span> <span class="kp">nil</span>
+<span class="o">&gt;&gt;</span> <span class="n">yummy_cookie</span> <span class="o">=</span> <span class="no">Cookie</span><span class="p">.</span><span class="nf">new</span>
+<span class="o">&gt;&gt;</span> <span class="o">&lt;</span><span class="no">Cookie</span><span class="p">:</span><span class="mh">0x007fb0e1024f38</span><span class="o">&gt;</span>
+<span class="o">&gt;&gt;</span> <span class="n">yummy_cookie</span><span class="p">.</span><span class="nf">class</span>
+<span class="o">&gt;&gt;</span> <span class="no">Cookie</span></code></pre></figure>
+
+<p>yummy_cookie.class returns us a class Cookie. Yay! It means that our instantiation went successfully.</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Day 5: Arrays and Hashes</title>
+	  <link>//day-5-arrays-and-hashes/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-02-12T21:48:25-08:00</pubDate>
+	  <guid>//day-5-arrays-and-hashes/</guid>
+	  <description><![CDATA[
+	     <p>Moving on. In order to build programs we need some building blocks (aka <strong>Data Structures</strong>). As I mentioned, Ruby is simple. There are only two data structures: <strong>arrays</strong> and <strong>hashes</strong>.</p>
+
+<h1 id="arrays">Arrays</h1>
+
+<p><a href="http://www.ruby-doc.org/core-2.1.0/Array.html">Ruby documentation</a> says: “Arrays are ordered, integer-indexed collections of any object”. Sounds a little complicated. Let’s give arrays some love!</p>
+
+<p><img src="/assets/images/give-arrays-some-love.jpg" alt="Give arrays some love" />
+<em>Photo by <a href="http://www.flickr.com/photos/35168673@N03/">libertygrace0</a></em></p>
+
+<p>Look at the picture a above. Here is the <strong>ordered</strong> <strong>collection</strong> of four blocks. If we count them from left to right, then we can refer to each block by it’s position or <strong>index</strong>. Let’s start counting from zero. The block number zero has the letter “L” on it. The block number one has the letter “O”. Number two is “V”. Number three is “E”. This is called <strong>zero indexed</strong>. We stick with blocks in this example, but it really can be <strong>any object</strong>.</p>
+
+<p>Here is code representing the example above:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span><span class="s2">"L"</span><span class="p">,</span> <span class="s2">"O"</span><span class="p">,</span> <span class="s2">"V"</span><span class="p">,</span> <span class="s2">"E"</span><span class="p">]</span></code></pre></figure>
+
+<p>This is the most common way to define an array in Ruby. You start with an opening square bracket. Then, you define elements of the array separated by a comma sign. Finish it with a closing square bracket.</p>
+
+<p>Now we have defined the array, let’s assign it to a variable so we can access it’s elements. Try it out in your IRB:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;&gt;</span> <span class="n">my_array</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"L"</span><span class="p">,</span> <span class="s2">"O"</span><span class="p">,</span> <span class="s2">"V"</span><span class="p">,</span> <span class="s2">"E"</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"L"</span><span class="p">,</span> <span class="s2">"O"</span><span class="p">,</span> <span class="s2">"V"</span><span class="p">,</span> <span class="s2">"E"</span><span class="p">]</span>
+<span class="o">&gt;&gt;</span> <span class="n">my_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="s2">"L"</span>
+<span class="o">&gt;&gt;</span> <span class="n">my_array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="s2">"O"</span>
+<span class="o">&gt;&gt;</span> <span class="n">my_array</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="s2">"V"</span>
+<span class="o">&gt;&gt;</span> <span class="n">my_array</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="s2">"E"</span></code></pre></figure>
+
+<blockquote>
+  <p>IRB executes code you type line by line. The text you typed in after » sign is code. The text that shows up after the =&gt; sign is a corresponding result.</p>
+</blockquote>
+
+<p>You can refer to array’s element by it’s <strong>index</strong> (i.e. position). You start with specifying the variable my_array following with an opening square bracket sign. Then you specify a numeric index of an element you want to retrieve. It’s <strong>zero indexed</strong>, remember? Let’s say we want to get the letter O from my_array. It’s index is 1, so we access it like this:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span></code></pre></figure>
+
+<h1 id="hashes">Hashes</h1>
+
+<p>Hashes are similar to arrays. Two main differences are:</p>
+
+<ol>
+  <li>Instead of storing a single object, hashes store <strong>key value pairs</strong>.</li>
+  <li>Instead of accessing an element by an index, you access it by a <strong>key</strong>.</li>
+</ol>
+
+<p>Here is the simple hash that consist of one key value pair</p>
+
+<p><img src="/assets/images/hash-in-ruby-language1.png" alt="Hash in Ruby explained" /></p>
+
+<p>The <strong>key</strong> is the string “name”. The <strong>value</strong> is the string “Alex Tamoykin”. A key and a value are separated by the equal sign followed by the greater than sight. Let’s call this =&gt; a rocket, just because it looks like it.</p>
+
+<p>You start defining a hash with an opening curly brace following by key value pairs. Then you finish defining it with a closing curly brace.</p>
+
+<p>Let’s try to access a value. The syntax is similar to array’s syntax but instead of using a numeric index, you need to use a <strong>key</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_hash</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s2">"Alex Tamoykin"</span> <span class="p">}</span>
+<span class="n">my_hash</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span></code></pre></figure>
+
+<p>The last line of code we wrote returns the string “Alex Tamoykin”. You can specify as many key value pairs as you want. Just use a comma sign to separate it.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span> <span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s2">"Alex Tamoykin"</span><span class="p">,</span> <span class="s2">"type"</span> <span class="o">=&gt;</span> <span class="s2">"Geek"</span><span class="p">,</span> <span class="s2">"lives_in"</span> <span class="o">=&gt;</span> <span class="s2">"Santa Monica"</span> <span class="p">}</span></code></pre></figure>
+
+<p><em>Photo by <a href="http://www.flickr.com/photos/35168673@N03/">libertygrace0</a></em></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Day 4: Control Structures &#8211; Loops</title>
+	  <link>//day-4-control-structures-loops/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-02-12T21:16:18-08:00</pubDate>
+	  <guid>//day-4-control-structures-loops/</guid>
+	  <description><![CDATA[
+	     <h2 id="while">while</h2>
+
+<p>Let’s imagine that you’re the world known runner. You’re about to run 5 laps at the upcoming Olympics.  Before running, you remind yourself that you need to run exactly 5 laps. No more, no less. Ready, Set, Go! You ran 1 lap. It’s not 5, so you keep running. Lap 2, 3, 4, 5 and you stop running. Well done!</p>
+
+<p>Loops work exactly the same. First, you define a condition that tells a program when to stop. Second, you run code inside the loop. If the condition is met, then we’re done. Otherwise, we run code again.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">lap</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">while</span> <span class="n">lap</span> <span class="o">&lt;</span> <span class="mi">5</span>
+  <span class="nb">puts</span> <span class="s2">"keep running"</span>
+  <span class="n">lap</span> <span class="o">=</span> <span class="n">lap</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Run it. You should see this output.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">keep</span> <span class="n">running</span>
+<span class="n">keep</span> <span class="n">running</span>
+<span class="n">keep</span> <span class="n">running</span>
+<span class="n">keep</span> <span class="n">running</span>
+<span class="n">keep</span> <span class="n">running</span></code></pre></figure>
+
+<p>Let me explain what happened here. On the first line we declare the variable named lap with the value of 0. Next, we use the special keyword <em>while</em> following the condition.</p>
+
+<blockquote>
+  <p>While this condition is true, the code block located between the keywords while and end will be run.</p>
+</blockquote>
+
+<p>Let’s evaluate the condition at the first time. The value of lap is zero. Zero is less than five. The condition is <strong>true</strong>. What do we need to do? Right! We need to run code inside the code block. We enter the code block. We output “keep running” and increase the variable lap by 1. At this point, we finished executing the inner code block and it’s time to check our exiting condition again. The value of the lap variable is one. One is less then five. The condition is <strong>true</strong> which means that we need to run the code again.</p>
+
+<p>Rinse and repeat 4 more times. Now is the moment of truth. The value of lap is 5. We’re at the end of our code block. We evaluate our condition. Five is not less the five. The condition is <strong>false</strong>. Yay! We don’t need to execute the inner code block. We’re done.</p>
+
+<h2 id="until">until</h2>
+
+<p>until keyword acts in the opposite way of while.</p>
+
+<blockquote>
+  <p>Until this condition is true, the code block located between the keywords while and end will be run.</p>
+</blockquote>
+
+<p>Here is the same example written using the <em>until</em> keyword. Notice that the condition now checks if lap variable is greater then 5.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">lap</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">until</span> <span class="n">lap</span> <span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="mi">5</span>
+  <span class="nb">puts</span> <span class="s2">"keep running"</span>
+  <span class="n">lap</span> <span class="o">=</span> <span class="n">lap</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Photo by <a href="http://www.flickr.com/photos/royluck/">roy.luck</a></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Day 3: Control Structures &#8211; Conditionals</title>
+	  <link>//day-3-control-structures-conditionals/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-02-11T23:42:23-08:00</pubDate>
+	  <guid>//day-3-control-structures-conditionals/</guid>
+	  <description><![CDATA[
+	     <p>Let’s imagine a highway. If a highway had no turns, then it could only lead us to one place. In order to have the ability to drive to different places using the same highway, we need to make turns.</p>
+
+<p>Code gets executed line by line from top to bottom. It’s called a <strong>code flow</strong>. If you want to change the code flow, you need to use special keywords called <strong>Control Structures</strong>. There are two main categories of Control Structures: conditionals and loops</p>
+
+<h2 id="conditionals">Conditionals</h2>
+
+<h3 id="if">if</h3>
+
+<p>The “If” conditional is very dumb. If the code satisfies a condition, then run this code, otherwise run a different code. Here is the syntax:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">today</span> <span class="o">=</span> <span class="s2">"Friday"</span>
+
+<span class="k">if</span> <span class="n">today</span> <span class="o">==</span> <span class="s2">"Friday"</span>
+  <span class="nb">puts</span> <span class="s2">"Time to party!"</span>
+<span class="k">else</span>
+  <span class="nb">puts</span> <span class="s2">"Hang in there"</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>What does the code above do? On the first line, it defines the variable <em>today</em> and assigns it the value of “Friday”. Then, it evaluates the code inside the <em>if</em> condition. It tries to figure out whether the condition is <em>true</em> or <em>false</em>. If today is Friday then it’s true and the next line gets executed. You’ll see the text “Time to party!”. Yay!&lt;/span&gt;</p>
+
+<p>What happens next ? The code in the “else” clause gets skipped. It goes straight to the “end” clause which does nothing. Execution resumes after the “end” clause.</p>
+
+<p>Guess what happens if today is not Friday. Then the condition is evaluated to false and it jumps to the line right after the “else” clause. You’ll see “Hang in there” and it goes to the “end” clause.</p>
+
+<h3 id="unless">unless</h3>
+
+<p>The “unless” conditional acts in the opposite way of the “if” conditional. It evaluates a condition and does the opposite.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">today</span> <span class="o">=</span> <span class="s2">"Friday"</span>
+
+<span class="k">unless</span> <span class="n">today</span> <span class="o">==</span> <span class="s2">"Friday"</span>
+  <span class="nb">puts</span> <span class="s2">"Keep calm and code on"</span>
+<span class="k">else</span>
+  <span class="nb">puts</span> <span class="s2">"Almost there"</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>Let’s run it. If today is Friday then you’ll see “Almost there”. Why ? Because we used “unless” instead of “if”. If the “unless” keyword makes code a little confusing, try to read it as “<strong>if not</strong>”. You can read the code above as the following.</p>
+
+<blockquote>
+  <p>If not today is Friday, then “Keep calm and code on”, otherwise output “Almost there”</p>
+</blockquote>
+
+<p>Photo by <a href="http://www.flickr.com/photos/29071316@N06/">sacks08</a></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Day 2: Data Types and Variables</title>
+	  <link>//day-2-data-types-and-variables/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-02-05T22:58:44-08:00</pubDate>
+	  <guid>//day-2-data-types-and-variables/</guid>
+	  <description><![CDATA[
+	     <p><img src="/assets/images/how_programming_works.png" alt="How programming works" /></p>
+
+<h2 id="first-let8217s-figure-out-how-programming-works">First, let’s figure out How Programming Works</h2>
+
+<p>Don’t be scared of coding. It’s actually pretty simple. Any program is just <strong>code</strong> running by an <strong>interpreter</strong> inside an <strong>operating system</strong>. Let me explain:</p>
+
+<ol>
+  <li>Code is text written according to a certain (Ruby) <strong>syntax</strong> which is stored into a regular file.</li>
+  <li>Interpreter (Ruby binary) is the program that reads code and runs it. It takes some actions according to instructions written in code.</li>
+  <li>Operating System (Mac OS X) is the software installed on our computer that runs the interpreter.</li>
+</ol>
+
+<p>That’s it! So all we need to do is to write some ruby code and run it. Let’s figure out how to write code.</p>
+
+<h2 id="variables">Variables</h2>
+
+<p>Variables are like labels. Let’s say you put all your old stuff in a box. You don’t want to forget what’s in it. You put a label on the box with the <strong>name</strong> old_stuff. Next time you want to look at your old stuff, you can refer to the box named old_stuff. Same analogy works for programming. You create a variable named old_stuff. You assign it a value of “action figures of Ninja Turtles” which is a string of text. When you need to look at old_stuff in your program, you can reference it by the variable named <em>old_stuff</em>.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">old</span><span class="p">\</span><span class="n">_stuff</span> <span class="o">=</span> <span class="s2">"action figures of Ninja Turtles"</span>
+<span class="nb">puts</span> <span class="s2">"Check this out: "</span> <span class="o">+</span> <span class="n">old_stuff</span></code></pre></figure>
+
+<p>Note that every programming language has it’s own convention. It’s a set of naming rules that programmers agree to use for the sake of consistency. Here is our first Ruby convention. A variable name in Ruby is always lowercase separated with the underscore symbol. For instance: variable or variable_with_many_words.</p>
+
+<h2 id="try-it-out"><strong>Try it out!</strong></h2>
+
+<p>Seriously, try it, right now. Go to your terminal and run irb (Interactive Ruby). This tool will run the code you type in the real time. It’s amazing!</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;&gt;</span></code></pre></figure>
+
+<p>Now just type in the ruby code from above line by line. The same way as you would type regular text. As soon as you hit Enter, your code gets executed and you will see the result. If you typed it correctly, you should see this:</p>
+
+<p><img src="/assets/images/ruby-variables-in-irb.png" alt="Ruby variables in IRB" /></p>
+
+<p>Here it is. We wrote our first lines of code. Congrats!</p>
+
+<h2 id="data-types">Data Types</h2>
+
+<p>Meet Data Type Cat.</p>
+
+<p><img src="/assets/images/cat_in_a_box_500x400.jpg" alt="Data Types" />
+<em>Photo by <a href="https://www.flickr.com/photos/mr_t_in_dc/">mr_t_in_dc</a></em></p>
+
+<p>Variable has a value. The type of this value is called a <strong>Data Type</strong>. In other words, if a variable is a label on a box, a data type is the way to describe what’s inside the box.</p>
+
+<p>You might notice that the condition might be evaluated to either <strong>true</strong> or <strong>false</strong>. Here is our first data type called <em>Boolean</em>.</p>
+
+<p>Ruby is a very simple language. There are just 3 basic data types:</p>
+
+<ol>
+  <li><em>Boolean</em>. A way to say yes or no. There are only two boolean values: <strong>true</strong> or <strong>false</strong>.</li>
+  <li><em>Number</em>. A fixed or floating point number. Examples are 5 or 5.25.</li>
+  <li><em>String</em>. An arbitrary string of text. Example: “Text inside double quotes” or ‘Text inside single quotes’</li>
+</ol>
+
+<p>Go ahead and try it in your irb</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">variable</span> <span class="o">=</span> <span class="kp">true</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="mi">5</span><span class="o">.</span><span class="mi">25</span>
+<span class="n">variable</span> <span class="o">=</span> <span class="s2">"String of text"</span></code></pre></figure>
+
+<p>From now on, I highly encourage you to <strong>type code in</strong>. You’ll learn way better by typing code yourself instead of just copying and pasting.</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Day 1: Setup</title>
+	  <link>//day-1-setup/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-02-05T00:37:09-08:00</pubDate>
+	  <guid>//day-1-setup/</guid>
+	  <description><![CDATA[
+	     <p>We need tools in order to program. This is where programming starts. Unfortunately, for many people this is where it also ends. I’ve seen people fighting with incompatible versions or programs and giving up. But don’t worry, I went through this process myself. I tried every piece of software and I can tell you that it works for sure. Follow the instructions and you’ll be fine. Ready, get set, go!</p>
+
+<h2 id="already-have-ruby-installed-">Already have Ruby installed ?</h2>
+
+<p>Mac OS X and many modern Linux distributions should already have ruby installed. Open up your terminal and type this:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>ruby -v
+<span class="gp">$ </span>irb -v</code></pre></figure>
+
+<p>If you see the version of Ruby, you’re good to go. It should look something like this:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">ruby 1.9.3p194 <span class="o">(</span>2012-04-20 revision 35410<span class="o">)[</span>x86_64-darwin12.2.0]</code></pre></figure>
+
+<p>If this is the case, go ahead straight to <a href="//day-2-data-types-and-variables/" title="Day 2: Data Types and Variables">Day 2: Data Types and Variables</a></p>
+
+<p>If you see “unknown command” error instead, the Ruby is missing on your system. It’s not a big deal. We’ll install Ruby ourselves.</p>
+
+<h2 id="using-windows">Using Windows?</h2>
+
+<p>If you’re on Windows and running a Linux under VirtualBox is not an option, you can still install Ruby using Ruby Installer.</p>
+
+<h4 id="download-ruby-installer">1) Download Ruby Installer</h4>
+
+<p>Download Ruby-2.0.0 installer from <a href="http://rubyinstaller.org/downloads/">Ruby Installer download page</a>.</p>
+
+<h4 id="install-it">2) Install it</h4>
+
+<p>Make sure to check “Add Ruby executables to you PATH” checkbox</p>
+
+<p><img src="/assets/images/install-ruby-on-windows.png" alt="Install Ruby on Windows" /></p>
+
+<h4 id="check-your-ruby-installation">3) Check your Ruby installation</h4>
+
+<p>Open your Command Prompt to see if Ruby was successfully installed. See the instructions from “Already have Ruby installed ?” section for more information. You should see this</p>
+
+<p><img src="/assets/images/ruby-in-command-prompt-on-windows.png" alt="Ruby in command prompt on Windows" /></p>
+
+<h2 id="using-mac-os-x">Using Mac OS X?</h2>
+
+<p>Most of modern Macs already have ruby installed. If you have an old Mac with no ruby on it, follow these instructions.</p>
+
+<h4 id="install-os-x-command-line-tools">1) Install OS X command line tools</h4>
+
+<p>Go to <a href="https://developer.apple.com/downloads">the downloads page of Apple Developer Portal</a>. Register or sign in if you have an account already. Search for “Command Line Tools”. Choose the one for you version of OS X (Mountain Lion, Mavericks, etc), download it and install it.</p>
+
+<h4 id="install-homebrew">2) Install Homebrew</h4>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>ruby -e <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install<span class="k">)</span><span class="s2">"</span></code></pre></figure>
+
+<h4 id="span-styleline-height-123-install-rbenvspan"><span style="line-height: 1.2;">3) Install rbenv</span></h4>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>brew update
+<span class="gp">$ </span>brew install rbenv ruby-build
+<span class="gp">$ </span><span class="nb">echo</span> <span class="s1">'eval "$(rbenv init -)"'</span> &amp;gt;&amp;gt; ~/.bash_profile
+<span class="gp">$ </span><span class="nb">source</span> ~/.bash_profile</code></pre></figure>
+
+<h4 id="install-ruby">4) Install Ruby</h4>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>rbenv install 2.1.0
+<span class="gp">$ </span>rbenv global 2.1.0 <span class="c"># set ruby 2.1.0 as a default</span></code></pre></figure>
+
+<h4 id="install-gems">5) Install Gems</h4>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>gem install rbenv-rehash bundler</code></pre></figure>
+
+<p>Photo by <a href="http://www.flickr.com/photos/zzpza/">zzpza</a></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>7 Days of Ruby</title>
+	  <link>//start-programming-now-free-7-day-online-course/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-02-05T00:03:34-08:00</pubDate>
+	  <guid>//start-programming-now-free-7-day-online-course/</guid>
+	  <description><![CDATA[
+	     <h2 id="what-is-it">What is it</h2>
+
+<p>It’s the nuts and bolts of programming. This FREE online course helps you to start programming from scratch. In almost anything, the hardest part is to <b>get the ball rolling</b>. After going through this course you will be comfortable with programming. Further learning will require less effort since the ball is already rolling.</p>
+
+<h2 id="who-is-it-for">Who is it for</h2>
+
+<ul>
+  <li>You don’t have a Computer Science degree ?</li>
+  <li>You would love to create software but don’t know where to start ?</li>
+  <li>All these academic books don’t make sense ?</li>
+</ul>
+
+<p>If the answer to any of these question is yes, then this course is for you. I’ve been there. Most of computer science books are so in depth. There was nothing that explains the most important basics of different aspects of programming. This is what this course is about. It helps you to connect the dots and start programming something useful.</p>
+
+<h2 id="results">Results</h2>
+
+<p>After going through this course you will be able to do 3 things:</p>
+
+<ul>
+  <li>Understand the basics of programming</li>
+  <li>Write code yourself.</li>
+  <li>Read and modify existing code.</li>
+</ul>
+
+<h2 id="im-down-whats-the-plan">I’m down. What’s the plan?</h2>
+<p>We’re going to learn the programming language called Ruby. Why Ruby? Because it’s really easy to use. It’s really powerful. It is great for web development which is hot on the job market.</p>
+
+<p>I’ll show you how to set up your computer for software development. We’ll cover the basics of Ruby programming language. I’ll tell you what to do next and how to improve your skills going forward.</p>
+
+<p><em>Photo by <a href="http://www.flickr.com/photos/emagic/29615044/sizes/m/">e-magic</a></em></p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

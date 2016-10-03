@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [[! Page Meta ]] -->
+    <title>Day 4: Models, Controllers and Routing</title>
+    <meta name="description" content="How To Program Better - Learn How To Program and become a Better Software Engineer with Alex Tamoykin" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+        <link rel="canonical" href="/" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="How To Program Better" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How To Program Better" />
+    <meta property="og:description" content="Learn How To Program and become a Better Software Engineer with Alex Tamoykin" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/assets/images/cover1.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How To Program Better" />
+    <meta name="twitter:description" content="Learn How To Program and become a Better Software Engineer with Alex Tamoykin" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image:src" content="/assets/images/cover1.jpg" />
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "How To Program Better",
+    "url": "/",
+    "image": "/assets/images/cover1.jpg",
+    "description": "Learn How To Program and become a Better Software Engineer with Alex Tamoykin"
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="How To Program Better" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+        <li class="nav-about " role="presentation"><a href="/about">About</a></li>
+        <li class="nav-fables " role="presentation"><a href="/tag/7-days-of-ruby">7 Days of Ruby</a></li>
+        <li class="nav-speeches " role="presentation"><a href="/tag/7-days-of-rails">Rails in 7 Days</a></li>
+        <li class="nav-speeches " role="presentation"><a href="/tag/book">Books</a></li>
+    </ul>
+    <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        <!-- < default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: url(/assets/images/model.jpg) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/"><img src="/assets/images/logo.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-speeches">
+
+        <header class="post-header">
+            <h1 class="post-title">Day 4: Models, Controllers and Routing</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>Alex Tamoykin</a> -->
+            <time class="post-date" datetime="2014-03-11">11 Mar 2014</time>
+                <!-- [[tags prefix=" on "]] -->
+                
+                on
+                
+                    
+                       <a href='/tag/7-days-of-rails'>7-days-of-rails</a>
+                    
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+
+            <h2 id="task-model">Task model</h2>
+
+<p>Rails has a particular file structure. Models are located under <em>app/models</em> folder. Controllers are under <em>app/controllers</em>. Views are under <em>app/views</em>. We need to edit our Task model. Let’s open it. It’s under <em>app/models/task.rb</em>.</p>
+
+<p><img src="/assets/images/ruby_on_rails_task_model.png" alt="Task Model" /></p>
+
+<p>When you add a new database column, Rails does one very useful thing for you. It generates <strong>attribute methods</strong>. A name of every attribute method is the same as a corresponding column’s name. An attribute method returns a value of a corresponding row in a database. Rails defines several attribute methods. One for each database column.</p>
+
+<p>As a user of our application, we need to know when a task is completed. Let’s see how <em>completed</em> attribute method helps us to achieve this goal. We will try it in <strong>rails console</strong>. Open up your terminal and navigate to the project’s directory. Type <em>bundle exec rails console</em>. It will start a new IRB session within the context of our todo app.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>bundle <span class="nb">exec </span>rails console
+Loading development environment <span class="o">(</span>Rails 4.0.2<span class="o">)</span>
+<span class="gp">&gt;&gt; </span>task <span class="o">=</span> Task.new
+<span class="gp">=&gt; </span><span class="c">#&amp;lt;Task id: nil, name: nil, created_at: nil, updated_at: nil, completed: nil&amp;gt;</span>
+<span class="gp">&gt;&gt; </span>task.completed?
+<span class="gp">=&gt; </span><span class="nb">false</span>
+<span class="gp">&gt;&gt; </span>task.completed <span class="o">=</span> <span class="nb">true</span>
+<span class="gp">=&gt; </span><span class="nb">true</span>
+<span class="gp">&gt;&gt; </span>task.completed?
+<span class="gp">=&gt; </span><span class="nb">true</span></code></pre></figure>
+
+<p>_Note: Did you notice a question mark at the end of the function’s name? This is another Ruby convention. Question mark methods return true or false. It’s like asking a question: “Hey task, are you completed?” _</p>
+
+<p>Four things happened here:</p>
+
+<ol>
+  <li>We instantiated a new Task object.</li>
+  <li>We called <em>completed?</em> method on the task object. Since completed field is <em>nil</em>, it returned <em>false</em>.</li>
+  <li>Now we decided to complete a task. We’ve changed completed attribute to <em>true</em></li>
+  <li>Is our <em>task.completed?</em> Yes, it finally is.</li>
+</ol>
+
+<p><em>Note: nil is a Ruby builtin data type. It represents nothing. In other words, it’s the absence of data.</em></p>
+
+<h2 id="taskscontroller">TasksController</h2>
+
+<p>Controller’s job is to control a workflow. If you look at <a title="How Rails Works - diagram" href="/assets/images/how_rails_works.png" target="_blank">“How Rails Works” diagram</a>, the controller is displayed in the center. It’s like a manager. It directs others and delegates actual work to it’s close friends: Models and Views.</p>
+
+<p>If you open up <em>app/controllers/tasks_controller.rb</em> you will see a lot of generated code. This is what scaffold generated for us automatically. Let’s take a look.</p>
+
+<p><img src="/assets/images/ruby_on_rails_controller_action.png" alt="Controller action" /></p>
+
+<p>There are 3 main things:</p>
+
+<ol>
+  <li>TasksController inherits from ApplicationController.</li>
+  <li>Every method represents an action. Look at the comments before each action. These are hints. For example: if you send a get request to <em>/tasks/1</em> then the <em>show</em> action gets triggered.</li>
+  <li>Method <em>before_action</em> sets up a filter. Filter is a method that gets executed before, after or around a specific action. In our case, the method <em>set_task</em> is executed before actions <em>show</em>, <em>edit</em>, <em>update</em> and <em>destroy</em>.</li>
+</ol>
+
+<p><em>Note: Code comment is any code prefixed by a pound sign #. Code comments are not executed by an interpreter. They are used mostly as hints for developers.</em></p>
+
+<p>Thanks to <em>set_task</em> before filter, we don’t need to manually retrieve our task from the database every time the action is called.</p>
+
+<h2 id="routing">Routing</h2>
+
+<p>You probably wonder how Rails determines what action corresponds to what url. It figures it our from the set of rules called <strong>routes</strong>. Routes are defined in the file <em>config/routes.rb</em>. Since we’re here, let’s add the <em>root</em> route for our todo application. Default welcome page is nice, but we want to see a list of tasks instead of it.</p>
+
+<p><img src="/assets/images/ruby_on_rails_home_route.png" alt="Home route" /></p>
+
+<p>Go back to your browser. Let’s go to <a href="http://localhost:3000">http://localhost:3000</a>. This time we should see task listing page instead of welcome page.</p>
+
+<p><img src="/assets/images/ruby_on_rails_home_page_with_listing.png" alt="Home page with a listing" /></p>
+
+<h2 id="what-happened-here">What happened here?</h2>
+
+<p>We looked at Tasks model. We played with attribute methods in rails console. We understood the structure of <em>TasksController</em>. After that we dove into <em>config/routes.rb</em> file and added a <em>root</em> route.</p>
+
+<p>Ready to make more changes to your rails app? Let’s move on to our views.</p>
+
+<p>Photo by <a href="http://www.flickr.com/photos/mazzuk/">MaZzuk</a></p>
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/fsproru" style="background-image: url(/assets/images/alex_tamoykin_profile_pic_small.jpg)"><span class="hidden">Alex Tamoykin's Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/fsproru">Alex Tamoykin</a></h4>
+
+                
+                    <p> Alex started coding in 5th grade of elementary school. He is an award winning software engineer and a hands on technical leader with over a decade of industry experience.</p>
+                
+                <div class="author-meta">
+                    <span class="author-location icon-location"> Los Angeles, USA</span>
+                    <span class="author-link icon-link"><a href="http://howtoprogrambetter.com/"> howtoprogrambetter.com</a></span>
+                </div>
+            </section>
+
+            <!-- /author  -->
+
+            <!-- share -->
+            <!-- <section class="share"> -->
+            <!--     <h4>Share this post</h4> -->
+            <!--     <a class="icon-twitter" href="http://twitter.com/share?text=Day 4: Models, Controllers and Routing&amp;url=http://howtoprogrambetter.com/day-4-models-controllers-and-routing" -->
+            <!--         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"> -->
+            <!--         <span class="hidden">Twitter</span> -->
+            <!--     </a> -->
+            <!--     <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://howtoprogrambetter.com/day-4-models-controllers-and-routing" -->
+            <!--         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"> -->
+            <!--         <span class="hidden">Facebook</span> -->
+            <!--     </a> -->
+            <!--     <a class="icon-google-plus" href="https://plus.google.com/share?url=http://howtoprogrambetter.com/day-4-models-controllers-and-routing" -->
+            <!--        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"> -->
+            <!--         <span class="hidden">Google+</span> -->
+            <!--     </a> -->
+            <!-- </section> -->
+
+            <!-- subscribe -->
+            <section class="subscribe">
+              <a href="http://eepurl.com/OvBfP" target="_blank"><button>SUBSCRIBE</button></a>
+
+            </section>
+
+            <!-- add Disqus Comments -->
+            
+
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+        <a class="read-next-story " style="background-image: url(/assets/images/checklist.jpg)" href="/day-5-task-views-adding-the-ability-to-complete-a-task">
+            <section class="post">
+                <h2>Day 5: Task Views &#8211; Adding the ability to complete a task</h2>
+                <p>## Task Views Yes, there are many task views. One for each controller action. This...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/train_cover.jpg)" href="/day-3-how-rails-works-database-migrations">
+            <section class="post">
+                <h2>Day 3: How Rails Works &#8211; Database Migrations</h2>
+                <p>How Rails works Here is what happens when you go to your browser and see...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">How To Program Better</a> &copy; 2016</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-45185368-3', 'auto');
+	    ga('send', 'pageview');
+
+     </script>   
+</body>
+</html>

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>howtoprogrambetter.com</title>
+   
+   <link>http://howtoprogrambetter.com/</link>
+   <description>Learn How To Program and become a Better Software Engineer with Alex Tamoykin</description>
+   <language>en-us</language>
+   <managingEditor> Alex Tamoykin</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Data Types in Swift</title>
+	  <link>//data-types-in-swift/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2015-03-08T11:09:50-07:00</pubDate>
+	  <guid>//data-types-in-swift/</guid>
+	  <description><![CDATA[
+	     <p>I’m currently teaching a <a title="Mobile Development at General Assembly" href="https://generalassemb.ly/education/mobile-development" target="_blank">mobile development course at GA</a>. I’ll be sharing my swift lessons one by one. Lesson 1: Data Types.After reading this blog post you’ll be able to learn and use the basic data types in Swift.I’m going to briefly introduce a data type. Then I’ll show the syntax for creating it and what you can do with it.</p>
+
+<p>Ready, get set, go!</p>
+
+<h2 id="string">String</h2>
+
+<p>The String datatype is used for storing and manipulating text. You start defining a string by using a double quotes symbol following by your text. Finish defining your string by using a second double quotes symbol.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="s">""</span>                    <span class="c1">// an empty string</span>
+<span class="s">"hello world"</span>         <span class="c1">// a string with words</span>
+
+<span class="nf">countElements</span><span class="p">(</span><span class="s">"dude"</span><span class="p">)</span> <span class="c1">// =&gt; 4</span>
+<span class="s">"dude"</span><span class="o">.</span><span class="n">isEmpty</span>        <span class="c1">// =&gt; false</span>
+<span class="s">""</span><span class="o">.</span><span class="n">isEmpty</span>            <span class="c1">// =&gt; true</span></code></pre></figure>
+
+<h2 id="boolean">Boolean</h2>
+
+<p>A boolean can be either true or false. It’s useful in conditions inside control flow statements like if. It also helps with checking whether a certain condition is met.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kc">true</span>  <span class="c1">// a boolean with a value of true</span>
+<span class="kc">false</span> <span class="c1">// a boolean with a value offalse</span>
+
+<span class="k">let</span> <span class="nv">age</span> <span class="o">=</span> <span class="mi">19</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="p">{</span>
+  <span class="nf">println</span><span class="p">(</span><span class="s">"Congratulations! Now you can now get a California driver license."</span><span class="p">)</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="range">Range</h2>
+
+<p>The Range data type is used to define a range of values. It’s very handy to define long sequences.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mi">0</span><span class="o">...</span><span class="mi">3</span> <span class="c1">// =&gt; 0,1,2,3</span>
+<span class="mi">0</span><span class="o">..&lt;</span><span class="mi">3</span> <span class="c1">// =&gt; 0,1,2&lt;/pre&gt;</span></code></pre></figure>
+
+<h2 id="integer">Integer</h2>
+
+<p>An integer describes a whole number without a decimal point. It’s useful for performing any sort of math on whole numbers.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mi">1</span>     <span class="c1">// an integer with a value of 1</span>
+
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="c1">// =&gt; -1</span>
+<span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1">// =&gt; 5</span>
+<span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1">// =&gt; 4</span></code></pre></figure>
+
+<h2 id="double--float">Double / Float</h2>
+
+<p>Doubles and Floats are used for numbers with precision. A double is twice as precise as a float.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mf">4.2</span> <span class="c1">// a double with a value of 4.2</span>
+
+<span class="k">let</span> <span class="nv">my_float</span> <span class="p">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mf">4.2</span> <span class="c1">// If you want to use float to consume some memory, you'll need to explicitly specify avariable'stype&lt;/pre&gt;</span></code></pre></figure>
+
+<h2 id="array">Array</h2>
+
+<p>Array is a zero indexed, ordered collection of elements.Arrays come in handy when you need to store and operate on a collection of elements.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="p">[</span><span class="s">"a"</span><span class="p">,</span><span class="s">"b"</span><span class="p">,</span><span class="s">"c"</span><span class="p">,</span><span class="s">"d"</span><span class="p">]</span>    <span class="c1">// an array of characters</span>
+<span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">6.7</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">]</span> <span class="c1">// an array of numbers</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>        <span class="c1">// =&gt; [1,2,3,4]</span>
+<span class="k">let</span> <span class="nv">my_array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">my_array</span><span class="o">.</span><span class="n">count</span>       <span class="c1">// =&gt; 4</span>
+
+<span class="c1">// retrieving the first element of an array</span>
+<span class="n">my_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>          <span class="c1">// =&gt; 1</span></code></pre></figure>
+
+<h2 id="dictionary">Dictionary</h2>
+
+<p>A dictionary is a collection of key value pairs. A value is stored and retrieved from a dictionary by it’s key. Dictionaries are useful for managing different sets of data. For example keeping a track of heroes and their superpowers 😉</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// A dictionary with 3 key value pairs</span>
+<span class="k">var</span> <span class="nv">heroes</span> <span class="o">=</span> <span class="p">[</span>
+ <span class="s">"wonder_woman"</span><span class="p">:</span> <span class="p">[</span><span class="s">"strong"</span><span class="p">],</span>
+ <span class="s">"aqua_man"</span><span class="p">:</span> <span class="p">[</span><span class="s">"can breathe underwater"</span><span class="p">],</span>
+ <span class="s">"wonder twins"</span><span class="p">:</span> <span class="p">[</span><span class="s">"take forms of other things"</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="c1">// retrieving values using keys</span>
+<span class="n">heroes</span><span class="p">[</span><span class="s">"wonder_woman"</span><span class="p">]</span> <span class="c1">// =&gt; strong</span>
+<span class="n">heroes</span><span class="p">[</span><span class="s">"aqua_man"</span><span class="p">]</span>     <span class="c1">// =&gt; can breathe underwater</span>
+
+<span class="c1">// inserting a new key / value pair</span>
+<span class="n">heroes</span><span class="p">[</span><span class="s">"spiderman"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"spidey sense"</span><span class="p">,</span> <span class="s">"throw a web"</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">pre</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>Feel free to play with this code in the playgrounds. Every data type has a lot more useful methods on it.</p>
+
+<p>Enjoy,</p>
+
+<p>Alex</p>
+
+<p><em>Photo by <a href="https://www.flickr.com/photos/yukop">yukop</a></em></p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

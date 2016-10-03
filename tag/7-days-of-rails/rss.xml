@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>howtoprogrambetter.com</title>
+   
+   <link>http://howtoprogrambetter.com/</link>
+   <description>Learn How To Program and become a Better Software Engineer with Alex Tamoykin</description>
+   <language>en-us</language>
+   <managingEditor> Alex Tamoykin</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>What&#8217;s next</title>
+	  <link>//what-is-next/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-03-14T23:34:54-07:00</pubDate>
+	  <guid>//what-is-next/</guid>
+	  <description><![CDATA[
+	     <p>We covered a lot of stuff. We set up the computer for local development. We created a web application and deployed it to a server. Great job!</p>
+
+<p>Keep in mind, everything we’ve learned is just a tip of the iceberg. Each topic is probably worth a book of it’s own. The great thing about Software Engineering is that there is always a way to get better. Next, try to create your app and <strong>always keep learning</strong>. Keep an eye on new frameworks, libraries, languages etc.</p>
+
+<p><strong>Sign up for my Newsletter</strong>. I will be updating it with new techniques, development tools and everything you need to know to program better. Just enter your name and your email below. Let’s keep in touch.</p>
+
+<p>Photo by <a href="https://www.flickr.com/photos/jlodder">jlodder</a></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Day 7: Deployment</title>
+	  <link>//day-7-deployment/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-03-12T23:34:44-07:00</pubDate>
+	  <guid>//day-7-deployment/</guid>
+	  <description><![CDATA[
+	     <h2 id="what-is-deployment">What is deployment?</h2>
+
+<p>Deployment makes our application available for use. For a web application it means putting it on the Internet in most cases. This is exactly what we’re going to do in this chapter. In order to put our application on the Internet, we need a <strong>server</strong>. A server is a computer which has an access to the Internet. When we run <em>bundle exec rails server</em> command and go to <a href="http://localhost:3000">http://localhost:3000</a>, our laptop is the server. It is ok for your own use. In order to make it available for everyone, we need to upload our app to a server and run it there. The server will have a URL assigned to it, so everyone can access it.</p>
+
+<h2 id="setting-up-heroku">Setting up Heroku</h2>
+
+<p>We’re going to use a service called Heroku. Here are 3 reasons why:</p>
+
+<ol>
+  <li>It’s <strong>free</strong> for our small app</li>
+  <li>It’s <strong>easy</strong> to setup and deploy to it.</li>
+  <li>They provide you with both: <strong>a server and a URL</strong>.</li>
+</ol>
+
+<p>Let’s set it up, it’s really easy.</p>
+
+<h4 id="sign-up-for-heroku-account"><strong>Sign up for Heroku account</strong></h4>
+
+<p>Open up your browser, go to <a href="http://heroku.com/signup">http://heroku.com/signup</a> and sign up for an account.</p>
+
+<h4 id="install-heroku-toolbelt"><strong>Install heroku-toolbelt</strong></h4>
+
+<p>Go to the terminal and install heroku-toolbelt. It’s a set of command line tools that we will use to deploy to Heroku</p>
+
+<figure class="highlight"><pre><code class="language-terminal" data-lang="terminal">$ brew install heroku-toolbelt</code></pre></figure>
+
+<h4 id="authenticate-with-heroku"><strong>Authenticate with heroku</strong></h4>
+
+<p>Go back to the terminal and run</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>heroku login</code></pre></figure>
+
+<p>It will ask you for your email and password from your account. <strong>Type it in</strong> (don’t copy and paste). <em>**</em>It will also ask you whether you want to upload a SSH key. Do it, it will make it easier to deploy. If you already have existing keys it will ask you which one you want to upload. If you don’t have one, it will generate a new key for you.</p>
+
+<h4 id="install-heroku-push-plugin"><strong>Install heroku-push plugin</strong></h4>
+
+<p>It will allow us to push our app straight from our laptop. Go back to the terminal and run this command:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>heroku plugins:install https://github.com/ddollar/heroku-push</code></pre></figure>
+
+<h2 id="push-to-heroku">Push to Heroku</h2>
+
+<p>We’ve created an account and installed heroku command line tools on our local machine. Now it’s time to deploy our todo application to Heroku.</p>
+
+<p>First, let’s create an app on heroku. Go to your terminal. Navigate to todo project directory and run this:</p>
+
+<p><img src="/assets/images/heroku_app_name_and_url.png" alt="Heroku app name and URL" /></p>
+
+<p>Notice that it gave us the app name and the URL. App name is random for everyone. My app name is “still-taiga-7739”, your name will be different. Remember the app name. Put your app name in place of <em>your_app_name</em> variable for the next set of commands.</p>
+
+<p>Next, add PostgreSQL database to you app. Don’t forget to use your app name instead of <em>your_app_name</em> variable.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>heroku addons:add heroku-postgresql:dev --app your_app_name&lt;/pre&gt;</code></pre></figure>
+
+<p>Now it’s time to push our app to Heroku. Ready ? Let’s do it!</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>heroku push --app your_app_name</code></pre></figure>
+
+<p>It might take a while to upload code and build an application. After it’s done, let’s run our migrations for the newly deployed app.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>heroku run bundle <span class="nb">exec </span>rake db:migrate --app your_app_name&lt;/pre&gt;</code></pre></figure>
+
+<p>That’s it! Remember the URL from heroku create command ? Go to your browser, navigate to that URL. You new shiny todo app should be ready to use.</p>
+
+<p><img src="/assets/images/todo_app_deployed_on_heroku.png" alt="TODO app deployed to Heroku" /></p>
+
+<h2 id="what-happened-here">What happened here</h2>
+
+<p>Now you understand what it takes to <strong>put your app on the Internet</strong>. Not only you can deploy your todo app. You can deploy pretty much <strong>any Rails app</strong>. This is very valuable! Now you can use this app from anywhere. You can even share it with your friends. Just send them a link.</p>
+
+<p>We started from nothing. Now we have a web application running on the Internet. This is awesome!</p>
+
+<p>Photo by <a href="https://www.flickr.com/photos/jon_a_ross">jon_a_ross</a></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Day 6: Task Views &#8211; Show a completed task</title>
+	  <link>//day-6-task-views-show-a-completed-task/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-03-12T22:50:54-07:00</pubDate>
+	  <guid>//day-6-task-views-show-a-completed-task/</guid>
+	  <description><![CDATA[
+	     <h2 id="showing-a-completed-task">Showing a completed task</h2>
+
+<p>Let’s add our status to <em>show</em> view. In order to do it, we need to add a new paragraph tag. If a task is completed, we want to display text: “Completed. Yay!”. We’re going to use our <em>completed?</em> method to determine whether we should show this section or not. This is what it’s going to look like. Go ahead and put this code in <em>show</em> view before <em>Edit</em> link.</p>
+
+<p><img src="/assets/images/ruby_on_rails_show_completed_code.png" alt="Show completed code" /></p>
+
+<p>Don’t forget to start a server if you don’t have it running already. Go back to your browser and navigate to <a href="http://localhost:3000/tasks/1">http://localhost:3000/tasks/1</a>. Look, our task shows as completed, Yay!</p>
+
+<p><img src="/assets/images/ruby_on_rails_show_completed_in_a_browser.png" alt="Completed code in the browser" /></p>
+
+<h2 id="adding-a-status-to-task-listing">Adding a status to task listing</h2>
+
+<p>The last change that we’re going to make is adding a status to <em>list</em> view. We want to see which task is completed and which is not. This is really simple. Open up <em>app/views/tasks/index.html.erb</em>. We’ll need to add a new HTML table row. We will show the text “Completed!” if a task is completed.</p>
+
+<p><img src="/assets/images/ruby_on_rails_adding_status_to_task_listing.png" alt="Adding status to a task listing" /></p>
+
+<p>Go back to the browser. Go to: <a href="http://localhost:3000/tasks">http://localhost:3000/tasks</a>. You should see “Completed!” next to our first task. Just so we see the difference, let’s add a new task. Click “New Task”, enter “Learn how to program better”. Click “Create Task”. Click “Back” link to return to the task listing. You should see two tasks. One is completed. Another one is not.</p>
+
+<p><img src="/assets/images/completed_on_task_listing_screen.png" alt="Completed on the task listing screen" />We learned how to program, now we need to learn how to program <strong>better</strong>.</p>
+
+<h2 id="what-we-just-covered">What we just covered</h2>
+
+<p>We’ve made great progress! <strong>We wrote our first web application using Ruby on Rails</strong>. How cool is that? We went through basics of Rails framework. We understood how Models, Views and Controllers work together to deliver a web page to a user. This time we did everything ourselves. We generated a database migration. We used an attribute method on Task model. We looked at how <em>TaskController</em> renders views using actions. At the end of this chapter we added the ability to complete a task. Then we displayed this information on <em>show</em>, <em>edit</em> and <em>list</em> views.</p>
+
+<p>Now we have a fully working todo application. Let’s put it on the Internet and tell the world about it.</p>
+
+<p>Photo by <a href="http://www.flickr.com/photos/rodrigosa/">rodrigosa</a></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Day 5: Task Views &#8211; Adding the ability to complete a task</title>
+	  <link>//day-5-task-views-adding-the-ability-to-complete-a-task/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-03-11T23:43:53-07:00</pubDate>
+	  <guid>//day-5-task-views-adding-the-ability-to-complete-a-task/</guid>
+	  <description><![CDATA[
+	     <h2 id="task-views">Task Views</h2>
+
+<p>Yes, there are many task views. One for each controller action. This is what <em>edit</em> view looks like.</p>
+
+<p>Views are simply HTML templates with some ruby code mixed in them. Ruby code is located inside &lt;%= %&gt; tags. Like this: &lt;%= ruby_code_goes_here %&gt;</p>
+
+<p><img src="/assets/images/html_and_ruby_code_in_a_view.png" alt="HTML and Ruby code in a view" /></p>
+
+<p>Views can render other views called <strong>partials</strong>. In our case, <em>edit</em> view renders <em>form</em> partial. Partials are located in the same directory as views. The only difference is that partial’s filename starts with the underscore symbol.</p>
+
+<p>Lets look at <em>form</em> partial a little closer.</p>
+
+<p><img src="/assets/images/rails_form_partial.png" alt="Rails form partial" /></p>
+
+<p>3 Things:</p>
+
+<ol>
+  <li><em>form_for</em> method takes <em>@task</em> instance variable as a parameter. It generates an HTML form. This form is meant for editing the <em>@task</em>.</li>
+  <li>Name field contains the name of the <em>@task</em>.</li>
+  <li>Submit button submits the form and it’s fields to a server.</li>
+</ol>
+
+<h2 id="adding-the-ability-to-complete-a-task">Adding the ability to complete a task</h2>
+
+<p>We can change the name of a task. Let’s add the ability to complete the task. We’ll add a checkbox. If the checkbox is checked, then <em>completed</em> field changes to <em>true</em>. If it’s unchecked, it is set back to <em>false</em>.</p>
+
+<p>We need to make 2 changes in order to make it happen:</p>
+
+<ol>
+  <li>Let’s use <em>check_box</em> method inside our form to add a checkbox.</li>
+</ol>
+
+<p><img src="/assets/images/ruby_on_rails_add_checkbox_to_a_form.png" alt="Add a checkbox to a form" />2. We need to come back to <em>app/controllers/tasks_controller.rb</em>. <em>TasksController</em> needs to trust <em>completed</em> attribute.</p>
+
+<p><img src="/assets/images/ruby_on_rails_whitelist_completed_attribute.png" alt="Whitelist completed attribute" /></p>
+
+<p>That’s it! Go back to you browser, navigate to the previously created task at <a href="http://localhost:3000/tasks/1/edit">http://localhost:3000/tasks/1/edit</a></p>
+
+<p><img src="/assets/images/ruby_on_rails_completed_checkbox.png" alt="Completed checkbox" /></p>
+
+<p>Look! It’s our completed checkbox. Right now it’s unchecked. Check it and click <em>Update Task</em> button. The task is saved.</p>
+
+<p>Let’s check if it was really saved into our database. Click <em>edit</em> link to return back to edit screen. If you see <em>completed</em> checkbox checked, then it was indeed saved. Congratulations, my friend.</p>
+
+<h2 id="what-happened-here">What happened here?</h2>
+
+<p>We looked at a rails view. The view is a mix of HTML and Ruby code. We added <em>completed</em> checkbox to <em>edit</em> view. After that we whitelisted <em>completed</em> attribute inside <em>TasksController</em> so we can save it.</p>
+
+<p>We can successfully complete our tasks. Although, task completeness is not displayed on any other views. Let’s change that next.</p>
+
+<p>Photo by <a href="http://www.flickr.com/photos/alancleaver/">Alan Cleaver</a></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Day 4: Models, Controllers and Routing</title>
+	  <link>//day-4-models-controllers-and-routing/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-03-11T22:43:05-07:00</pubDate>
+	  <guid>//day-4-models-controllers-and-routing/</guid>
+	  <description><![CDATA[
+	     <h2 id="task-model">Task model</h2>
+
+<p>Rails has a particular file structure. Models are located under <em>app/models</em> folder. Controllers are under <em>app/controllers</em>. Views are under <em>app/views</em>. We need to edit our Task model. Let’s open it. It’s under <em>app/models/task.rb</em>.</p>
+
+<p><img src="/assets/images/ruby_on_rails_task_model.png" alt="Task Model" /></p>
+
+<p>When you add a new database column, Rails does one very useful thing for you. It generates <strong>attribute methods</strong>. A name of every attribute method is the same as a corresponding column’s name. An attribute method returns a value of a corresponding row in a database. Rails defines several attribute methods. One for each database column.</p>
+
+<p>As a user of our application, we need to know when a task is completed. Let’s see how <em>completed</em> attribute method helps us to achieve this goal. We will try it in <strong>rails console</strong>. Open up your terminal and navigate to the project’s directory. Type <em>bundle exec rails console</em>. It will start a new IRB session within the context of our todo app.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>bundle <span class="nb">exec </span>rails console
+Loading development environment <span class="o">(</span>Rails 4.0.2<span class="o">)</span>
+<span class="gp">&gt;&gt; </span>task <span class="o">=</span> Task.new
+<span class="gp">=&gt; </span><span class="c">#&amp;lt;Task id: nil, name: nil, created_at: nil, updated_at: nil, completed: nil&amp;gt;</span>
+<span class="gp">&gt;&gt; </span>task.completed?
+<span class="gp">=&gt; </span><span class="nb">false</span>
+<span class="gp">&gt;&gt; </span>task.completed <span class="o">=</span> <span class="nb">true</span>
+<span class="gp">=&gt; </span><span class="nb">true</span>
+<span class="gp">&gt;&gt; </span>task.completed?
+<span class="gp">=&gt; </span><span class="nb">true</span></code></pre></figure>
+
+<p>_Note: Did you notice a question mark at the end of the function’s name? This is another Ruby convention. Question mark methods return true or false. It’s like asking a question: “Hey task, are you completed?” _</p>
+
+<p>Four things happened here:</p>
+
+<ol>
+  <li>We instantiated a new Task object.</li>
+  <li>We called <em>completed?</em> method on the task object. Since completed field is <em>nil</em>, it returned <em>false</em>.</li>
+  <li>Now we decided to complete a task. We’ve changed completed attribute to <em>true</em></li>
+  <li>Is our <em>task.completed?</em> Yes, it finally is.</li>
+</ol>
+
+<p><em>Note: nil is a Ruby builtin data type. It represents nothing. In other words, it’s the absence of data.</em></p>
+
+<h2 id="taskscontroller">TasksController</h2>
+
+<p>Controller’s job is to control a workflow. If you look at <a title="How Rails Works - diagram" href="/assets/images/how_rails_works.png" target="_blank">“How Rails Works” diagram</a>, the controller is displayed in the center. It’s like a manager. It directs others and delegates actual work to it’s close friends: Models and Views.</p>
+
+<p>If you open up <em>app/controllers/tasks_controller.rb</em> you will see a lot of generated code. This is what scaffold generated for us automatically. Let’s take a look.</p>
+
+<p><img src="/assets/images/ruby_on_rails_controller_action.png" alt="Controller action" /></p>
+
+<p>There are 3 main things:</p>
+
+<ol>
+  <li>TasksController inherits from ApplicationController.</li>
+  <li>Every method represents an action. Look at the comments before each action. These are hints. For example: if you send a get request to <em>/tasks/1</em> then the <em>show</em> action gets triggered.</li>
+  <li>Method <em>before_action</em> sets up a filter. Filter is a method that gets executed before, after or around a specific action. In our case, the method <em>set_task</em> is executed before actions <em>show</em>, <em>edit</em>, <em>update</em> and <em>destroy</em>.</li>
+</ol>
+
+<p><em>Note: Code comment is any code prefixed by a pound sign #. Code comments are not executed by an interpreter. They are used mostly as hints for developers.</em></p>
+
+<p>Thanks to <em>set_task</em> before filter, we don’t need to manually retrieve our task from the database every time the action is called.</p>
+
+<h2 id="routing">Routing</h2>
+
+<p>You probably wonder how Rails determines what action corresponds to what url. It figures it our from the set of rules called <strong>routes</strong>. Routes are defined in the file <em>config/routes.rb</em>. Since we’re here, let’s add the <em>root</em> route for our todo application. Default welcome page is nice, but we want to see a list of tasks instead of it.</p>
+
+<p><img src="/assets/images/ruby_on_rails_home_route.png" alt="Home route" /></p>
+
+<p>Go back to your browser. Let’s go to <a href="http://localhost:3000">http://localhost:3000</a>. This time we should see task listing page instead of welcome page.</p>
+
+<p><img src="/assets/images/ruby_on_rails_home_page_with_listing.png" alt="Home page with a listing" /></p>
+
+<h2 id="what-happened-here">What happened here?</h2>
+
+<p>We looked at Tasks model. We played with attribute methods in rails console. We understood the structure of <em>TasksController</em>. After that we dove into <em>config/routes.rb</em> file and added a <em>root</em> route.</p>
+
+<p>Ready to make more changes to your rails app? Let’s move on to our views.</p>
+
+<p>Photo by <a href="http://www.flickr.com/photos/mazzuk/">MaZzuk</a></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Day 3: How Rails Works &#8211; Database Migrations</title>
+	  <link>//day-3-how-rails-works-database-migrations/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-03-10T01:18:31-07:00</pubDate>
+	  <guid>//day-3-how-rails-works-database-migrations/</guid>
+	  <description><![CDATA[
+	     <h2 id="how-rails-works">How Rails works</h2>
+
+<p>Here is what happens when you go to your browser and see a web page.</p>
+
+<p><img src="/assets/images/how_rails_works.png" alt="How Rails Works" /> Rails is a MVC framework. MVC stands for Model View Controller. Model, View and Controller components are displayed as scroll scripts on the picture above. Think about each of the components as of individual ruby files.</p>
+
+<p>As soon as you hit enter after typing in the URL, your browser sends a <strong>request</strong> to a server. In our case the <strong>server</strong> is running locally. We stated it with <em>bundle exec rails server</em> command.</p>
+
+<p>When request hits the server, controller takes care of it. It reads the url and tries to understand what kind of a page you want to see. Then it usually instantiates a model. Model retrieves data from a database. The data is returned to the controller. Now the controller has all data it needs, it uses a view component to construct a HTML page. Finally, HTML is generated and controller sends the <strong>response</strong> back to the browser.</p>
+
+<p>Don’t worry if it sounds confusing. It will make more sense when we’ll write code for every component. Let’s do it!</p>
+
+<h2 id="database-migrations">Database migrations</h2>
+
+<p>To keep things simple, let’s assume that a task can be either completed or incomplete. In order to capture this information we need to store it inside the database. Rails uses the mechanism called migrations. It’s really simple. You need to generate a migration and run it. Run this command in the terminal to generate it.</p>
+
+<p><img src="/assets/images/ruby_on_rails_generate_migration.png" alt="Generate a Migration with Ruby on Rails" /></p>
+
+<p>Look at the output. It have generated a file for us. It’s located under db/migrate folder. Let’s open this newly generated file in our editor. Launch RubyMine application. Click Open Directory link and choose the project location (it should be in home -&gt; todo).</p>
+
+<p><img src="/assets/images/ruby_mine_open_directory.png" alt="Open Directory in RubyMine" /></p>
+
+<p>Next, look at the directory structure on a left. Navigate to db/migrate folder and choose the generated migration file.</p>
+
+<p><img src="/assets/images/ruby_mine_open_file.png" alt="Open File in RubyMine" /></p>
+
+<p>This is the generated class <em>AddCompletedToTasks</em>. As you can see it <a title="Inheritance explained" href="http://howtoprogrambetter.com/day-7-iterators-and-inheritance/" target="_blank">inherits</a> from the base class <em>ActiveRecord::Migration</em>. For now it has only one method called <em>change</em> which does nothing. Let’s write the code that adds a <em>completed</em> column to <em>Tasks</em> table.</p>
+
+<p><em>Note: Double colon sign :: is used as a namespace separator.</em></p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">AddCompletedToTasks</span> <span class="o">&lt;</span> <span class="no">ActiveRecord</span><span class="o">::</span><span class="no">Migration</span>
+  <span class="k">def</span> <span class="nf">change</span>
+    <span class="n">add_column</span> <span class="ss">:tasks</span><span class="p">,</span> <span class="ss">:completed</span><span class="p">,</span> <span class="ss">:boolean</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
+
+<p>We used the function <em>add_column</em>. Where does this function come from ? Right, it’s inherited from <em>ActiveRecord::Migration</em> base class.</p>
+
+<p><em>Note: We passed input parameters into add_column function. Here we used the new data type called</em> <strong><em>symbols</em></strong><em>. Symbols are similar to strings. The main difference is that symbols are immutable. You can’t change symbols after you created them. Therefore, symbols work well as input parameters. The way you define a symbol is by prefixing the name of the symbol with a colon.</em></p>
+
+<p>We wrote our migration. Let’s run it.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>bundle <span class="nb">exec </span>rake db:migrate
+<span class="o">==</span> AddCompletedToTasks: migrating <span class="o">===============================================</span>
+-- add_column<span class="o">(</span>:tasks, :completed, :boolean<span class="o">)</span>
+<span class="gp">-&gt; </span>0.0043s
+<span class="o">==</span> AddCompletedToTasks: migrated <span class="o">(</span>0.0044s<span class="o">)</span> <span class="o">======================================</span></code></pre></figure>
+
+<p>As you can see from the terminal output, we’ve successfully added the new <em>completed</em> column. Awesome! Let’s move on to the Task model. Click here to go to <a href="//day-4-models-controllers-and-routing/">Day 4: Models, Controllers and Routing</a></p>
+
+<p><a href="https://www.flickr.com/photos/victorcamilo">Cover photo by victorcamilo</a></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Day 2: Building a simple ToDo application</title>
+	  <link>//day-2-building-a-simple-todo-application/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-03-09T22:43:58-07:00</pubDate>
+	  <guid>//day-2-building-a-simple-todo-application/</guid>
+	  <description><![CDATA[
+	     <p>In order to keep things simple, we’re going to create a simple todo list application. This application should display a list of tasks. We should be able to add new tasks. Delete and edit existing tasks. Also, there should be a way to mark a task as finished.</p>
+
+<h2 id="rails-new">rails new</h2>
+
+<p>We will start it off by executing several commands in the Terminal. The first command is <em>rails new</em>. It will generate us a skeleton for our new app.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span><span class="nb">cd</span> ~
+<span class="gp">$ </span>rails new todo --database<span class="o">=</span>postgresql</code></pre></figure>
+
+<p>It will take some time to generate files and install dependencies. After it’s done, you should see our newly generated project in the folder <em>todo</em>. Let’s go into this folder and setup the database.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span><span class="nb">cd </span>todo
+<span class="gp">$ </span>bundle <span class="nb">exec </span>rake db:create db:migrate db:schema:load
+<span class="gp">$ </span>bundle <span class="nb">exec </span>rails server</code></pre></figure>
+
+<p>That’s it! Four commands and we have a running website. Open up your browser, go to <a href="&quot;http://localhost:3000&quot;">http://localhost:3000</a> and you should see the Ruby on Rails welcome page.</p>
+
+<p><img src="/assets/images/ruby_on_rails_default_page.png" alt="Default Ruby on Rails page" /></p>
+
+<p>Let me explain what happened here.  First, we used the command called <em>cd</em>. It stands for “change directory”. It jumps to a directory you specified. Second command consist of 3 parts.</p>
+
+<p><img src="/assets/images/bundle_exec_rake_db_migrate_explained.png" alt="bundle exec rials db:migrate explained" /></p>
+
+<ol>
+  <li><em>bundle exec</em> tells a terminal to use libraries installed inside a current project. There might be a different version of rake installed but we tell it to use the one installed for our project.</li>
+  <li><em>rake</em> is a helper utility. It does a lot of helpful stuff. In our case it creates a new database. It also migrates the database so it has a proper schema.</li>
+  <li><em>db:create db:migrate db:schema:load</em> are the three tasks that we provide rake with. You can specify one or many tasks separated by a space.</li>
+</ol>
+
+<p>There are many useful rake tasks. If you want to see a full list of them, call rake with -T option.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>bundle <span class="nb">exec </span>rake -T
+rake about              <span class="c"># List versions of all Rails frameworks and the environment</span>
+rake assets:clean[keep] <span class="c"># Remove old compiled assets</span>
+...</code></pre></figure>
+
+<p><em>Note: For keeping it simple, just prefix every command with</em> <em>bundle exec</em> <em>if you’re inside your project directory.</em></p>
+
+<p>Everything that we’re going to run inside the terminal will consist of these three basic parts.</p>
+
+<p><strong>bundle exec</strong> someutility <em>parameters</em></p>
+
+<p>The last command that we ran is no exception. <em>bundle exec rails server</em> starts up a server locally.</p>
+
+<h2 id="create-edit-delete-tasks">Create, Edit, Delete tasks</h2>
+
+<p>We got our first rails app running in just four commands. How awesome it is? Now let’s add some features to our application.</p>
+
+<p>First, we want to be able to create, edit and delete our tasks. Rails has a code generator for exactly this purpose. It’s called <strong>scaffold generator</strong>. Let’s give it a shot. Go back to your terminal. I recommend to leave the server running in the current window and open a new terminal (Command-T if you’re on a mac).</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span><span class="nb">cd</span> ~/todo
+<span class="gp">$ </span>bundle <span class="nb">exec </span>rails generate scaffold task name:string
+<span class="gp">$ </span>bundle <span class="nb">exec </span>rake db:migrate</code></pre></figure>
+
+<p>Go back to your browser and go to <a href="http://localhost:3000/tasks">http://localhost:3000/tasks</a></p>
+
+<p><img src="/assets/images/ruby_on_rails_scaffold_generator.png" alt="Ruby on Rails scaffold generator" /></p>
+
+<p>This is a task listing. It looks very lonely, since there is no tasks. Let’s add a new task. Click on the <em>New Task</em> link. It should take you to the New Task screen.</p>
+
+<p><img src="/assets/images/ruby_on_rails_new_scaffold_new.png" alt="Ruby on Rails scaffold for new" /></p>
+
+<p>Enter “Learn how to program” in the Name field and click the Create Task button. Now you should see the screen representing our newly created task.</p>
+
+<p><img src="/assets/images/ruby_on_rails_scaffold_show.png" alt="Ruby on Rails scaffold for show" /></p>
+
+<p>Click the “Back” link and you should see the Task Listing screen with our newly created task. Yay!</p>
+
+<p><a href="/assets/images/ruby_on_rails_task_listing_with_a_task.png">Tast listing</a></p>
+
+<p>You see how easy it is to create a website with Ruby on Rails? Now that we a website running locally, let’s dive deeper. We’ll see how Rails works under the hood.</p>
+
+<p>Photo by <a href="&quot;http://www.flickr.com/photos/purpleslog/183842413/sizes/l/&quot;">purpleslog</a></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Day 1: Setup</title>
+	  <link>//day-1-setup-rails/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-03-09T01:24:12-08:00</pubDate>
+	  <guid>//day-1-setup-rails/</guid>
+	  <description><![CDATA[
+	     <h2 id="mac-os-x">Mac OS X</h2>
+
+<h3 id="ruby">Ruby</h3>
+
+<p>If you don’t have Ruby installed, follow <a href="//day-1-setup/">these instructions</a> from 7 Days of Ruby tutorial.</p>
+
+<h3 id="database">Database</h3>
+
+<p>We’re going to use the database called PostgreSQL aka Postgres. It’s simple to install and use. It’s supported by many platforms. Let’s install it using Homebrew. We’ll also configure Postgres to run locally.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>brew install postgresql
+<span class="gp">$ </span><span class="nb">echo</span> “export <span class="nv">PGHOST</span><span class="o">=</span>localhost” &gt;&gt; ~/.bash_profile
+<span class="gp">$ </span><span class="nb">echo</span> “export <span class="nv">PGDATA</span><span class="o">=</span>/usr/local/var/postgres” &gt;&gt; ~/.bash_profile
+<span class="gp">$ </span><span class="nb">source</span> ~/.bash_profile</code></pre></figure>
+
+<p>Following commands make it so Postgres starts up on boot. It’s convenient. You won’t need to start it manually every time you reboot.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>ln -sfv /usr/local/opt/postgresql/<span class="k">*</span>.plist ~/Library/LaunchAgents
+<span class="gp">$ </span>launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist</code></pre></figure>
+
+<p>Now it’s time to create a database user for our application.</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>createuser todo -s&lt;/pre&gt;</code></pre></figure>
+
+<h3 id="rails">Rails</h3>
+
+<p>Now is time to install Rails framework. Rails is distributed as a ruby gem. RubyGems is a packaging system that comes with ruby installation. We’ll need to use gem command to install it</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>gem install rails --version 4.0.2&lt;/pre&gt;</code></pre></figure>
+
+<h3 id="ide-integrated-development-environment">IDE (Integrated Development Environment)</h3>
+
+<p>I recommend to start with RubyMine. I used it myself to start with. It does a lot of stuff for you automatically so you can focus on learning how to program instead of configuring your development environment. Download and install the 30 days trial from <a href="http://www.jetbrains.com/ruby/download/">JetBrains website</a>.</p>
+
+<h2 id="what-happened-here-">What happened here ?</h2>
+
+<p>Now you have all necessary software to start programming. Can’t wait to write a first line of code ? Let’s learn how to do it.</p>
+
+<p>Photo by <a href="http://www.flickr.com/photos/ooocha/">ooocha</a></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Rails in 7 Days</title>
+	  <link>//rails-in-7-days/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-03-09T00:11:37-08:00</pubDate>
+	  <guid>//rails-in-7-days/</guid>
+	  <description><![CDATA[
+	     <h2 id="what-it-is">What it is</h2>
+
+<p>It’s the guide for building a web application using Rails framework. It’s practical, simple and it’s <strong>FREE</strong>.</p>
+
+<h2 id="who-is-it-for">Who is it for</h2>
+
+<ul>
+  <li>Tired of learning ?</li>
+  <li>Want to finally start building useful stuff ?</li>
+  <li>Want to put your skills into real practice?</li>
+</ul>
+
+<p>Yes? Then let’s jump to the fun part. We’ll create our web app.</p>
+
+<h2 id="results">Results</h2>
+
+<p>After going through this course you’ll be able to do 3 things:</p>
+
+<ol>
+  <li>Create a basic web application</li>
+  <li>Put your rails application on the Internet</li>
+  <li>Understand the basics of Rails framework</li>
+</ol>
+
+<h2 id="let8217s-do-it-what8217s-the-plan">Let’s do it. What’s the plan?</h2>
+
+<p>If you have never wrote a single line of code. I recommend going through <a href="http://howtoprogrambetter.com/start-programming-now-free-7-day-online-course/">7 Days of Ruby course</a> first. It will teach you basics of programming in Ruby. If you already know how to code, you’ll be fine.</p>
+
+<p>We’ll need to install some more software. Next, we’ll get to hands on coding. This is where we create our first web application. Then, we’ll add a feature to our app. Finally, we’ll put it on the Internet so anyone can use it. How awesome is that?</p>
+
+<p>As always, useful, practical and simple stuff. Get you keyboard ready.</p>
+
+<p>Photo by <a href="http://www.flickr.com/photos/sufw/">sufw</a></p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

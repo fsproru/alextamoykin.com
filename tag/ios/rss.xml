@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>howtoprogrambetter.com</title>
+   
+   <link>http://howtoprogrambetter.com/</link>
+   <description>Learn How To Program and become a Better Software Engineer with Alex Tamoykin</description>
+   <language>en-us</language>
+   <managingEditor> Alex Tamoykin</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Test Driven Development with Xcode</title>
+	  <link>//test-driven-development-with-xcode/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2016-03-13T22:11:26-07:00</pubDate>
+	  <guid>//test-driven-development-with-xcode/</guid>
+	  <description><![CDATA[
+	     <p>Test Driven Development is a great way to take your code to a whole another level. In this presentation, we’ll talk about what is TDD, why TDD is awesome and how to do it in Xcode using Swift and XCTest</p>
+
+<p>Here is the link to a <a href="https://youtu.be/06-9Xsd8saA">Video Recording</a></p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/06-9Xsd8saA?controls=0" frameborder="0" allowfullscreen=""></iframe>
+
+<p>and <a href="https://speakerdeck.com/fsproru/test-driven-development-with-xcode">Slides</a></p>
+
+<script async="" class="speakerdeck-embed" data-id="c7250296330e420e857540912eee7a4f" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+<p><br />
+Presented at <a href="http://www.meetup.com/CocoaHeads-LA/events/225155127/" target="_blank">CocoaHeads LA – Testing Edition</a></p>
+
+<p>Enjoy,</p>
+
+<p>Alex</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Data Types in Swift</title>
+	  <link>//data-types-in-swift/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2015-03-08T11:09:50-07:00</pubDate>
+	  <guid>//data-types-in-swift/</guid>
+	  <description><![CDATA[
+	     <p>I’m currently teaching a <a title="Mobile Development at General Assembly" href="https://generalassemb.ly/education/mobile-development" target="_blank">mobile development course at GA</a>. I’ll be sharing my swift lessons one by one. Lesson 1: Data Types.After reading this blog post you’ll be able to learn and use the basic data types in Swift.I’m going to briefly introduce a data type. Then I’ll show the syntax for creating it and what you can do with it.</p>
+
+<p>Ready, get set, go!</p>
+
+<h2 id="string">String</h2>
+
+<p>The String datatype is used for storing and manipulating text. You start defining a string by using a double quotes symbol following by your text. Finish defining your string by using a second double quotes symbol.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="s">""</span>                    <span class="c1">// an empty string</span>
+<span class="s">"hello world"</span>         <span class="c1">// a string with words</span>
+
+<span class="nf">countElements</span><span class="p">(</span><span class="s">"dude"</span><span class="p">)</span> <span class="c1">// =&gt; 4</span>
+<span class="s">"dude"</span><span class="o">.</span><span class="n">isEmpty</span>        <span class="c1">// =&gt; false</span>
+<span class="s">""</span><span class="o">.</span><span class="n">isEmpty</span>            <span class="c1">// =&gt; true</span></code></pre></figure>
+
+<h2 id="boolean">Boolean</h2>
+
+<p>A boolean can be either true or false. It’s useful in conditions inside control flow statements like if. It also helps with checking whether a certain condition is met.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kc">true</span>  <span class="c1">// a boolean with a value of true</span>
+<span class="kc">false</span> <span class="c1">// a boolean with a value offalse</span>
+
+<span class="k">let</span> <span class="nv">age</span> <span class="o">=</span> <span class="mi">19</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="p">{</span>
+  <span class="nf">println</span><span class="p">(</span><span class="s">"Congratulations! Now you can now get a California driver license."</span><span class="p">)</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="range">Range</h2>
+
+<p>The Range data type is used to define a range of values. It’s very handy to define long sequences.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mi">0</span><span class="o">...</span><span class="mi">3</span> <span class="c1">// =&gt; 0,1,2,3</span>
+<span class="mi">0</span><span class="o">..&lt;</span><span class="mi">3</span> <span class="c1">// =&gt; 0,1,2&lt;/pre&gt;</span></code></pre></figure>
+
+<h2 id="integer">Integer</h2>
+
+<p>An integer describes a whole number without a decimal point. It’s useful for performing any sort of math on whole numbers.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mi">1</span>     <span class="c1">// an integer with a value of 1</span>
+
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="c1">// =&gt; -1</span>
+<span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1">// =&gt; 5</span>
+<span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1">// =&gt; 4</span></code></pre></figure>
+
+<h2 id="double--float">Double / Float</h2>
+
+<p>Doubles and Floats are used for numbers with precision. A double is twice as precise as a float.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mf">4.2</span> <span class="c1">// a double with a value of 4.2</span>
+
+<span class="k">let</span> <span class="nv">my_float</span> <span class="p">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mf">4.2</span> <span class="c1">// If you want to use float to consume some memory, you'll need to explicitly specify avariable'stype&lt;/pre&gt;</span></code></pre></figure>
+
+<h2 id="array">Array</h2>
+
+<p>Array is a zero indexed, ordered collection of elements.Arrays come in handy when you need to store and operate on a collection of elements.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="p">[</span><span class="s">"a"</span><span class="p">,</span><span class="s">"b"</span><span class="p">,</span><span class="s">"c"</span><span class="p">,</span><span class="s">"d"</span><span class="p">]</span>    <span class="c1">// an array of characters</span>
+<span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">6.7</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">]</span> <span class="c1">// an array of numbers</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>        <span class="c1">// =&gt; [1,2,3,4]</span>
+<span class="k">let</span> <span class="nv">my_array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">my_array</span><span class="o">.</span><span class="n">count</span>       <span class="c1">// =&gt; 4</span>
+
+<span class="c1">// retrieving the first element of an array</span>
+<span class="n">my_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>          <span class="c1">// =&gt; 1</span></code></pre></figure>
+
+<h2 id="dictionary">Dictionary</h2>
+
+<p>A dictionary is a collection of key value pairs. A value is stored and retrieved from a dictionary by it’s key. Dictionaries are useful for managing different sets of data. For example keeping a track of heroes and their superpowers 😉</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// A dictionary with 3 key value pairs</span>
+<span class="k">var</span> <span class="nv">heroes</span> <span class="o">=</span> <span class="p">[</span>
+ <span class="s">"wonder_woman"</span><span class="p">:</span> <span class="p">[</span><span class="s">"strong"</span><span class="p">],</span>
+ <span class="s">"aqua_man"</span><span class="p">:</span> <span class="p">[</span><span class="s">"can breathe underwater"</span><span class="p">],</span>
+ <span class="s">"wonder twins"</span><span class="p">:</span> <span class="p">[</span><span class="s">"take forms of other things"</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="c1">// retrieving values using keys</span>
+<span class="n">heroes</span><span class="p">[</span><span class="s">"wonder_woman"</span><span class="p">]</span> <span class="c1">// =&gt; strong</span>
+<span class="n">heroes</span><span class="p">[</span><span class="s">"aqua_man"</span><span class="p">]</span>     <span class="c1">// =&gt; can breathe underwater</span>
+
+<span class="c1">// inserting a new key / value pair</span>
+<span class="n">heroes</span><span class="p">[</span><span class="s">"spiderman"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"spidey sense"</span><span class="p">,</span> <span class="s">"throw a web"</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">pre</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>Feel free to play with this code in the playgrounds. Every data type has a lot more useful methods on it.</p>
+
+<p>Enjoy,</p>
+
+<p>Alex</p>
+
+<p><em>Photo by <a href="https://www.flickr.com/photos/yukop">yukop</a></em></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Running iOS tests on Travis CI</title>
+	  <link>//running-ios-tests-on-travis-ci/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-09-06T22:15:21-07:00</pubDate>
+	  <guid>//running-ios-tests-on-travis-ci/</guid>
+	  <description><![CDATA[
+	     <h2 id="why">Why</h2>
+
+<p>Did you ever ship buggy code in production ? If it is the case, you may consider setting up a CI server.</p>
+
+<h2 id="span-styleline-height-15whatspan"><span style="line-height: 1.5;">What</span></h2>
+
+<p>CI stands for <a title="CI explanation on Wikipedia" href="http://en.wikipedia.org/wiki/Continuous_integration" target="_blank">continuous integration</a>. CI Server is a machine that watches your main branch and runs your tests every time there are new commits. It ensures that you product is ready to ship from your main branch at any point in time.</p>
+
+<h2 id="how">How</h2>
+
+<p>Setting up and especially maintaining a CI server is pain in the neck. That’s why I prefer to use a CI service instead of hosting a server in house. They scale it, they maintain it, all I do is focus on development.</p>
+
+<h2 id="setup">Setup</h2>
+
+<p><em>Note: The following tutorial works for Cedar testing framework as well as XCTest. Tests should be set up as a test target (not a separate app).</em></p>
+
+<ol>
+  <li>Sign up for an account with Travis CI.</li>
+</ol>
+
+<ul>
+  <li>Sign up <a title="Open Source Travis CI" href="https://travis-ci.org/" target="_blank">here</a> for a free account if your project is Open Source and it’s public.</li>
+  <li>Sign up <a title="Travis CI Pro" href="https://travis-ci.com/" target="_blank">here</a> is your project is private.</li>
+</ul>
+
+<ol>
+  <li>Enable the app.</li>
+</ol>
+
+<p>Sign into your account on Travis CI. Click on your profile on the top right and choose <em>accounts</em>. Choose the repo that you want to test and flip the switch to <em>on</em>.</p>
+
+<ol>
+  <li>Make sure that your scheme is shared.</li>
+</ol>
+
+<p>Open up your project in XCode. Go to Product-&gt;Scheme-&gt;Manage Schemes. Select the Target that you use for testing and check the <strong>Shared</strong> checkbox.</p>
+
+<p><a href="http://howtoprogrambetter.com/wp-content/uploads/2014/09/shared_schemes_in_xcode.png"><img class="aligncenter size-full wp-image-530" alt="Shared scheme in Xcode" src="http://howtoprogrambetter.com/wp-content/uploads/2014/09/shared_schemes_in_xcode.png" width="640" height="174" /></a></p>
+
+<ol>
+  <li>Create .travis.yml file</li>
+</ol>
+
+<p>.travis.yml is the configuration file for your build on Travis CI. Here is the minimal .travis.yml file.  Replace <em>MyAwesomeApp</em> with your app name and save it in the root of your project.</p>
+
+<pre class="lang:yaml decode:true" title="Minimal .travis.yml configuration file">language: objective-c
+xcode_workspace: MyAwesomeApp.xcworkspace # if you're using cocoapods
+# xcode_project: MyAwesomeApp.xcproject #if you're not using cocoapods
+xcode_scheme: MyAwesomeApp
+xcode_sdk: iphonesimulator7.1
+script: xcodebuild -workspace MyAwesomeApp.xcworkspace -scheme MyAwesomeApp -sdk iphonesimulator7.1 -configuration Debug build test</pre>
+
+<ol>
+  <li>Commit everything, push it up to github and check out you triggered build.</li>
+</ol>
+
+<p>Cheers,</p>
+
+<p>Alex</p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

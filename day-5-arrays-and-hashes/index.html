@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [[! Page Meta ]] -->
+    <title>Day 5: Arrays and Hashes</title>
+    <meta name="description" content="How To Program Better - Learn How To Program and become a Better Software Engineer with Alex Tamoykin" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+        <link rel="canonical" href="/" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="How To Program Better" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How To Program Better" />
+    <meta property="og:description" content="Learn How To Program and become a Better Software Engineer with Alex Tamoykin" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/assets/images/cover1.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How To Program Better" />
+    <meta name="twitter:description" content="Learn How To Program and become a Better Software Engineer with Alex Tamoykin" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image:src" content="/assets/images/cover1.jpg" />
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "How To Program Better",
+    "url": "/",
+    "image": "/assets/images/cover1.jpg",
+    "description": "Learn How To Program and become a Better Software Engineer with Alex Tamoykin"
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="How To Program Better" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+        <li class="nav-about " role="presentation"><a href="/about">About</a></li>
+        <li class="nav-fables " role="presentation"><a href="/tag/7-days-of-ruby">7 Days of Ruby</a></li>
+        <li class="nav-speeches " role="presentation"><a href="/tag/7-days-of-rails">Rails in 7 Days</a></li>
+        <li class="nav-speeches " role="presentation"><a href="/tag/book">Books</a></li>
+    </ul>
+    <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        <!-- < default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: url(/assets/images/building_blocks.jpg) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/"><img src="/assets/images/logo.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-speeches">
+
+        <header class="post-header">
+            <h1 class="post-title">Day 5: Arrays and Hashes</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>Alex Tamoykin</a> -->
+            <time class="post-date" datetime="2014-02-12">12 Feb 2014</time>
+                <!-- [[tags prefix=" on "]] -->
+                
+                on
+                
+                    
+                       <a href='/tag/7-days-of-ruby'>7-days-of-ruby</a>
+                    
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+
+            <p>Moving on. In order to build programs we need some building blocks (aka <strong>Data Structures</strong>). As I mentioned, Ruby is simple. There are only two data structures: <strong>arrays</strong> and <strong>hashes</strong>.</p>
+
+<h1 id="arrays">Arrays</h1>
+
+<p><a href="http://www.ruby-doc.org/core-2.1.0/Array.html">Ruby documentation</a> says: “Arrays are ordered, integer-indexed collections of any object”. Sounds a little complicated. Let’s give arrays some love!</p>
+
+<p><img src="/assets/images/give-arrays-some-love.jpg" alt="Give arrays some love" />
+<em>Photo by <a href="http://www.flickr.com/photos/35168673@N03/">libertygrace0</a></em></p>
+
+<p>Look at the picture a above. Here is the <strong>ordered</strong> <strong>collection</strong> of four blocks. If we count them from left to right, then we can refer to each block by it’s position or <strong>index</strong>. Let’s start counting from zero. The block number zero has the letter “L” on it. The block number one has the letter “O”. Number two is “V”. Number three is “E”. This is called <strong>zero indexed</strong>. We stick with blocks in this example, but it really can be <strong>any object</strong>.</p>
+
+<p>Here is code representing the example above:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">[</span><span class="s2">"L"</span><span class="p">,</span> <span class="s2">"O"</span><span class="p">,</span> <span class="s2">"V"</span><span class="p">,</span> <span class="s2">"E"</span><span class="p">]</span></code></pre></figure>
+
+<p>This is the most common way to define an array in Ruby. You start with an opening square bracket. Then, you define elements of the array separated by a comma sign. Finish it with a closing square bracket.</p>
+
+<p>Now we have defined the array, let’s assign it to a variable so we can access it’s elements. Try it out in your IRB:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="err">$</span> <span class="n">irb</span>
+<span class="o">&gt;&gt;</span> <span class="n">my_array</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"L"</span><span class="p">,</span> <span class="s2">"O"</span><span class="p">,</span> <span class="s2">"V"</span><span class="p">,</span> <span class="s2">"E"</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="p">[</span><span class="s2">"L"</span><span class="p">,</span> <span class="s2">"O"</span><span class="p">,</span> <span class="s2">"V"</span><span class="p">,</span> <span class="s2">"E"</span><span class="p">]</span>
+<span class="o">&gt;&gt;</span> <span class="n">my_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="s2">"L"</span>
+<span class="o">&gt;&gt;</span> <span class="n">my_array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="s2">"O"</span>
+<span class="o">&gt;&gt;</span> <span class="n">my_array</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="s2">"V"</span>
+<span class="o">&gt;&gt;</span> <span class="n">my_array</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="o">=&gt;</span> <span class="s2">"E"</span></code></pre></figure>
+
+<blockquote>
+  <p>IRB executes code you type line by line. The text you typed in after » sign is code. The text that shows up after the =&gt; sign is a corresponding result.</p>
+</blockquote>
+
+<p>You can refer to array’s element by it’s <strong>index</strong> (i.e. position). You start with specifying the variable my_array following with an opening square bracket sign. Then you specify a numeric index of an element you want to retrieve. It’s <strong>zero indexed</strong>, remember? Let’s say we want to get the letter O from my_array. It’s index is 1, so we access it like this:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_array</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span></code></pre></figure>
+
+<h1 id="hashes">Hashes</h1>
+
+<p>Hashes are similar to arrays. Two main differences are:</p>
+
+<ol>
+  <li>Instead of storing a single object, hashes store <strong>key value pairs</strong>.</li>
+  <li>Instead of accessing an element by an index, you access it by a <strong>key</strong>.</li>
+</ol>
+
+<p>Here is the simple hash that consist of one key value pair</p>
+
+<p><img src="/assets/images/hash-in-ruby-language1.png" alt="Hash in Ruby explained" /></p>
+
+<p>The <strong>key</strong> is the string “name”. The <strong>value</strong> is the string “Alex Tamoykin”. A key and a value are separated by the equal sign followed by the greater than sight. Let’s call this =&gt; a rocket, just because it looks like it.</p>
+
+<p>You start defining a hash with an opening curly brace following by key value pairs. Then you finish defining it with a closing curly brace.</p>
+
+<p>Let’s try to access a value. The syntax is similar to array’s syntax but instead of using a numeric index, you need to use a <strong>key</strong>.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="n">my_hash</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s2">"Alex Tamoykin"</span> <span class="p">}</span>
+<span class="n">my_hash</span><span class="p">[</span><span class="s2">"name"</span><span class="p">]</span></code></pre></figure>
+
+<p>The last line of code we wrote returns the string “Alex Tamoykin”. You can specify as many key value pairs as you want. Just use a comma sign to separate it.</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="p">{</span> <span class="s2">"name"</span> <span class="o">=&gt;</span> <span class="s2">"Alex Tamoykin"</span><span class="p">,</span> <span class="s2">"type"</span> <span class="o">=&gt;</span> <span class="s2">"Geek"</span><span class="p">,</span> <span class="s2">"lives_in"</span> <span class="o">=&gt;</span> <span class="s2">"Santa Monica"</span> <span class="p">}</span></code></pre></figure>
+
+<p><em>Photo by <a href="http://www.flickr.com/photos/35168673@N03/">libertygrace0</a></em></p>
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/fsproru" style="background-image: url(/assets/images/alex_tamoykin_profile_pic_small.jpg)"><span class="hidden">Alex Tamoykin's Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/fsproru">Alex Tamoykin</a></h4>
+
+                
+                    <p> Alex started coding in 5th grade of elementary school. He is an award winning software engineer and a hands on technical leader with over a decade of industry experience.</p>
+                
+                <div class="author-meta">
+                    <span class="author-location icon-location"> Los Angeles, USA</span>
+                    <span class="author-link icon-link"><a href="http://howtoprogrambetter.com/"> howtoprogrambetter.com</a></span>
+                </div>
+            </section>
+
+            <!-- /author  -->
+
+            <!-- share -->
+            <!-- <section class="share"> -->
+            <!--     <h4>Share this post</h4> -->
+            <!--     <a class="icon-twitter" href="http://twitter.com/share?text=Day 5: Arrays and Hashes&amp;url=http://howtoprogrambetter.com/day-5-arrays-and-hashes" -->
+            <!--         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"> -->
+            <!--         <span class="hidden">Twitter</span> -->
+            <!--     </a> -->
+            <!--     <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://howtoprogrambetter.com/day-5-arrays-and-hashes" -->
+            <!--         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"> -->
+            <!--         <span class="hidden">Facebook</span> -->
+            <!--     </a> -->
+            <!--     <a class="icon-google-plus" href="https://plus.google.com/share?url=http://howtoprogrambetter.com/day-5-arrays-and-hashes" -->
+            <!--        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"> -->
+            <!--         <span class="hidden">Google+</span> -->
+            <!--     </a> -->
+            <!-- </section> -->
+
+            <!-- subscribe -->
+            <section class="subscribe">
+              <a href="http://eepurl.com/OvBfP" target="_blank"><button>SUBSCRIBE</button></a>
+
+            </section>
+
+            <!-- add Disqus Comments -->
+            
+
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+        <a class="read-next-story " style="background-image: url(/assets/images/cookie_cutter.jpg)" href="/day-6-classes-methods-and-objects">
+            <section class="post">
+                <h2>Day 6: Classes, Methods and Objects</h2>
+                <p>## Classes You’ve made it to this point, congratulations! We’ve covered a lot of basics....</p>
+            </section>
+        </a>
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/running_at_a_stadium.jpg)" href="/day-4-control-structures-loops">
+            <section class="post">
+                <h2>Day 4: Control Structures &#8211; Loops</h2>
+                <p>while Let’s imagine that you’re the world known runner. You’re about to run 5 laps...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">How To Program Better</a> &copy; 2016</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-45185368-3', 'auto');
+	    ga('send', 'pageview');
+
+     </script>   
+</body>
+</html>

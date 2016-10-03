@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>howtoprogrambetter.com</title>
+   
+   <link>http://howtoprogrambetter.com/</link>
+   <description>Learn How To Program and become a Better Software Engineer with Alex Tamoykin</description>
+   <language>en-us</language>
+   <managingEditor> Alex Tamoykin</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Test Driven Development with Xcode</title>
+	  <link>//test-driven-development-with-xcode/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2016-03-13T22:11:26-07:00</pubDate>
+	  <guid>//test-driven-development-with-xcode/</guid>
+	  <description><![CDATA[
+	     <p>Test Driven Development is a great way to take your code to a whole another level. In this presentation, we’ll talk about what is TDD, why TDD is awesome and how to do it in Xcode using Swift and XCTest</p>
+
+<p>Here is the link to a <a href="https://youtu.be/06-9Xsd8saA">Video Recording</a></p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/06-9Xsd8saA?controls=0" frameborder="0" allowfullscreen=""></iframe>
+
+<p>and <a href="https://speakerdeck.com/fsproru/test-driven-development-with-xcode">Slides</a></p>
+
+<script async="" class="speakerdeck-embed" data-id="c7250296330e420e857540912eee7a4f" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+<p><br />
+Presented at <a href="http://www.meetup.com/CocoaHeads-LA/events/225155127/" target="_blank">CocoaHeads LA – Testing Edition</a></p>
+
+<p>Enjoy,</p>
+
+<p>Alex</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Interview at Swift Coders Podcast</title>
+	  <link>//interview-at-swift-coders-podcast/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2016-03-06T20:35:22-08:00</pubDate>
+	  <guid>//interview-at-swift-coders-podcast/</guid>
+	  <description><![CDATA[
+	     <p>We’re big proponents of <a href="https://swift.org/" target="_blank" rel="nofollow">Swift</a>, Apple’s new programing language at <a href="http://rightbalance.io/" target="_blank" rel="nofollow">The Right Balance</a>. It’s exciting to see the Swift community evolving. It was great to speak at the opening podcast dedicated to Swift Development called <a href="http://swiftcoders.org/" target="_blank" rel="nofollow">Swift Coders</a>. Kudos to <a href="https://twitter.com/garricn" target="_blank" rel="nofollow">Garric Nahapetian</a> for putting it together.</p>
+
+<p>Check out <a href="https://itunes.apple.com/us/podcast/swiftcoders/id1082937962?mt=2&amp;i=362557025" target="_blank" rel="nofollow">the first episode here</a>, we hope that you really like it.</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Equality Operators in Swift: Double equal vs Tripe equal and how to define even your own Quadruple Equal operator</title>
+	  <link>//equality-operators-in-swift-double-equal-vs-tripe-equal-and-how-to-define-even-your-own-quadruple-equal-operator/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2015-07-12T14:51:33-07:00</pubDate>
+	  <guid>//equality-operators-in-swift-double-equal-vs-tripe-equal-and-how-to-define-even-your-own-quadruple-equal-operator/</guid>
+	  <description><![CDATA[
+	     <p>Yes, a quadruple operator. Bare with me, we’ll get there by the end of this post. In order to figure out how equivalence operators work, let’s start with a simple example:</p>
+
+<h1 id="double-equal">Double equal</h1>
+
+<p>A double equal operator (aka ==) compares <strong>values</strong>. Let’s look at the simple example below:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mi">5</span> <span class="o">==</span> <span class="mi">5</span>                             <span class="c1">// =&gt; true</span>
+<span class="s">"same string"</span> <span class="o">==</span> <span class="s">"same string"</span>     <span class="c1">// =&gt; true</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>                 <span class="c1">// =&gt; true</span>
+<span class="s">"one string"</span> <span class="o">==</span> <span class="s">"different string"</span> <span class="c1">// =&gt; false</span></code></pre></figure>
+
+<p>The left-hand side and the right-hand side are different objects in all three cases. Swift compares basic types with no problem. Let’s see how Swift is doing with our custom octocat classes:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">Octocat</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">legs</span><span class="p">:</span><span class="kt">Int</span>
+    <span class="k">var</span> <span class="nv">kind</span><span class="p">:</span><span class="kt">String</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="nv">legs</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="nv">kind</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">legs</span> <span class="o">=</span> <span class="n">legs</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">=</span> <span class="n">kind</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">eight_leg_octo</span> <span class="o">=</span> <span class="kt">Octocat</span><span class="p">(</span>
+    <span class="nv">legs</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span> <span class="nv">kind</span><span class="p">:</span><span class="s">"Coder"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">another_eight_leg_octo</span> <span class="o">=</span> <span class="kt">Octocat</span><span class="p">(</span>
+    <span class="nv">legs</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="nv">kind</span><span class="p">:</span> <span class="s">"Coder"</span><span class="p">)</span>
+
+<span class="c1">// ERROR: Cannot invoke '==' with an argument list of type Octocat, Octocat</span>
+<span class="n">eight_leg_octo</span> <span class="o">==</span> <span class="n">another_eight_leg_octo</span></code></pre></figure>
+
+<p>Error! Swift doesn’t know how to compare octocats. C’mon Swift! It’s not that hard, all you need is to compare the number of legs. Although it seems obvious for the author of this code, Swift doesn’t know how to compare custom objects. Every custom object has a meaning. It is pretty reasonable to push the responsibility of defining equivalence to the author. In order to do that, we need to define the equivalence operator for the Octocat class. All you need to do is to return true or false depending whether the left-hand side is equal to the right-hand side. Note that the equivalence operator is redefined outside of the class. But the Octocat type is specified inside parameters.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="o">==</span><span class="p">(</span><span class="nv">left</span><span class="p">:</span><span class="kt">Octocat</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span><span class="kt">Octocat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">left</span><span class="o">.</span><span class="n">legs</span> <span class="o">==</span> <span class="k">right</span><span class="o">.</span><span class="n">legs</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Now Swift is all happy and our octocats are indeed equal.</p>
+
+<h1 id="triple-equal">Triple equal</h1>
+
+<p>The triple equal (aka ===) operator compares <strong>identity</strong>. If the variable on the left points to the same exact object that the variable on the right, then it returns true. It returns false otherwise. Here is the example:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">Skateboard</span> <span class="p">{}</span>
+<span class="k">let</span> <span class="nv">red_skate</span> <span class="o">=</span> <span class="kt">Skateboard</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">same_red_skate</span> <span class="o">=</span> <span class="n">red_skate</span>
+
+<span class="n">red_skate</span> <span class="o">===</span> <span class="n">same_red_skate</span> <span class="c1">// =&gt; true</span>
+
+<span class="k">let</span> <span class="nv">blue_skate</span> <span class="o">=</span> <span class="kt">Skateboard</span><span class="p">()</span>
+<span class="n">red_skate</span> <span class="o">===</span> <span class="n">blue_skate</span>     <span class="c1">// =&gt; false</span></code></pre></figure>
+
+<p>The <em>red_skate</em> variable and the <em>same_red_skate</em> variable point to the same exact instance of the <em>Skateboard</em> class. That’s why our tripe equal operator returns us true. The variable <em>blue_skate</em> on the other hand points to a different instance than what the <em>red_skate</em> variable points to. Therefore, the triple equal operator returns us false in the second case.</p>
+
+<h1 id="custom-operators">Custom operators</h1>
+
+<p>But wait, but there is more. Just to make things more fun, let’s introduce a quadruple equal operator for our Octocat class. Why not? It turns out that you can introduce pretty much any custom operator in Swift pretty easily. It’s a two step process. First, you’ll need to define a new operator. Be careful, it defines this new operator globally:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">infix</span> <span class="k">operator</span> <span class="o">====</span> <span class="p">{}</span></code></pre></figure>
+
+<p>Then, you’ll need to implement it. Our quadruple equal operator makes absolutely sure that Octocats are the same. It compares the number of legs and the kind or an Octocat <img src="http://howtoprogrambetter.com/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="o">====</span><span class="p">(</span><span class="nv">left</span><span class="p">:</span><span class="kt">Octocat</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span><span class="kt">Octocat</span><span class="p">)</span> <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">left</span><span class="o">.</span><span class="n">legs</span> <span class="o">==</span> <span class="k">right</span><span class="o">.</span><span class="n">legs</span>
+        <span class="o">&amp;&amp;</span> <span class="k">left</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="k">right</span><span class="o">.</span><span class="n">kind</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Now that we have it, let’s use it:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="n">eight_leg_octo</span> <span class="o">====</span> <span class="n">another_eight_leg_octo</span> <span class="c1">// =&gt; true</span></code></pre></figure>
+
+<h1 id="recap">Recap</h1>
+
+<p>Swift has two major mechanisms for comparing objects. The equality operator and the identity operator. The equality operator compares values. The identity operator checks whether variables point to the same instance. Swift provides us with a way of defining custom operators. I can see it being useful in certain cases but you can easily take it too far. Before defining a new custom operator, ask yourself whether you can accomplish the same goal with existing operators.</p>
+
+<p>Cheers,</p>
+
+<p>Alex</p>
+
+<p><em>Photo by <a href="https://www.flickr.com/photos/ssoosay">ssoosay</a></em></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Data Types in Swift</title>
+	  <link>//data-types-in-swift/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2015-03-08T11:09:50-07:00</pubDate>
+	  <guid>//data-types-in-swift/</guid>
+	  <description><![CDATA[
+	     <p>I’m currently teaching a <a title="Mobile Development at General Assembly" href="https://generalassemb.ly/education/mobile-development" target="_blank">mobile development course at GA</a>. I’ll be sharing my swift lessons one by one. Lesson 1: Data Types.After reading this blog post you’ll be able to learn and use the basic data types in Swift.I’m going to briefly introduce a data type. Then I’ll show the syntax for creating it and what you can do with it.</p>
+
+<p>Ready, get set, go!</p>
+
+<h2 id="string">String</h2>
+
+<p>The String datatype is used for storing and manipulating text. You start defining a string by using a double quotes symbol following by your text. Finish defining your string by using a second double quotes symbol.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="s">""</span>                    <span class="c1">// an empty string</span>
+<span class="s">"hello world"</span>         <span class="c1">// a string with words</span>
+
+<span class="nf">countElements</span><span class="p">(</span><span class="s">"dude"</span><span class="p">)</span> <span class="c1">// =&gt; 4</span>
+<span class="s">"dude"</span><span class="o">.</span><span class="n">isEmpty</span>        <span class="c1">// =&gt; false</span>
+<span class="s">""</span><span class="o">.</span><span class="n">isEmpty</span>            <span class="c1">// =&gt; true</span></code></pre></figure>
+
+<h2 id="boolean">Boolean</h2>
+
+<p>A boolean can be either true or false. It’s useful in conditions inside control flow statements like if. It also helps with checking whether a certain condition is met.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kc">true</span>  <span class="c1">// a boolean with a value of true</span>
+<span class="kc">false</span> <span class="c1">// a boolean with a value offalse</span>
+
+<span class="k">let</span> <span class="nv">age</span> <span class="o">=</span> <span class="mi">19</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="p">{</span>
+  <span class="nf">println</span><span class="p">(</span><span class="s">"Congratulations! Now you can now get a California driver license."</span><span class="p">)</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="range">Range</h2>
+
+<p>The Range data type is used to define a range of values. It’s very handy to define long sequences.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mi">0</span><span class="o">...</span><span class="mi">3</span> <span class="c1">// =&gt; 0,1,2,3</span>
+<span class="mi">0</span><span class="o">..&lt;</span><span class="mi">3</span> <span class="c1">// =&gt; 0,1,2&lt;/pre&gt;</span></code></pre></figure>
+
+<h2 id="integer">Integer</h2>
+
+<p>An integer describes a whole number without a decimal point. It’s useful for performing any sort of math on whole numbers.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mi">1</span>     <span class="c1">// an integer with a value of 1</span>
+
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="c1">// =&gt; -1</span>
+<span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1">// =&gt; 5</span>
+<span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1">// =&gt; 4</span></code></pre></figure>
+
+<h2 id="double--float">Double / Float</h2>
+
+<p>Doubles and Floats are used for numbers with precision. A double is twice as precise as a float.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mf">4.2</span> <span class="c1">// a double with a value of 4.2</span>
+
+<span class="k">let</span> <span class="nv">my_float</span> <span class="p">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mf">4.2</span> <span class="c1">// If you want to use float to consume some memory, you'll need to explicitly specify avariable'stype&lt;/pre&gt;</span></code></pre></figure>
+
+<h2 id="array">Array</h2>
+
+<p>Array is a zero indexed, ordered collection of elements.Arrays come in handy when you need to store and operate on a collection of elements.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="p">[</span><span class="s">"a"</span><span class="p">,</span><span class="s">"b"</span><span class="p">,</span><span class="s">"c"</span><span class="p">,</span><span class="s">"d"</span><span class="p">]</span>    <span class="c1">// an array of characters</span>
+<span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">6.7</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">]</span> <span class="c1">// an array of numbers</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>        <span class="c1">// =&gt; [1,2,3,4]</span>
+<span class="k">let</span> <span class="nv">my_array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">my_array</span><span class="o">.</span><span class="n">count</span>       <span class="c1">// =&gt; 4</span>
+
+<span class="c1">// retrieving the first element of an array</span>
+<span class="n">my_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>          <span class="c1">// =&gt; 1</span></code></pre></figure>
+
+<h2 id="dictionary">Dictionary</h2>
+
+<p>A dictionary is a collection of key value pairs. A value is stored and retrieved from a dictionary by it’s key. Dictionaries are useful for managing different sets of data. For example keeping a track of heroes and their superpowers 😉</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// A dictionary with 3 key value pairs</span>
+<span class="k">var</span> <span class="nv">heroes</span> <span class="o">=</span> <span class="p">[</span>
+ <span class="s">"wonder_woman"</span><span class="p">:</span> <span class="p">[</span><span class="s">"strong"</span><span class="p">],</span>
+ <span class="s">"aqua_man"</span><span class="p">:</span> <span class="p">[</span><span class="s">"can breathe underwater"</span><span class="p">],</span>
+ <span class="s">"wonder twins"</span><span class="p">:</span> <span class="p">[</span><span class="s">"take forms of other things"</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="c1">// retrieving values using keys</span>
+<span class="n">heroes</span><span class="p">[</span><span class="s">"wonder_woman"</span><span class="p">]</span> <span class="c1">// =&gt; strong</span>
+<span class="n">heroes</span><span class="p">[</span><span class="s">"aqua_man"</span><span class="p">]</span>     <span class="c1">// =&gt; can breathe underwater</span>
+
+<span class="c1">// inserting a new key / value pair</span>
+<span class="n">heroes</span><span class="p">[</span><span class="s">"spiderman"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"spidey sense"</span><span class="p">,</span> <span class="s">"throw a web"</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">pre</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>Feel free to play with this code in the playgrounds. Every data type has a lot more useful methods on it.</p>
+
+<p>Enjoy,</p>
+
+<p>Alex</p>
+
+<p><em>Photo by <a href="https://www.flickr.com/photos/yukop">yukop</a></em></p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

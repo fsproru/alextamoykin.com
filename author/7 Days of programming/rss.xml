@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>howtoprogrambetter.com</title>
+   
+   <link>http://howtoprogrambetter.com/</link>
+   <description>Learn How To Program and become a Better Software Engineer with Alex Tamoykin</description>
+   <language>en-us</language>
+   <managingEditor> Alex Tamoykin</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Day 1: Setup</title>
+	  <link>//day-1-setup/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2014-02-05T00:37:09-08:00</pubDate>
+	  <guid>//day-1-setup/</guid>
+	  <description><![CDATA[
+	     <p>We need tools in order to program. This is where programming starts. Unfortunately, for many people this is where it also ends. I’ve seen people fighting with incompatible versions or programs and giving up. But don’t worry, I went through this process myself. I tried every piece of software and I can tell you that it works for sure. Follow the instructions and you’ll be fine. Ready, get set, go!</p>
+
+<h2 id="already-have-ruby-installed-">Already have Ruby installed ?</h2>
+
+<p>Mac OS X and many modern Linux distributions should already have ruby installed. Open up your terminal and type this:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>ruby -v
+<span class="gp">$ </span>irb -v</code></pre></figure>
+
+<p>If you see the version of Ruby, you’re good to go. It should look something like this:</p>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell">ruby 1.9.3p194 <span class="o">(</span>2012-04-20 revision 35410<span class="o">)[</span>x86_64-darwin12.2.0]</code></pre></figure>
+
+<p>If this is the case, go ahead straight to <a href="//day-2-data-types-and-variables/" title="Day 2: Data Types and Variables">Day 2: Data Types and Variables</a></p>
+
+<p>If you see “unknown command” error instead, the Ruby is missing on your system. It’s not a big deal. We’ll install Ruby ourselves.</p>
+
+<h2 id="using-windows">Using Windows?</h2>
+
+<p>If you’re on Windows and running a Linux under VirtualBox is not an option, you can still install Ruby using Ruby Installer.</p>
+
+<h4 id="download-ruby-installer">1) Download Ruby Installer</h4>
+
+<p>Download Ruby-2.0.0 installer from <a href="http://rubyinstaller.org/downloads/">Ruby Installer download page</a>.</p>
+
+<h4 id="install-it">2) Install it</h4>
+
+<p>Make sure to check “Add Ruby executables to you PATH” checkbox</p>
+
+<p><img src="/assets/images/install-ruby-on-windows.png" alt="Install Ruby on Windows" /></p>
+
+<h4 id="check-your-ruby-installation">3) Check your Ruby installation</h4>
+
+<p>Open your Command Prompt to see if Ruby was successfully installed. See the instructions from “Already have Ruby installed ?” section for more information. You should see this</p>
+
+<p><img src="/assets/images/ruby-in-command-prompt-on-windows.png" alt="Ruby in command prompt on Windows" /></p>
+
+<h2 id="using-mac-os-x">Using Mac OS X?</h2>
+
+<p>Most of modern Macs already have ruby installed. If you have an old Mac with no ruby on it, follow these instructions.</p>
+
+<h4 id="install-os-x-command-line-tools">1) Install OS X command line tools</h4>
+
+<p>Go to <a href="https://developer.apple.com/downloads">the downloads page of Apple Developer Portal</a>. Register or sign in if you have an account already. Search for “Command Line Tools”. Choose the one for you version of OS X (Mountain Lion, Mavericks, etc), download it and install it.</p>
+
+<h4 id="install-homebrew">2) Install Homebrew</h4>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>ruby -e <span class="s2">"</span><span class="k">$(</span>curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install<span class="k">)</span><span class="s2">"</span></code></pre></figure>
+
+<h4 id="span-styleline-height-123-install-rbenvspan"><span style="line-height: 1.2;">3) Install rbenv</span></h4>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>brew update
+<span class="gp">$ </span>brew install rbenv ruby-build
+<span class="gp">$ </span><span class="nb">echo</span> <span class="s1">'eval "$(rbenv init -)"'</span> &amp;gt;&amp;gt; ~/.bash_profile
+<span class="gp">$ </span><span class="nb">source</span> ~/.bash_profile</code></pre></figure>
+
+<h4 id="install-ruby">4) Install Ruby</h4>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>rbenv install 2.1.0
+<span class="gp">$ </span>rbenv global 2.1.0 <span class="c"># set ruby 2.1.0 as a default</span></code></pre></figure>
+
+<h4 id="install-gems">5) Install Gems</h4>
+
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>gem install rbenv-rehash bundler</code></pre></figure>
+
+<p>Photo by <a href="http://www.flickr.com/photos/zzpza/">zzpza</a></p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

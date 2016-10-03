@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [[! Page Meta ]] -->
+    <title>Data Types in Swift</title>
+    <meta name="description" content="How To Program Better - Learn How To Program and become a Better Software Engineer with Alex Tamoykin" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+        <link rel="canonical" href="/" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="How To Program Better" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="How To Program Better" />
+    <meta property="og:description" content="Learn How To Program and become a Better Software Engineer with Alex Tamoykin" />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/assets/images/cover1.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="How To Program Better" />
+    <meta name="twitter:description" content="Learn How To Program and become a Better Software Engineer with Alex Tamoykin" />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image:src" content="/assets/images/cover1.jpg" />
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "How To Program Better",
+    "url": "/",
+    "image": "/assets/images/cover1.jpg",
+    "description": "Learn How To Program and become a Better Software Engineer with Alex Tamoykin"
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="How To Program Better" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+        <li class="nav-about " role="presentation"><a href="/about">About</a></li>
+        <li class="nav-fables " role="presentation"><a href="/tag/7-days-of-ruby">7 Days of Ruby</a></li>
+        <li class="nav-speeches " role="presentation"><a href="/tag/7-days-of-rails">Rails in 7 Days</a></li>
+        <li class="nav-speeches " role="presentation"><a href="/tag/book">Books</a></li>
+    </ul>
+    <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        <!-- < default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: url(/assets/images/swift_coffee.jpg) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/"><img src="/assets/images/logo.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-speeches">
+
+        <header class="post-header">
+            <h1 class="post-title">Data Types in Swift</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>Alex Tamoykin</a> -->
+            <time class="post-date" datetime="2015-03-08">08 Mar 2015</time>
+                <!-- [[tags prefix=" on "]] -->
+                
+                on
+                
+                    
+                       <a href='/tag/apple'>Apple</a>,
+                    
+                
+                    
+                       <a href='/tag/cocoatouch'>Cocoatouch</a>,
+                    
+                
+                    
+                       <a href='/tag/ios'>Ios</a>,
+                    
+                
+                    
+                       <a href='/tag/ipad'>Ipad</a>,
+                    
+                
+                    
+                       <a href='/tag/iphone'>Iphone</a>,
+                    
+                
+                    
+                       <a href='/tag/mobile'>Mobile</a>,
+                    
+                
+                    
+                       <a href='/tag/swift'>Swift</a>
+                    
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+
+            <p>I’m currently teaching a <a title="Mobile Development at General Assembly" href="https://generalassemb.ly/education/mobile-development" target="_blank">mobile development course at GA</a>. I’ll be sharing my swift lessons one by one. Lesson 1: Data Types.After reading this blog post you’ll be able to learn and use the basic data types in Swift.I’m going to briefly introduce a data type. Then I’ll show the syntax for creating it and what you can do with it.</p>
+
+<p>Ready, get set, go!</p>
+
+<h2 id="string">String</h2>
+
+<p>The String datatype is used for storing and manipulating text. You start defining a string by using a double quotes symbol following by your text. Finish defining your string by using a second double quotes symbol.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="s">""</span>                    <span class="c1">// an empty string</span>
+<span class="s">"hello world"</span>         <span class="c1">// a string with words</span>
+
+<span class="nf">countElements</span><span class="p">(</span><span class="s">"dude"</span><span class="p">)</span> <span class="c1">// =&gt; 4</span>
+<span class="s">"dude"</span><span class="o">.</span><span class="n">isEmpty</span>        <span class="c1">// =&gt; false</span>
+<span class="s">""</span><span class="o">.</span><span class="n">isEmpty</span>            <span class="c1">// =&gt; true</span></code></pre></figure>
+
+<h2 id="boolean">Boolean</h2>
+
+<p>A boolean can be either true or false. It’s useful in conditions inside control flow statements like if. It also helps with checking whether a certain condition is met.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kc">true</span>  <span class="c1">// a boolean with a value of true</span>
+<span class="kc">false</span> <span class="c1">// a boolean with a value offalse</span>
+
+<span class="k">let</span> <span class="nv">age</span> <span class="o">=</span> <span class="mi">19</span>
+<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="p">{</span>
+  <span class="nf">println</span><span class="p">(</span><span class="s">"Congratulations! Now you can now get a California driver license."</span><span class="p">)</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="range">Range</h2>
+
+<p>The Range data type is used to define a range of values. It’s very handy to define long sequences.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mi">0</span><span class="o">...</span><span class="mi">3</span> <span class="c1">// =&gt; 0,1,2,3</span>
+<span class="mi">0</span><span class="o">..&lt;</span><span class="mi">3</span> <span class="c1">// =&gt; 0,1,2&lt;/pre&gt;</span></code></pre></figure>
+
+<h2 id="integer">Integer</h2>
+
+<p>An integer describes a whole number without a decimal point. It’s useful for performing any sort of math on whole numbers.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mi">1</span>     <span class="c1">// an integer with a value of 1</span>
+
+<span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="c1">// =&gt; -1</span>
+<span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1">// =&gt; 5</span>
+<span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1">// =&gt; 4</span></code></pre></figure>
+
+<h2 id="double--float">Double / Float</h2>
+
+<p>Doubles and Floats are used for numbers with precision. A double is twice as precise as a float.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mf">4.2</span> <span class="c1">// a double with a value of 4.2</span>
+
+<span class="k">let</span> <span class="nv">my_float</span> <span class="p">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mf">4.2</span> <span class="c1">// If you want to use float to consume some memory, you'll need to explicitly specify avariable'stype&lt;/pre&gt;</span></code></pre></figure>
+
+<h2 id="array">Array</h2>
+
+<p>Array is a zero indexed, ordered collection of elements.Arrays come in handy when you need to store and operate on a collection of elements.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="p">[</span><span class="s">"a"</span><span class="p">,</span><span class="s">"b"</span><span class="p">,</span><span class="s">"c"</span><span class="p">,</span><span class="s">"d"</span><span class="p">]</span>    <span class="c1">// an array of characters</span>
+<span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">6.7</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">]</span> <span class="c1">// an array of numbers</span>
+
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>        <span class="c1">// =&gt; [1,2,3,4]</span>
+<span class="k">let</span> <span class="nv">my_array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
+<span class="n">my_array</span><span class="o">.</span><span class="n">count</span>       <span class="c1">// =&gt; 4</span>
+
+<span class="c1">// retrieving the first element of an array</span>
+<span class="n">my_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>          <span class="c1">// =&gt; 1</span></code></pre></figure>
+
+<h2 id="dictionary">Dictionary</h2>
+
+<p>A dictionary is a collection of key value pairs. A value is stored and retrieved from a dictionary by it’s key. Dictionaries are useful for managing different sets of data. For example keeping a track of heroes and their superpowers 😉</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// A dictionary with 3 key value pairs</span>
+<span class="k">var</span> <span class="nv">heroes</span> <span class="o">=</span> <span class="p">[</span>
+ <span class="s">"wonder_woman"</span><span class="p">:</span> <span class="p">[</span><span class="s">"strong"</span><span class="p">],</span>
+ <span class="s">"aqua_man"</span><span class="p">:</span> <span class="p">[</span><span class="s">"can breathe underwater"</span><span class="p">],</span>
+ <span class="s">"wonder twins"</span><span class="p">:</span> <span class="p">[</span><span class="s">"take forms of other things"</span><span class="p">]</span>
+<span class="p">]</span>
+
+<span class="c1">// retrieving values using keys</span>
+<span class="n">heroes</span><span class="p">[</span><span class="s">"wonder_woman"</span><span class="p">]</span> <span class="c1">// =&gt; strong</span>
+<span class="n">heroes</span><span class="p">[</span><span class="s">"aqua_man"</span><span class="p">]</span>     <span class="c1">// =&gt; can breathe underwater</span>
+
+<span class="c1">// inserting a new key / value pair</span>
+<span class="n">heroes</span><span class="p">[</span><span class="s">"spiderman"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"spidey sense"</span><span class="p">,</span> <span class="s">"throw a web"</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">pre</span><span class="o">&gt;</span></code></pre></figure>
+
+<p>Feel free to play with this code in the playgrounds. Every data type has a lot more useful methods on it.</p>
+
+<p>Enjoy,</p>
+
+<p>Alex</p>
+
+<p><em>Photo by <a href="https://www.flickr.com/photos/yukop">yukop</a></em></p>
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/fsproru" style="background-image: url(/assets/images/alex_tamoykin_profile_pic_small.jpg)"><span class="hidden">Alex Tamoykin's Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/fsproru">Alex Tamoykin</a></h4>
+
+                
+                    <p> Alex started coding in 5th grade of elementary school. He is an award winning software engineer and a hands on technical leader with over a decade of industry experience.</p>
+                
+                <div class="author-meta">
+                    <span class="author-location icon-location"> Los Angeles, USA</span>
+                    <span class="author-link icon-link"><a href="http://howtoprogrambetter.com/"> howtoprogrambetter.com</a></span>
+                </div>
+            </section>
+
+            <!-- /author  -->
+
+            <!-- share -->
+            <!-- <section class="share"> -->
+            <!--     <h4>Share this post</h4> -->
+            <!--     <a class="icon-twitter" href="http://twitter.com/share?text=Data Types in Swift&amp;url=http://howtoprogrambetter.com/data-types-in-swift" -->
+            <!--         onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;"> -->
+            <!--         <span class="hidden">Twitter</span> -->
+            <!--     </a> -->
+            <!--     <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://howtoprogrambetter.com/data-types-in-swift" -->
+            <!--         onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;"> -->
+            <!--         <span class="hidden">Facebook</span> -->
+            <!--     </a> -->
+            <!--     <a class="icon-google-plus" href="https://plus.google.com/share?url=http://howtoprogrambetter.com/data-types-in-swift" -->
+            <!--        onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;"> -->
+            <!--         <span class="hidden">Google+</span> -->
+            <!--     </a> -->
+            <!-- </section> -->
+
+            <!-- subscribe -->
+            <section class="subscribe">
+              <a href="http://eepurl.com/OvBfP" target="_blank"><button>SUBSCRIBE</button></a>
+
+            </section>
+
+            <!-- add Disqus Comments -->
+            
+
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+        <a class="read-next-story " style="background-image: url(/assets/images/bridge.jpg)" href="/off-the-rails">
+            <section class="post">
+                <h2>Off The Rails</h2>
+                <p>Rails is awesome, but it&#8217;s not the best framework for building fat client web applications....</p>
+            </section>
+        </a>
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/code.jpg)" href="/10-steps-to-become-a-senior-software-engineer">
+            <section class="post">
+                <h2>10 Steps to become a Senior Software Engineer</h2>
+                <p>What Software engineers go through several stages in their careers. They start from a Junior...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">How To Program Better</a> &copy; 2016</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+	    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	    ga('create', 'UA-45185368-3', 'auto');
+	    ga('send', 'pageview');
+
+     </script>   
+</body>
+</html>

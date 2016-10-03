@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>howtoprogrambetter.com</title>
+   
+   <link>http://howtoprogrambetter.com/</link>
+   <description>Learn How To Program and become a Better Software Engineer with Alex Tamoykin</description>
+   <language>en-us</language>
+   <managingEditor> Alex Tamoykin</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Test Driven Development with Xcode</title>
+	  <link>//test-driven-development-with-xcode/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2016-03-13T22:11:26-07:00</pubDate>
+	  <guid>//test-driven-development-with-xcode/</guid>
+	  <description><![CDATA[
+	     <p>Test Driven Development is a great way to take your code to a whole another level. In this presentation, we’ll talk about what is TDD, why TDD is awesome and how to do it in Xcode using Swift and XCTest</p>
+
+<p>Here is the link to a <a href="https://youtu.be/06-9Xsd8saA">Video Recording</a></p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/06-9Xsd8saA?controls=0" frameborder="0" allowfullscreen=""></iframe>
+
+<p>and <a href="https://speakerdeck.com/fsproru/test-driven-development-with-xcode">Slides</a></p>
+
+<script async="" class="speakerdeck-embed" data-id="c7250296330e420e857540912eee7a4f" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+<p><br />
+Presented at <a href="http://www.meetup.com/CocoaHeads-LA/events/225155127/" target="_blank">CocoaHeads LA – Testing Edition</a></p>
+
+<p>Enjoy,</p>
+
+<p>Alex</p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

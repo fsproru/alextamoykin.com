@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>How To Program Better - Articles</title>
+    <description>Learn How To Program and become a Better Software Engineer with Alex Tamoykin</description>
+    <link>
+    http://howtoprogrambetter.com/</link>
+    
+      
+      <item>
+        <title>3 Must Read Books for Software Consultants</title>
+        
+          <description>&lt;p&gt;There are a number of books that you can read on software consulting. These three books focus on the management and business development aspect of running a consulting shop. I specifically didn’t mention any technical books since there are a lot of different ways you can specialize in (if you are looking for tech books, keep reading, I have it for you at the end of this post). Even if these things don’t feel as attractive as diving into a new technology, it is vital to obtain business skills in a software development consulting world. It’s on a full time job there is no need to find work, when you freelance, you need to hustle to get clients. The good news that it’s not a rocket science, so these three books will get you up and running pretty fast:&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 12 Sep 2016 21:54:34 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//3-must-read-books-for-software-consultants</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//3-must-read-books-for-software-consultants</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Top 5 Pitfalls of a Software Development Consultant</title>
+        
+          <description>&lt;p&gt;If you never did software consulting, you’ll need to take care of several things. It’s important to do it right from the beginning in order to avoid issues later. I was lucky to have veteran consultants providing me with an advise. After running a software consultancy of my own, I’ve also learned several things the hard way. Here we go, my guest posts on top 5 consulting pitfalls at &lt;a href=&quot;http://www.freelancermap.com/freelancer-tips/11534-top-5-pitfalls-of-a-software-development-consultant&quot;&gt;Freelancer Tips&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 09 Sep 2016 21:35:22 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//top-5-pitfalls-of-a-software-development-consultant</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//top-5-pitfalls-of-a-software-development-consultant</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Living in the Fastlane &amp;#8211; Deploying 100 Apps to the App Store at Victorious</title>
+        
+          <description>&lt;p&gt;If you need to submit more that one app to App Store or Google Play store, this talk is for you! Here is how we automated our App Deployment Pipeline. We can now submit ~100 apps to the App Store at Victorious with a single command. You’ll learn how to use Fastlane so you can use it for your needs too.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 23 May 2016 21:45:29 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//living-in-the-fastlane-deploying-100-apps-to-the-app-store-at-victorious/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//living-in-the-fastlane-deploying-100-apps-to-the-app-store-at-victorious/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Test Driven Development with Xcode</title>
+        
+          <description>&lt;p&gt;Test Driven Development is a great way to take your code to a whole another level. In this presentation, we’ll talk about what is TDD, why TDD is awesome and how to do it in Xcode using Swift and XCTest&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 13 Mar 2016 22:11:26 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//test-driven-development-with-xcode/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//test-driven-development-with-xcode/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Interview at Swift Coders Podcast</title>
+        
+          <description>&lt;p&gt;We’re big proponents of &lt;a href=&quot;https://swift.org/&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;Swift&lt;/a&gt;, Apple’s new programing language at &lt;a href=&quot;http://rightbalance.io/&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;The Right Balance&lt;/a&gt;. It’s exciting to see the Swift community evolving. It was great to speak at the opening podcast dedicated to Swift Development called &lt;a href=&quot;http://swiftcoders.org/&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;Swift Coders&lt;/a&gt;. Kudos to &lt;a href=&quot;https://twitter.com/garricn&quot; target=&quot;_blank&quot; rel=&quot;nofollow&quot;&gt;Garric Nahapetian&lt;/a&gt; for putting it together.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 06 Mar 2016 20:35:22 -0800</pubDate>
+        <link>
+        http://howtoprogrambetter.com//interview-at-swift-coders-podcast/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//interview-at-swift-coders-podcast/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Equality Operators in Swift: Double equal vs Tripe equal and how to define even your own Quadruple Equal operator</title>
+        
+          <description>&lt;p&gt;Yes, a quadruple operator. Bare with me, we’ll get there by the end of this post. In order to figure out how equivalence operators work, let’s start with a simple example:&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 12 Jul 2015 14:51:33 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//equality-operators-in-swift-double-equal-vs-tripe-equal-and-how-to-define-even-your-own-quadruple-equal-operator/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//equality-operators-in-swift-double-equal-vs-tripe-equal-and-how-to-define-even-your-own-quadruple-equal-operator/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Off The Rails</title>
+        
+          <description>&lt;p&gt;Rails is awesome, but it’s not the best framework for building fat client web applications. I’ll demonstrate why and how we’ve broken our Rails app into an Angular client and a thin API back end.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 22 Apr 2015 23:02:18 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//off-the-rails/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//off-the-rails/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Data Types in Swift</title>
+        
+          <description>&lt;p&gt;I’m currently teaching a &lt;a title=&quot;Mobile Development at General Assembly&quot; href=&quot;https://generalassemb.ly/education/mobile-development&quot; target=&quot;_blank&quot;&gt;mobile development course at GA&lt;/a&gt;. I’ll be sharing my swift lessons one by one. Lesson 1: Data Types.After reading this blog post you’ll be able to learn and use the basic data types in Swift.I’m going to briefly introduce a data type. Then I’ll show the syntax for creating it and what you can do with it.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 08 Mar 2015 11:09:50 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//data-types-in-swift/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//data-types-in-swift/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>10 Steps to become a Senior Software Engineer</title>
+        
+          <description>&lt;h2 id=&quot;what&quot;&gt;What&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 22 Dec 2014 20:54:34 -0800</pubDate>
+        <link>
+        http://howtoprogrambetter.com//10-steps-to-become-a-senior-software-engineer/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//10-steps-to-become-a-senior-software-engineer/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Running iOS tests on Travis CI</title>
+        
+          <description>&lt;h2 id=&quot;why&quot;&gt;Why&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 06 Sep 2014 22:15:21 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//running-ios-tests-on-travis-ci/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//running-ios-tests-on-travis-ci/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Start Programming Now Book is Released</title>
+        
+          <description>&lt;h2 id=&quot;what&quot;&gt;What&lt;/h2&gt;
+&lt;p&gt;I’m super excited to annouce that the Start Programming Now book is released. If you would like to get into coding but you don’t know where to start, this book is for you. And you can read if for &lt;em&gt;FREE&lt;/em&gt;.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Mon, 05 May 2014 01:03:34 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//start-programming-now-book-is-released/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//start-programming-now-book-is-released/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>What&amp;#8217;s next</title>
+        
+          <description>&lt;p&gt;We covered a lot of stuff. We set up the computer for local development. We created a web application and deployed it to a server. Great job!&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 14 Mar 2014 23:34:54 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//what-is-next/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//what-is-next/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Day 7: Deployment</title>
+        
+          <description>&lt;h2 id=&quot;what-is-deployment&quot;&gt;What is deployment?&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 12 Mar 2014 23:34:44 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//day-7-deployment/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//day-7-deployment/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Day 6: Task Views &amp;#8211; Show a completed task</title>
+        
+          <description>&lt;h2 id=&quot;showing-a-completed-task&quot;&gt;Showing a completed task&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 12 Mar 2014 22:50:54 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//day-6-task-views-show-a-completed-task/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//day-6-task-views-show-a-completed-task/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Day 5: Task Views &amp;#8211; Adding the ability to complete a task</title>
+        
+          <description>&lt;h2 id=&quot;task-views&quot;&gt;Task Views&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 11 Mar 2014 23:43:53 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//day-5-task-views-adding-the-ability-to-complete-a-task/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//day-5-task-views-adding-the-ability-to-complete-a-task/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Day 4: Models, Controllers and Routing</title>
+        
+          <description>&lt;h2 id=&quot;task-model&quot;&gt;Task model&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Tue, 11 Mar 2014 22:43:05 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//day-4-models-controllers-and-routing/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//day-4-models-controllers-and-routing/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Day 3: How Rails Works &amp;#8211; Database Migrations</title>
+        
+          <description>&lt;h2 id=&quot;how-rails-works&quot;&gt;How Rails works&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Mon, 10 Mar 2014 01:18:31 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//day-3-how-rails-works-database-migrations/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//day-3-how-rails-works-database-migrations/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Day 2: Building a simple ToDo application</title>
+        
+          <description>&lt;p&gt;In order to keep things simple, we’re going to create a simple todo list application. This application should display a list of tasks. We should be able to add new tasks. Delete and edit existing tasks. Also, there should be a way to mark a task as finished.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 09 Mar 2014 22:43:58 -0700</pubDate>
+        <link>
+        http://howtoprogrambetter.com//day-2-building-a-simple-todo-application/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//day-2-building-a-simple-todo-application/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Day 1: Setup</title>
+        
+          <description>&lt;h2 id=&quot;mac-os-x&quot;&gt;Mac OS X&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 09 Mar 2014 01:24:12 -0800</pubDate>
+        <link>
+        http://howtoprogrambetter.com//day-1-setup-rails/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//day-1-setup-rails/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Rails in 7 Days</title>
+        
+          <description>&lt;h2 id=&quot;what-it-is&quot;&gt;What it is&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sun, 09 Mar 2014 00:11:37 -0800</pubDate>
+        <link>
+        http://howtoprogrambetter.com//rails-in-7-days/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//rails-in-7-days/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Congratulations! You&amp;#8217;ve just finished 7 Days of Ruby course.</title>
+        
+          <description>&lt;p&gt;If you made it to this point, you already know &lt;strong&gt;the basics of programming in Ruby&lt;/strong&gt;. This is huge! We covered a lot of complicated concepts like variables, control structures, data types, methods, classes and inheritance.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Thu, 20 Feb 2014 18:13:20 -0800</pubDate>
+        <link>
+        http://howtoprogrambetter.com//congratulations-you-ve-just-finished-7-days-of-programming-course/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//congratulations-you-ve-just-finished-7-days-of-programming-course/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Day 7: Iterators and Inheritance</title>
+        
+          <description>&lt;h2 id=&quot;iterators&quot;&gt;Iterators&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Sat, 15 Feb 2014 00:18:03 -0800</pubDate>
+        <link>
+        http://howtoprogrambetter.com//day-7-iterators-and-inheritance/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//day-7-iterators-and-inheritance/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Day 6: Classes, Methods and Objects</title>
+        
+          <description>&lt;h2 id=&quot;classes&quot;&gt;Classes&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Fri, 14 Feb 2014 23:36:03 -0800</pubDate>
+        <link>
+        http://howtoprogrambetter.com//day-6-classes-methods-and-objects/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//day-6-classes-methods-and-objects/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Day 5: Arrays and Hashes</title>
+        
+          <description>&lt;p&gt;Moving on. In order to build programs we need some building blocks (aka &lt;strong&gt;Data Structures&lt;/strong&gt;). As I mentioned, Ruby is simple. There are only two data structures: &lt;strong&gt;arrays&lt;/strong&gt; and &lt;strong&gt;hashes&lt;/strong&gt;.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 12 Feb 2014 21:48:25 -0800</pubDate>
+        <link>
+        http://howtoprogrambetter.com//day-5-arrays-and-hashes/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//day-5-arrays-and-hashes/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Day 4: Control Structures &amp;#8211; Loops</title>
+        
+          <description>&lt;h2 id=&quot;while&quot;&gt;while&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 12 Feb 2014 21:16:18 -0800</pubDate>
+        <link>
+        http://howtoprogrambetter.com//day-4-control-structures-loops/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//day-4-control-structures-loops/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Day 3: Control Structures &amp;#8211; Conditionals</title>
+        
+          <description>&lt;p&gt;Let’s imagine a highway. If a highway had no turns, then it could only lead us to one place. In order to have the ability to drive to different places using the same highway, we need to make turns.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Tue, 11 Feb 2014 23:42:23 -0800</pubDate>
+        <link>
+        http://howtoprogrambetter.com//day-3-control-structures-conditionals/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//day-3-control-structures-conditionals/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Day 2: Data Types and Variables</title>
+        
+          <description>&lt;p&gt;&lt;img src=&quot;/assets/images/how_programming_works.png&quot; alt=&quot;How programming works&quot; /&gt;&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 05 Feb 2014 22:58:44 -0800</pubDate>
+        <link>
+        http://howtoprogrambetter.com//day-2-data-types-and-variables/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//day-2-data-types-and-variables/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>Day 1: Setup</title>
+        
+          <description>&lt;p&gt;We need tools in order to program. This is where programming starts. Unfortunately, for many people this is where it also ends. I’ve seen people fighting with incompatible versions or programs and giving up. But don’t worry, I went through this process myself. I tried every piece of software and I can tell you that it works for sure. Follow the instructions and you’ll be fine. Ready, get set, go!&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Wed, 05 Feb 2014 00:37:09 -0800</pubDate>
+        <link>
+        http://howtoprogrambetter.com//day-1-setup/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//day-1-setup/</guid>
+      </item>
+      
+    
+      
+      <item>
+        <title>7 Days of Ruby</title>
+        
+          <description>&lt;h2 id=&quot;what-is-it&quot;&gt;What is it&lt;/h2&gt;
+
+</description>
+        
+        <pubDate>Wed, 05 Feb 2014 00:03:34 -0800</pubDate>
+        <link>
+        http://howtoprogrambetter.com//start-programming-now-free-7-day-online-course/</link>
+        <guid isPermaLink="true">http://howtoprogrambetter.com//start-programming-now-free-7-day-online-course/</guid>
+      </item>
+      
+    
+  </channel>
+</rss>
