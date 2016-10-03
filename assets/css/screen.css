@@ -14,7 +14,7 @@
     7.  Read Next
     8.  Third Party Elements
     9.  Pagination
-    10.  Footer
+    10. Footer
     11. Media Queries (Tablet)
     12. Media Queries (Mobile)
     13. Animations
@@ -310,6 +310,7 @@ blockquote {
     margin: 1.75em 0 1.75em -2.2em;
     padding: 0 0 0 1.75em;
     border-left: #4A4A4A 0.4em solid;
+    margin-left: 0;
 }
 
 blockquote p {
@@ -493,6 +494,11 @@ body.nav-opened .site-wrapper {
     transition: transform 0.3s ease;
 }
 
+.left-align {
+    float: left;
+    marging: 1.5em;
+    padding: 1em;
+}
 
 /* ==========================================================================
    4. General - The main styles for the the theme
@@ -1135,6 +1141,29 @@ body:not(.post-template) .post-title {
     line-height: 1.75em;
 }
 
+/* subscribe */
+.post-footer .subscribe {
+    position: absolute;
+    right: 0;
+    top: 4.5em;
+}
+
+.subscribe button {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: #000;
+    border: 0.1em solid;
+    color: #FFF;
+    font-family: "Open Sans", sans-serif;
+    padding: 1em 1.5em;
+    border-radius: 0.3em;
+}
+
+.subscribe button:hover {
+    background-color: #FFF;
+    color: #000;
+}
+
 /* list of author links - location / url */
 .author-meta {
     padding: 0;
@@ -1607,10 +1636,6 @@ body:not(.post-template) .post-title {
 
 @media only screen and (max-width: 900px) {
 
-    blockquote {
-        margin-left: 0;
-    }
-
     .main-header {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
@@ -1941,6 +1966,15 @@ body:not(.post-template) .post-title {
         margin: 1.4rem 0.8rem 0 0.8rem;
     }
 
+    .post-footer .subscribe {
+        position: static;
+        width: auto;
+    }
+
+    .post-footer .subscribe a {
+        margin: 1.4rem 0.8rem 0 0.8rem;
+    }
+
     .author-meta li {
         float: none;
         margin: 0;
@@ -1999,6 +2033,9 @@ body:not(.post-template) .post-title {
         width: 100%;
     }
 
+    .left-align {
+        float: none;
+    }
 }
 
 

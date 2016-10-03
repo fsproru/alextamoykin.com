@@ -53,6 +53,97 @@ Presented at <a href="http://www.meetup.com/CocoaHeads-LA/events/225155127/" tar
 	</item>
 
 	<item>
+	  <title>Equality Operators in Swift: Double equal vs Tripe equal and how to define even your own Quadruple Equal operator</title>
+	  <link>//equality-operators-in-swift-double-equal-vs-tripe-equal-and-how-to-define-even-your-own-quadruple-equal-operator/</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2015-07-12T14:51:33-07:00</pubDate>
+	  <guid>//equality-operators-in-swift-double-equal-vs-tripe-equal-and-how-to-define-even-your-own-quadruple-equal-operator/</guid>
+	  <description><![CDATA[
+	     <p>Yes, a quadruple operator. Bare with me, we’ll get there by the end of this post. In order to figure out how equivalence operators work, let’s start with a simple example:</p>
+
+<h1 id="double-equal">Double equal</h1>
+
+<p>A double equal operator (aka ==) compares <strong>values</strong>. Let’s look at the simple example below:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mi">5</span> <span class="o">==</span> <span class="mi">5</span>                             <span class="c1">// =&gt; true</span>
+<span class="s">"same string"</span> <span class="o">==</span> <span class="s">"same string"</span>     <span class="c1">// =&gt; true</span>
+<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span> <span class="o">==</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>                 <span class="c1">// =&gt; true</span>
+<span class="s">"one string"</span> <span class="o">==</span> <span class="s">"different string"</span> <span class="c1">// =&gt; false</span></code></pre></figure>
+
+<p>The left-hand side and the right-hand side are different objects in all three cases. Swift compares basic types with no problem. Let’s see how Swift is doing with our custom octocat classes:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">Octocat</span> <span class="p">{</span>
+    <span class="k">var</span> <span class="nv">legs</span><span class="p">:</span><span class="kt">Int</span>
+    <span class="k">var</span> <span class="nv">kind</span><span class="p">:</span><span class="kt">String</span>
+
+    <span class="nf">init</span><span class="p">(</span><span class="nv">legs</span><span class="p">:</span><span class="kt">Int</span><span class="p">,</span> <span class="nv">kind</span><span class="p">:</span><span class="kt">String</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">legs</span> <span class="o">=</span> <span class="n">legs</span>
+        <span class="k">self</span><span class="o">.</span><span class="n">kind</span> <span class="o">=</span> <span class="n">kind</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">let</span> <span class="nv">eight_leg_octo</span> <span class="o">=</span> <span class="kt">Octocat</span><span class="p">(</span>
+    <span class="nv">legs</span><span class="p">:</span><span class="mi">8</span><span class="p">,</span> <span class="nv">kind</span><span class="p">:</span><span class="s">"Coder"</span><span class="p">)</span>
+<span class="k">let</span> <span class="nv">another_eight_leg_octo</span> <span class="o">=</span> <span class="kt">Octocat</span><span class="p">(</span>
+    <span class="nv">legs</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span> <span class="nv">kind</span><span class="p">:</span> <span class="s">"Coder"</span><span class="p">)</span>
+
+<span class="c1">// ERROR: Cannot invoke '==' with an argument list of type Octocat, Octocat</span>
+<span class="n">eight_leg_octo</span> <span class="o">==</span> <span class="n">another_eight_leg_octo</span></code></pre></figure>
+
+<p>Error! Swift doesn’t know how to compare octocats. C’mon Swift! It’s not that hard, all you need is to compare the number of legs. Although it seems obvious for the author of this code, Swift doesn’t know how to compare custom objects. Every custom object has a meaning. It is pretty reasonable to push the responsibility of defining equivalence to the author. In order to do that, we need to define the equivalence operator for the Octocat class. All you need to do is to return true or false depending whether the left-hand side is equal to the right-hand side. Note that the equivalence operator is redefined outside of the class. But the Octocat type is specified inside parameters.</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="o">==</span><span class="p">(</span><span class="nv">left</span><span class="p">:</span><span class="kt">Octocat</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span><span class="kt">Octocat</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">left</span><span class="o">.</span><span class="n">legs</span> <span class="o">==</span> <span class="k">right</span><span class="o">.</span><span class="n">legs</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Now Swift is all happy and our octocats are indeed equal.</p>
+
+<h1 id="triple-equal">Triple equal</h1>
+
+<p>The triple equal (aka ===) operator compares <strong>identity</strong>. If the variable on the left points to the same exact object that the variable on the right, then it returns true. It returns false otherwise. Here is the example:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">Skateboard</span> <span class="p">{}</span>
+<span class="k">let</span> <span class="nv">red_skate</span> <span class="o">=</span> <span class="kt">Skateboard</span><span class="p">()</span>
+<span class="k">let</span> <span class="nv">same_red_skate</span> <span class="o">=</span> <span class="n">red_skate</span>
+
+<span class="n">red_skate</span> <span class="o">===</span> <span class="n">same_red_skate</span> <span class="c1">// =&gt; true</span>
+
+<span class="k">let</span> <span class="nv">blue_skate</span> <span class="o">=</span> <span class="kt">Skateboard</span><span class="p">()</span>
+<span class="n">red_skate</span> <span class="o">===</span> <span class="n">blue_skate</span>     <span class="c1">// =&gt; false</span></code></pre></figure>
+
+<p>The <em>red_skate</em> variable and the <em>same_red_skate</em> variable point to the same exact instance of the <em>Skateboard</em> class. That’s why our tripe equal operator returns us true. The variable <em>blue_skate</em> on the other hand points to a different instance than what the <em>red_skate</em> variable points to. Therefore, the triple equal operator returns us false in the second case.</p>
+
+<h1 id="custom-operators">Custom operators</h1>
+
+<p>But wait, but there is more. Just to make things more fun, let’s introduce a quadruple equal operator for our Octocat class. Why not? It turns out that you can introduce pretty much any custom operator in Swift pretty easily. It’s a two step process. First, you’ll need to define a new operator. Be careful, it defines this new operator globally:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="k">infix</span> <span class="k">operator</span> <span class="o">====</span> <span class="p">{}</span></code></pre></figure>
+
+<p>Then, you’ll need to implement it. Our quadruple equal operator makes absolutely sure that Octocats are the same. It compares the number of legs and the kind or an Octocat <img src="http://howtoprogrambetter.com/wp-includes/images/smilies/simple-smile.png" alt=":-)" class="wp-smiley" style="height: 1em; max-height: 1em;" /></p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">func</span> <span class="o">====</span><span class="p">(</span><span class="nv">left</span><span class="p">:</span><span class="kt">Octocat</span><span class="p">,</span> <span class="nv">right</span><span class="p">:</span><span class="kt">Octocat</span><span class="p">)</span> <span class="o">-&amp;</span><span class="n">gt</span><span class="p">;</span> <span class="kt">Bool</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">left</span><span class="o">.</span><span class="n">legs</span> <span class="o">==</span> <span class="k">right</span><span class="o">.</span><span class="n">legs</span>
+        <span class="o">&amp;&amp;</span> <span class="k">left</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="k">right</span><span class="o">.</span><span class="n">kind</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Now that we have it, let’s use it:</p>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="n">eight_leg_octo</span> <span class="o">====</span> <span class="n">another_eight_leg_octo</span> <span class="c1">// =&gt; true</span></code></pre></figure>
+
+<h1 id="recap">Recap</h1>
+
+<p>Swift has two major mechanisms for comparing objects. The equality operator and the identity operator. The equality operator compares values. The identity operator checks whether variables point to the same instance. Swift provides us with a way of defining custom operators. I can see it being useful in certain cases but you can easily take it too far. Before defining a new custom operator, ask yourself whether you can accomplish the same goal with existing operators.</p>
+
+<p>Cheers,</p>
+
+<p>Alex</p>
+
+<p><em>Photo by <a href="https://www.flickr.com/photos/ssoosay">ssoosay</a></em></p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Data Types in Swift</title>
 	  <link>//data-types-in-swift/</link>
 	  <author>Alex Tamoykin</author>
