@@ -1142,13 +1142,13 @@ body:not(.post-template) .post-title {
 }
 
 /* subscribe */
-.post-footer .subscribe {
+.post-footer .primary-action {
     position: absolute;
     right: 0;
     top: 4.5em;
 }
 
-.subscribe button {
+.primary-action button {
     -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     background-color: #000;
@@ -1159,9 +1159,27 @@ body:not(.post-template) .post-title {
     border-radius: 0.3em;
 }
 
-.subscribe button:hover {
+.primary-action button:hover {
     background-color: #FFF;
     color: #000;
+}
+
+/* secondary action */
+
+.secondary-action button {
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: #FFF;
+    border: 0.1em solid;
+    color: #000;
+    font-family: "Open Sans", sans-serif;
+    padding: 1em 1.5em;
+    border-radius: 0.3em;
+}
+
+.secondary-action button:hover {
+    background-color: #000;
+    color: #FFF;
 }
 
 /* list of author links - location / url */
