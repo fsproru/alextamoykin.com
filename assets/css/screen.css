@@ -1984,12 +1984,12 @@ body:not(.post-template) .post-title {
         margin: 1.4rem 0.8rem 0 0.8rem;
     }
 
-    .post-footer .subscribe {
+    .post-footer .primary-action {
         position: static;
         width: auto;
     }
 
-    .post-footer .subscribe a {
+    .post-footer .primary-action a {
         margin: 1.4rem 0.8rem 0 0.8rem;
     }
 
