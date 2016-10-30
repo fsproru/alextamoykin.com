@@ -500,6 +500,12 @@ body.nav-opened .site-wrapper {
     padding: 1em;
 }
 
+.right-align {
+    float: right;
+    marging: 1.5em;
+    padding: 1em;
+}
+
 /* ==========================================================================
    4. General - The main styles for the the theme
    ========================================================================== */
@@ -2052,6 +2058,10 @@ body:not(.post-template) .post-title {
     }
 
     .left-align {
+        float: none;
+    }
+
+    .right-align {
         float: none;
     }
 }
