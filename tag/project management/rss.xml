@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>alextamoykin.com</title>
+   
+   <link>http://alextamoykin.com/</link>
+   <description>Building world-class software, teams, and products.</description>
+   <language>en-us</language>
+   <managingEditor> Alex Tamoykin</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Ship On Time: How to Give Accurate Software Estimates</title>
+	  <link>//ship-on-time-how-to-give-accurate-software-estimates</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2016-10-30T00:00:00-07:00</pubDate>
+	  <guid>//ship-on-time-how-to-give-accurate-software-estimates</guid>
+	  <description><![CDATA[
+	     <p>Imagine your CEO casually asks you: “Hey, how long would it take you to implement the feature X?”. You don’t want to disappoint your CEO and you’re feeling pressured for an answer, so you respond: “It’s pretty simple, I’ll get it done in a week.”. The CEO is happy, you’re fired up. As you’re working on the feature, you find our that you have an external dependency that makes it tricky. The code needs to be refactored and there are no tests. At the end of the week, the CEO shows up again. He/she already sold it to a prospective client but you now need to deliver bad news. We’ve all been there. After reading this post, you’ll know how to prevent it from happening.</p>
+
+<h2 id="why-software-estimates-are-important">Why software estimates are important</h2>
+<ol>
+  <li>Stakeholders need it to make business decisions</li>
+  <li>It helps you understand what you need to build</li>
+  <li>It helps you understand how you need to build it</li>
+</ol>
+
+<h2 id="how-you-can-estimate">How you can estimate</h2>
+<p>One of my old bosses from Russia brought up a simple formula:</p>
+
+<blockquote>
+  <p>Think of a worst possible case, double it and you’ll still be wrong. - My Old Boss</p>
+</blockquote>
+
+<p>Even though it sounds like a joke, there is something we can learn from it. You can’t predict it exactly right, period. You may know a lot of things, but you don’t know what you don’t know. A software is built on top of other software and you can’t control it completely. There is a technique that I developed over the years that will help you to get it very close. Here are the steps:</p>
+
+<h3 id="gather-requirements">Gather requirements</h3>
+
+<blockquote>
+  <p>If you don’t know where you are going, you’ll end up someplace else. - Yogi Berra</p>
+</blockquote>
+
+<p>The minute someone asks you about a new feature, ask questions to clarify details. It will lead to more questions and unknowns. Rinse, repeat until you get all your questions answered.</p>
+
+<p>Here is an example. Let’s say we would like to build new profile screen for your user. How should this screen look? Where should the avatar be located? What color is the font, what size it is ? How long should a bio be ? Should we allow editing the bio? Etc.</p>
+
+<h3 id="break-it-down">Break it down</h3>
+<p><img src="/assets/images/break_it_down.gif" alt="Break It Down" async="true" /></p>
+
+<p>Now that you have all your questions answered, it’s time to do your homework and break it down. The goal is to break down every individual requirement into small tasks so you can clearly estimate each of them. If your estimate seems high, break down a big task into a set of smaller tasks. Keep breaking it down until your estimate is clear and reasonable. Some people prefer doing it in hours, some people use points. We’ll use hours in this example to keep it simple.</p>
+
+<ul>
+  <li>Profile screen scaffold - 0.5 hour</li>
+  <li>Serve a user avatar URL from the back end - 1 hour</li>
+  <li>Display an avatar image centered on the screen - 0.5 hour</li>
+  <li>Serve a user bio from the back end - 0.5 hour</li>
+  <li>Display a bio on the profile screen - 0.5 hour</li>
+  <li>Create an edit bio endpoint on the back end - 1 hour</li>
+  <li>Present a new edit bio screen when user taps on a bio - 1 hour</li>
+  <li>Send a bio request and update the bio on the profile screen - 1.5 hours</li>
+</ul>
+
+<p>Total: 6.5 hours</p>
+
+<p>This is just a hypothetical example. Your estimates may be different depending on the state of your app, your familiarity with the codebase or even the team you’re on. Factor risk in your individual estimates.</p>
+
+<h3 id="estimate">Estimate</h3>
+<p>If you made it to this point, you’re in a pretty good shape. The hardest part is already done and all you need to do is to plug numbers into a simple formula:</p>
+
+<p><strong>Estimate = Total + (Risk Factor * Total)</strong></p>
+
+<p>Yes, a risk factor. Always factor in a risk factor. There is always something that you didn’t think of or something is outside of your control. The exact number varies from project to project. I’ve seen projects executed with a 20% risk factor with an established team and a solid codebase. And I saw a risk factor being as high as 100% for systems that need to talk to some weird unreliable API.</p>
+
+<h3 id="communicate">Communicate</h3>
+<p>Communicate your estimate to your steak holders, commit to it and start development. Show progress often and ask for feedback. It allows you to accomplish the following:</p>
+
+<ol>
+  <li>It keeps stakeholders involved</li>
+  <li>Stakeholders see your progress</li>
+  <li>You can course correct early if anything changes</li>
+</ol>
+
+<p>I was once in a situation where a feature set wasn’t presented to a stakeholder properly in the very beginning. As a result, a stakeholder had different expectations. If we would show progress earlier, it would be easier to course correct.</p>
+
+<h3 id="falling-behind-re-negotiate">Falling behind? Re-negotiate</h3>
+<p>As with any commitment, here are the only things you can do:</p>
+
+<ul>
+  <li>Fulfill the commitment, or</li>
+  <li>Avoid the commitment, or</li>
+  <li>Re-negotiate</li>
+</ul>
+
+<p>Notice that failing to deliver on your commitment is not an option. Even though delivering bad news is uncomfortable, failing to deliver your commitment is even worse. People loose trust in your which is hard to recover from. Do one of the things above instead.</p>
+
+<h2 id="final-words">Final words</h2>
+<p>At the end of the days, it all comes down to communication. Chose your words wisely and make sure the other side understands you. You are a part of the team and getting expectations aligned makes everyone’s life easier. There is no harm in delivering even bad updates early. People will appreciate it in the long run. You’ll be off sometimes in your estimation and it’s fine as long as you can communicate clearly and re-negotiate. You’ll get better at estimation over time. You may also notice that estimation takes time. You’ll be in a better place if you take your time to estimate your project properly instead of giving a wrong estimate on the spot. Giving accurate estimates is a crucial soft skill for a <a href="/10-steps-to-become-a-senior-software-engineer/">Senior Software Engineer</a>.</p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

@@ -61,7 +61,7 @@
 
 
 </head>
-<body class="tag-template nav-closed">
+<body class="paged archive-template nav-closed">
 
     <div class="nav">
     <h3 class="nav-title">Menu</h3>
@@ -69,7 +69,7 @@
         <span class="hidden">Close</span>
     </a>
     <ul>
-        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+        <li class="nav-home  nav-current" role="presentation"><a href="/">Home</a></li>
         <li class="nav-about " role="presentation"><a href="/author/fsproru">About</a></li>
         <li class="nav-fables " role="presentation"><a href="/tag/7-days-of-ruby">7 Days of Ruby</a></li>
         <li class="nav-speeches " role="presentation"><a href="/tag/7-days-of-rails">Rails in 7 Days</a></li>
@@ -83,14 +83,12 @@
     <div class="site-wrapper">
 
         <!-- [[! Everything else gets inserted here ]] -->
-        <!-- < dynamically overriding backgrounds for tags as well as descriptions -->
-
-
-<!-- < default}} -->
+        <!-- < default -->
 <!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
 
-<!-- If we have a tag cover, display that - else blog cover - else nothing -->
-<header class="main-header tag-head " style="background-image: url(/assets/images/sky_bright.jpg) ">
+<!-- The big featured header  -->
+<header class="main-header "
+        style="background-image: url(/assets/images/sunset_dark.jpg) ">
     <nav class="main-nav overlay clearfix">
         <a class="blog-logo" href="/"><img src="/assets/images/logo.png" alt="Blog Logo" /></a>
         
@@ -99,14 +97,11 @@
     </nav>
     <div class="vertical">
         <div class="main-header-content inner">
-            <h1 class="page-title">Software engineering</h1>
-            <h2 class="page-description">
-            
-                            A 3-post collection
-            
-            </h2>
+            <h1 class="page-title">Alex Tamoykin</h1>
+            <h2 class="page-description">Building world-class software, teams, and products.</h2>
         </div>
     </div>
+    <a class="scroll-down icon-arrow-left" href="#content" data-offset="-45"><span class="hidden">Scroll Down</span></a>
 </header>
 
 <!-- The main content area on the homepage -->
@@ -118,7 +113,11 @@
         
             <nav class="pagination" role="pagination">
     
-    <span class="page-number"> Page 1 of 1 </span>
+        
+            <a class="newer-posts" href="/page6/" title="Previous Page">&laquo; Newer Posts</a>
+      
+    
+    <span class="page-number"> Page 7 of 7 </span>
      
 </nav>
         
@@ -128,10 +127,10 @@
     
     <article class="post">
         <header class="post-header">
-            <h2 class="post-title"><a href="/ship-on-time-how-to-give-accurate-software-estimates">Ship On Time: How to Give Accurate Software Estimates</a></h2>
+            <h2 class="post-title"><a href="/start-programming-now-free-7-day-online-course">7 Days of Ruby</a></h2>
         </header>
         <section class="post-excerpt">
-            <p>Imagine your CEO casually asks you: “Hey, how long would it take you to implement the feature X?”. You don’t want to disappoint your CEO and... <a class="read-more" href="/ship-on-time-how-to-give-accurate-software-estimates">&raquo;</a></p>
+            <p>What is it It’s the nuts and bolts of programming. This FREE online course helps you to start programming from scratch. In almost anything, the hardest... <a class="read-more" href="/start-programming-now-free-7-day-online-course">&raquo;</a></p>
         </section>
         <footer class="post-meta">
             <img class="author-thumb" src="/assets/images/alex_tamoykin_profile_pic_small.jpg" alt="Author image" nopin="nopin" />
@@ -142,83 +141,11 @@
                 on 
                 
                     
-                       <a href='/tag/software engineering'>Software engineering</a>,
-                       
-                
-                    
-                       <a href='/tag/project management'>Project management</a>,
-                       
-                
-                    
-                       <a href='/tag/product management'>Product management</a>
+                       <a href='/tag/7-days-of-ruby'>7-days-of-ruby</a>
                        
                 
             
-            <time class="post-date" datetime="2016-10-30">30 Oct 2016</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/software-engineer-salary-dollar-dollar-bill-yall">Software Engineer Salary: Dollar Dollar Bill Y'All</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>Are software engineers fairly compensated at your company? Do you or your colleagues focus on building the product instead of getting a raise? Everyone needs to... <a class="read-more" href="/software-engineer-salary-dollar-dollar-bill-yall">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/alex_tamoykin_profile_pic_small.jpg" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/fsproru'>Alex Tamoykin</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/career'>Career</a>,
-                       
-                
-                    
-                       <a href='/tag/software engineering'>Software engineering</a>
-                       
-                
-            
-            <time class="post-date" datetime="2016-10-16">16 Oct 2016</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/10-steps-to-become-a-senior-software-engineer">10 Steps to become a Senior Software Engineer</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>What Software engineers go through several stages in their careers. They start from a Junior role, then they move to a Mid Level role. Then they... <a class="read-more" href="/10-steps-to-become-a-senior-software-engineer">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-            <img class="author-thumb" src="/assets/images/alex_tamoykin_profile_pic_small.jpg" alt="Author image" nopin="nopin" />
-            <!-- author -->
-            <a href='/author/fsproru'>Alex Tamoykin</a>
-            <!-- [[tags prefix=" on "]] -->
-             
-                on 
-                
-                    
-                       <a href='/tag/career'>Career</a>,
-                       
-                
-                    
-                       <a href='/tag/mobile'>Mobile</a>,
-                       
-                
-                    
-                       <a href='/tag/software engineering'>Software engineering</a>,
-                       
-                
-                    
-                       <a href='/tag/web'>Web</a>
-                       
-                
-            
-            <time class="post-date" datetime="2014-12-22">22 Dec 2014</time>
+            <time class="post-date" datetime="2014-02-05">05 Feb 2014</time>
         </footer>
     </article>
     
@@ -227,7 +154,11 @@
     
         <nav class="pagination" role="pagination">
     
-    <span class="page-number"> Page 1 of 1 </span>
+        
+            <a class="newer-posts" href="/page6/" title="Previous Page">&laquo; Newer Posts</a>
+      
+    
+    <span class="page-number"> Page 7 of 7 </span>
      
 </nav>
     
