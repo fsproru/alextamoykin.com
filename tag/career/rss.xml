@@ -12,6 +12,58 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Why Developer Athletes Get The Best Engineering Jobs</title>
+	  <link>//why-developer-athletes-get-the-best-engineering-jobs</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2016-11-13T00:00:00-08:00</pubDate>
+	  <guid>//why-developer-athletes-get-the-best-engineering-jobs</guid>
+	  <description><![CDATA[
+	     <h3 id="who-is-a-developer-athlete">Who is a developer athlete</h3>
+
+<p>Let’s first define a developer athlete. As I previously outlined in the <a href="/10-steps-to-become-a-senior-software-engineer/">10 Steps To Become a Senior Software Engineer post</a>, you can become very efficient at computer programming, then what ? Once you know your techstack in and out, it’s time to expand your horizons and become a developer athlete. A developer athlete can dive into any techstack and be productive very fast by building on existing experience in computer engineering.</p>
+
+<h3 id="why-would-you-want-to-be-a-developer-athlete">Why would you want to be a developer athlete</h3>
+
+<p>A developer athlete is a generalist computer software engineer. These kind of players are much more valuable on the team because of the following reasons:</p>
+
+<ol>
+  <li>Techstacks change frequently. The whole entire techstack changes completely every 5 years. I went through several techstack changes in my career.</li>
+  <li>The company (especially a startup) changes it’s course frequently. In order to stay agile, you have to be open to solving different problems and to using new tools. Developer athletes occupy the best engineering jobs and get the best <a href="/software-engineer-salary-dollar-dollar-bill-yall">software engineer salary</a>.</li>
+  <li>Operating in one techstack becomes boring over time. Great players become bored from doing the same thing over and over again. They branch out into a different technology to keep themselves engaged at work.</li>
+</ol>
+
+<h3 id="how-do-you-become-an-athlete">How do you become an athlete</h3>
+
+<p><img src="/assets/images/cat_workout.gif" alt="Cat workout" /></p>
+
+<h4 id="demonstrate-the-can-do-anything-attitude">1. Demonstrate the “can do anything” attitude</h4>
+
+<p>You have to get outside of your comfort zone and to be open to diving into any technology. It sounds crazy, and you’ll be surprised how far apart it puts you against your competition. You make your team a lot stronger and lot more resilient by being able to deliver quality work in any techstack. It is true that you don’t go deep into a specific technology and it doesn’t matter as much since you’re already an expert in one techstack. At some point, your team will lose an engineer and the ability to jump in and help out is crucial for the business.</p>
+
+<h4 id="pay-attention-to-the-basics">2. Pay attention to the basics</h4>
+
+<blockquote>
+  <p>Focus on fundamentals, the rest will change anyway</p>
+</blockquote>
+
+<p>As you get comfortable with changing techstacks, you’ll see that fundamentals stay the same in every single one of them. Whether you’re a web developer writing your next project in Javascript or doing app development in Swift, the fundamentals are the same. All programs are compiled into machine code that gets executed on a processor. It’s true that you don’t have to worry as much about some low level aspects like memory management when using high level programming languages. You still need to understand what happens under the hood in order to build software that performs well.</p>
+
+<h4 id="stay-open-minded">3. Stay open minded</h4>
+
+<p>One phrase that I often hear from junior developers is: “I hate language X and I will never do it.”. Never say never. If you would like to step up your game, you need to appreciate a particular technology for it’s strengths. You’ll also need to know it’s weaknesses. Even though a lot of people “hate” PHP, we wouldn’t be here without it. Most of the software problems that I’ve seen are not about the language you use, it’s about your architecture.</p>
+
+<h4 id="stay-current">4. Stay current</h4>
+
+<p>I learn at least one new programming language and one new framework a year. I picked up Swift 3.0 as a language and Android as a whole new platform this year. Once you master the fundamentals and become efficient at one techstack, you’ll start recognizing patterns. It helps you to take your learning speed onto the whole another level where you can pick up pretty much any techstack quickly. The key here is to pay attention to tech industry dynamics and play around with new technologies. You never know, it may be the best tool for the job on your next project.</p>
+
+<h4 id="exercise-eat-and-sleep-well">5. Exercise, eat and sleep well</h4>
+
+<p>As you grow, your responsibilities grow with it so as the impact of your decisions. The ability to be present in a high stakes meeting or the ability to focus while coding is key. Think of yourself as an athlete that needs rest before the next race. Your brain needs rest while sleeping. Your body needs an exercise and the right nutrition to operate well. All these systems are connected and it affects your ability to execute during the day.</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Software Engineer Salary: Dollar Dollar Bill Y'All</title>
 	  <link>//software-engineer-salary-dollar-dollar-bill-yall</link>
 	  <author>Alex Tamoykin</author>

@@ -12,6 +12,58 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Why Developer Athletes Get The Best Engineering Jobs</title>
+	  <link>//why-developer-athletes-get-the-best-engineering-jobs</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2016-11-13T00:00:00-08:00</pubDate>
+	  <guid>//why-developer-athletes-get-the-best-engineering-jobs</guid>
+	  <description><![CDATA[
+	     <h3 id="who-is-a-developer-athlete">Who is a developer athlete</h3>
+
+<p>Let’s first define a developer athlete. As I previously outlined in the <a href="/10-steps-to-become-a-senior-software-engineer/">10 Steps To Become a Senior Software Engineer post</a>, you can become very efficient at computer programming, then what ? Once you know your techstack in and out, it’s time to expand your horizons and become a developer athlete. A developer athlete can dive into any techstack and be productive very fast by building on existing experience in computer engineering.</p>
+
+<h3 id="why-would-you-want-to-be-a-developer-athlete">Why would you want to be a developer athlete</h3>
+
+<p>A developer athlete is a generalist computer software engineer. These kind of players are much more valuable on the team because of the following reasons:</p>
+
+<ol>
+  <li>Techstacks change frequently. The whole entire techstack changes completely every 5 years. I went through several techstack changes in my career.</li>
+  <li>The company (especially a startup) changes it’s course frequently. In order to stay agile, you have to be open to solving different problems and to using new tools. Developer athletes occupy the best engineering jobs and get the best <a href="/software-engineer-salary-dollar-dollar-bill-yall">software engineer salary</a>.</li>
+  <li>Operating in one techstack becomes boring over time. Great players become bored from doing the same thing over and over again. They branch out into a different technology to keep themselves engaged at work.</li>
+</ol>
+
+<h3 id="how-do-you-become-an-athlete">How do you become an athlete</h3>
+
+<p><img src="/assets/images/cat_workout.gif" alt="Cat workout" /></p>
+
+<h4 id="demonstrate-the-can-do-anything-attitude">1. Demonstrate the “can do anything” attitude</h4>
+
+<p>You have to get outside of your comfort zone and to be open to diving into any technology. It sounds crazy, and you’ll be surprised how far apart it puts you against your competition. You make your team a lot stronger and lot more resilient by being able to deliver quality work in any techstack. It is true that you don’t go deep into a specific technology and it doesn’t matter as much since you’re already an expert in one techstack. At some point, your team will lose an engineer and the ability to jump in and help out is crucial for the business.</p>
+
+<h4 id="pay-attention-to-the-basics">2. Pay attention to the basics</h4>
+
+<blockquote>
+  <p>Focus on fundamentals, the rest will change anyway</p>
+</blockquote>
+
+<p>As you get comfortable with changing techstacks, you’ll see that fundamentals stay the same in every single one of them. Whether you’re a web developer writing your next project in Javascript or doing app development in Swift, the fundamentals are the same. All programs are compiled into machine code that gets executed on a processor. It’s true that you don’t have to worry as much about some low level aspects like memory management when using high level programming languages. You still need to understand what happens under the hood in order to build software that performs well.</p>
+
+<h4 id="stay-open-minded">3. Stay open minded</h4>
+
+<p>One phrase that I often hear from junior developers is: “I hate language X and I will never do it.”. Never say never. If you would like to step up your game, you need to appreciate a particular technology for it’s strengths. You’ll also need to know it’s weaknesses. Even though a lot of people “hate” PHP, we wouldn’t be here without it. Most of the software problems that I’ve seen are not about the language you use, it’s about your architecture.</p>
+
+<h4 id="stay-current">4. Stay current</h4>
+
+<p>I learn at least one new programming language and one new framework a year. I picked up Swift 3.0 as a language and Android as a whole new platform this year. Once you master the fundamentals and become efficient at one techstack, you’ll start recognizing patterns. It helps you to take your learning speed onto the whole another level where you can pick up pretty much any techstack quickly. The key here is to pay attention to tech industry dynamics and play around with new technologies. You never know, it may be the best tool for the job on your next project.</p>
+
+<h4 id="exercise-eat-and-sleep-well">5. Exercise, eat and sleep well</h4>
+
+<p>As you grow, your responsibilities grow with it so as the impact of your decisions. The ability to be present in a high stakes meeting or the ability to focus while coding is key. Think of yourself as an athlete that needs rest before the next race. Your brain needs rest while sleeping. Your body needs an exercise and the right nutrition to operate well. All these systems are connected and it affects your ability to execute during the day.</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Ship On Time: How to Give Accurate Software Estimates</title>
 	  <link>//ship-on-time-how-to-give-accurate-software-estimates</link>
 	  <author>Alex Tamoykin</author>
@@ -392,108 +444,6 @@ Presented: <a href="http://www.meetup.com/socal-angular/events/190913672/">SoCal
 <p>Enjoy,</p>
 
 <p>Alex</p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>Data Types in Swift</title>
-	  <link>//data-types-in-swift/</link>
-	  <author>Alex Tamoykin</author>
-	  <pubDate>2015-03-08T11:09:50-07:00</pubDate>
-	  <guid>//data-types-in-swift/</guid>
-	  <description><![CDATA[
-	     <p>I’m currently teaching a <a title="Mobile Development at General Assembly" href="https://generalassemb.ly/education/mobile-development" target="_blank">mobile development course at GA</a>. I’ll be sharing my swift lessons one by one. Lesson 1: Data Types.After reading this blog post you’ll be able to learn and use the basic data types in Swift.I’m going to briefly introduce a data type. Then I’ll show the syntax for creating it and what you can do with it.</p>
-
-<p>Ready, get set, go!</p>
-
-<h2 id="string">String</h2>
-
-<p>The String datatype is used for storing and manipulating text. You start defining a string by using a double quotes symbol following by your text. Finish defining your string by using a second double quotes symbol.</p>
-
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="s">""</span>                    <span class="c1">// an empty string</span>
-<span class="s">"hello world"</span>         <span class="c1">// a string with words</span>
-
-<span class="nf">countElements</span><span class="p">(</span><span class="s">"dude"</span><span class="p">)</span> <span class="c1">// =&gt; 4</span>
-<span class="s">"dude"</span><span class="o">.</span><span class="n">isEmpty</span>        <span class="c1">// =&gt; false</span>
-<span class="s">""</span><span class="o">.</span><span class="n">isEmpty</span>            <span class="c1">// =&gt; true</span></code></pre></figure>
-
-<h2 id="boolean">Boolean</h2>
-
-<p>A boolean can be either true or false. It’s useful in conditions inside control flow statements like if. It also helps with checking whether a certain condition is met.</p>
-
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kc">true</span>  <span class="c1">// a boolean with a value of true</span>
-<span class="kc">false</span> <span class="c1">// a boolean with a value offalse</span>
-
-<span class="k">let</span> <span class="nv">age</span> <span class="o">=</span> <span class="mi">19</span>
-<span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span> <span class="p">{</span>
-  <span class="nf">println</span><span class="p">(</span><span class="s">"Congratulations! Now you can now get a California driver license."</span><span class="p">)</span>
-<span class="p">}</span></code></pre></figure>
-
-<h2 id="range">Range</h2>
-
-<p>The Range data type is used to define a range of values. It’s very handy to define long sequences.</p>
-
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mi">0</span><span class="o">...</span><span class="mi">3</span> <span class="c1">// =&gt; 0,1,2,3</span>
-<span class="mi">0</span><span class="o">..&lt;</span><span class="mi">3</span> <span class="c1">// =&gt; 0,1,2&lt;/pre&gt;</span></code></pre></figure>
-
-<h2 id="integer">Integer</h2>
-
-<p>An integer describes a whole number without a decimal point. It’s useful for performing any sort of math on whole numbers.</p>
-
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mi">1</span>     <span class="c1">// an integer with a value of 1</span>
-
-<span class="mi">1</span> <span class="o">-</span> <span class="mi">2</span> <span class="c1">// =&gt; -1</span>
-<span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span> <span class="c1">// =&gt; 5</span>
-<span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="c1">// =&gt; 4</span></code></pre></figure>
-
-<h2 id="double--float">Double / Float</h2>
-
-<p>Doubles and Floats are used for numbers with precision. A double is twice as precise as a float.</p>
-
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="mf">4.2</span> <span class="c1">// a double with a value of 4.2</span>
-
-<span class="k">let</span> <span class="nv">my_float</span> <span class="p">:</span> <span class="kt">Float</span> <span class="o">=</span> <span class="mf">4.2</span> <span class="c1">// If you want to use float to consume some memory, you'll need to explicitly specify avariable'stype&lt;/pre&gt;</span></code></pre></figure>
-
-<h2 id="array">Array</h2>
-
-<p>Array is a zero indexed, ordered collection of elements.Arrays come in handy when you need to store and operate on a collection of elements.</p>
-
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="p">[</span><span class="s">"a"</span><span class="p">,</span><span class="s">"b"</span><span class="p">,</span><span class="s">"c"</span><span class="p">,</span><span class="s">"d"</span><span class="p">]</span>    <span class="c1">// an array of characters</span>
-<span class="p">[</span><span class="mf">1.2</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="mf">6.7</span><span class="p">,</span> <span class="mf">5.6</span><span class="p">]</span> <span class="c1">// an array of numbers</span>
-
-<span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="o">+</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>        <span class="c1">// =&gt; [1,2,3,4]</span>
-<span class="k">let</span> <span class="nv">my_array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]</span>
-<span class="n">my_array</span><span class="o">.</span><span class="n">count</span>       <span class="c1">// =&gt; 4</span>
-
-<span class="c1">// retrieving the first element of an array</span>
-<span class="n">my_array</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>          <span class="c1">// =&gt; 1</span></code></pre></figure>
-
-<h2 id="dictionary">Dictionary</h2>
-
-<p>A dictionary is a collection of key value pairs. A value is stored and retrieved from a dictionary by it’s key. Dictionaries are useful for managing different sets of data. For example keeping a track of heroes and their superpowers 😉</p>
-
-<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="c1">// A dictionary with 3 key value pairs</span>
-<span class="k">var</span> <span class="nv">heroes</span> <span class="o">=</span> <span class="p">[</span>
- <span class="s">"wonder_woman"</span><span class="p">:</span> <span class="p">[</span><span class="s">"strong"</span><span class="p">],</span>
- <span class="s">"aqua_man"</span><span class="p">:</span> <span class="p">[</span><span class="s">"can breathe underwater"</span><span class="p">],</span>
- <span class="s">"wonder twins"</span><span class="p">:</span> <span class="p">[</span><span class="s">"take forms of other things"</span><span class="p">]</span>
-<span class="p">]</span>
-
-<span class="c1">// retrieving values using keys</span>
-<span class="n">heroes</span><span class="p">[</span><span class="s">"wonder_woman"</span><span class="p">]</span> <span class="c1">// =&gt; strong</span>
-<span class="n">heroes</span><span class="p">[</span><span class="s">"aqua_man"</span><span class="p">]</span>     <span class="c1">// =&gt; can breathe underwater</span>
-
-<span class="c1">// inserting a new key / value pair</span>
-<span class="n">heroes</span><span class="p">[</span><span class="s">"spiderman"</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">"spidey sense"</span><span class="p">,</span> <span class="s">"throw a web"</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">pre</span><span class="o">&gt;</span></code></pre></figure>
-
-<p>Feel free to play with this code in the playgrounds. Every data type has a lot more useful methods on it.</p>
-
-<p>Enjoy,</p>
-
-<p>Alex</p>
-
-<p><em>Photo by <a href="https://www.flickr.com/photos/yukop">yukop</a></em></p>
 
 	  ]]></description>
 	</item>
