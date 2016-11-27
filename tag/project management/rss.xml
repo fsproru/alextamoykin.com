@@ -12,6 +12,64 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>3 Reasons Why Throwing More Features At The Product Doesn't Work</title>
+	  <link>//why-throwing-more-features-at-the-product-doesnt-work</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2016-11-27T00:00:00-08:00</pubDate>
+	  <guid>//why-throwing-more-features-at-the-product-doesnt-work</guid>
+	  <description><![CDATA[
+	     <p>You’ve been working on your product very hard. You’re excited to launch it and to tell the world about it. There is a lot of interesting product ideas that you incorporated into your product. You keep thinking: “Just one last feature and it will be perfect!”. Finally, you push the button, the product is live but it doesn’t perform the way you expected. Sounds familiar ? After reading this post, you’ll learn a better way that delivers a <em>better product faster</em>.</p>
+
+<h4 id="what-is-the-problem-with-adding-a-lot-of-features">What is the problem with adding a lot of features</h4>
+<p>If your awesome product has all features in the word, it’s exactly where the problem is. More features come at the cost of the following things:</p>
+
+<ol>
+  <li>The increase of a feedback loop. It takes longer to build more functionality into the product. It delays time to market and it delays getting valuable customer feedback.</li>
+  <li>You don’t know what works until you test it. You’re not your target audience. What works for you will not necessarily work for your customer.</li>
+  <li>Building a product gets harder the more features you add to it. User experience gets confusing.</li>
+</ol>
+
+<h4 id="why-using-the-agile-methodology">Why using the agile methodology</h4>
+<p>The process of planning ahead for a complete product is called <a href="https://en.wikipedia.org/wiki/Waterfall_model" target="_blank">Waterfall</a> which is best illustrated in a classic comic from <a href="http://projectcartoon.com" target="_blank">project cartoon</a>:</p>
+
+<p><img src="/assets/images/waterfall_comic.jpg" alt="Waterfall comic" /></p>
+
+<p>As you may see from the picture above, there is a fundamental disconnect between how an implementor or even a customer sees the product and what customer actually needs. After numerous companies fell into this trap, a group of smart individuals invented the methodology called Agile which solves this problem. You can find the agile definition in <a href="http://agilemanifesto.org/" target="_blank">The Agile Manifesto</a>. The main idea is to short-circuit a long iteration cycle by building the product in small increments, testing it with a real customer, and pivoting. In other words, instead of planning for a rich feature set in advance, you plan for a <em>minimum</em> feature set needed, ship it, and learn from it. <em>Then and only then</em> you decide what to build next. Here are the main advantages of agile project management:</p>
+
+<ol>
+  <li>It shortens the feedback loop so you can iterate faster.</li>
+  <li>You build a better product based on the customer input.</li>
+  <li>The team feels a greater sense of ownership since it’s more involved working with the customer.</li>
+</ol>
+
+<h4 id="how-you-can-implement-the-agile-methodology-for-your-team">How you can implement the Agile methodology for your team</h4>
+
+<div class="left-align">
+<a target="_blank" href="https://www.amazon.com/gp/product/1934356581/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1934356581&amp;linkCode=as2&amp;tag=howtoprogramb-20&amp;linkId=4ec447bfbee241d0cf58ac54d9b36686"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=US&amp;ASIN=1934356581&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=howtoprogramb-20" /></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=howtoprogramb-20&amp;l=am2&amp;o=1&amp;a=1934356581" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+</div>
+<p>If you would like to know more about Agile, I encourage you to read <a href="https://www.amazon.com/gp/product/1934356581/ref=as_li_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;camp=1789&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=1934356581&amp;linkId=be6e2304236fdbfe25fdfe58cd95926d" target="_blank">The Agile Samurai</a> from Pragmatic Programmers. It goes into greater detail about the agile process starting from inception to planning and execution.</p>
+
+<p>Agile methodology (you may also hear the term called scrum) has many flavors and each team tweaks it to come up with its own flavor. Here are the main events in Agile:</p>
+
+<h5 id="inception">Inception</h5>
+<p>Once you go through the inception process, you’ll identify roles, goals, and risks of the project. This process may take from several hours to several days for big projects. The outcome of inception is the backlog of items for the first iteration.</p>
+
+<h5 id="planning">Planning</h5>
+<p>The first inception will serve as your first planning. That being said, you’ll need to get together with your team for a planning meeting at the beginning of every iteration to make sure everybody understands what needs to be done.</p>
+
+<h5 id="daily-standup">Daily Standup</h5>
+<p>Standups are quick check-ins where you go around the room and everyone shares a status update. The goal is to track progress and identify blocking issues early.</p>
+
+<h5 id="retrospective">Retrospective</h5>
+<p>This is one of the most important parts of Agile. The team gets together at the end of the iteration to discuss what worked, what didn’t so we can iterate on the process itself. Retrospective meetings are a safe place to express your thoughts so the team can improve.</p>
+
+<h4 id="conclusion">Conclusion</h4>
+<p>Using the right tool for the job is key. We learned how the Waterfall process is different from Agile/Scrum. Which methodology is right for you is your choice. In some cases, it may be appropriate to go with a waterfall process if your product cycle is very long in your industry. For most of the tech startups, I recommend going with Agile since things move quickly and you need to invent and innovate.</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Ship On Time: How to Give Accurate Software Estimates</title>
 	  <link>//ship-on-time-how-to-give-accurate-software-estimates</link>
 	  <author>Alex Tamoykin</author>
