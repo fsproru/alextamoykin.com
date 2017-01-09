@@ -12,6 +12,59 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Objective-C Is Dead, Why and How To Build Mobile Apps in Swift.</title>
+	  <link>//objective-c-is-dead-why-and-how-to-build-mobile-apps-in-swift</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2017-01-08T00:00:00-08:00</pubDate>
+	  <guid>//objective-c-is-dead-why-and-how-to-build-mobile-apps-in-swift</guid>
+	  <description><![CDATA[
+	     <p>Even though there is a plenty of Objective-C out there, if you’re not writing Swift now, you’re way behind as a <a href="/10-steps-to-become-a-senior-software-engineer/">software engineer</a> and as an engineering organization. This blog post goes over challenges behind using the Swift programming language at a legacy project and how to overcome them.</p>
+
+<h4 id="why-swift">Why Swift</h4>
+<ul>
+  <li>At this point, Swift is becoming mainstream for iOS app development. It reached a stable place and the API doesn’t change much. There is a plenty of Swift packages.</li>
+  <li>More and more <a href="http://crunchybagel.com/building-command-line-tools-with-swift/" target="blank">command line tools</a> are written in Swift outside of mobile app development.</li>
+  <li>Swift is picking up momentum on the server-side. There are several server-side swift frameworks available already and <a href="https://swift.org/server-apis/" target="_blank">Apple is now really pushing for server-side Swift</a>.</li>
+  <li>Swift is a better language than Objective-C and <a href="http://www.infoworld.com/article/2920333/mobile-development/swift-vs-objective-c-10-reasons-the-future-favors-swift.html" target="blank">this awesome post explains pretty well why</a>. It’s faster, safer, more expressive, and more fun to work with.</li>
+  <li>Knowing Swift becomes a requirement for a mobile app developer. If it’s not a requirement for the job you’re applying for, you probably don’t want to work there anyway.</li>
+</ul>
+
+<p>I know that you may be using Objective-C and you became very efficient at it. It’s time for a change, so be a <a href="/why-developer-athletes-get-the-best-engineering-jobs">developer athlete</a> and let it go.</p>
+
+<p><img src="/assets/images/let_it_go.gif" alt="Let it go" /></p>
+
+<h4 id="starting-a-new-project-in-swift">Starting a new project in Swift</h4>
+
+<p>Back in August 2014, when I was running the engineering team at AwesomenessTV, I wouldn’t start a new project in Swift. We decided to start a project in Objective-C and migrate to Swift overtime. Here is a quick presentation from the <a href="http://www.meetup.com/LASwift/events/204003792/" target="_blank">LA Swift Meetup</a> explaining the reasoning behind it:</p>
+
+<script async="" class="speakerdeck-embed" data-id="f5daa57536c84933814d37a70730385f" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+<p>Fast forward a couple of years and my decision would be completely opposite. If you’re starting a new project now, don’t hesitate and choose the Swift language.</p>
+
+<h4 id="migrating-an-existing-objective-c-project-to-swift">Migrating an existing Objective-C project to Swift</h4>
+
+<p>Since Objective-C has been around for almost 20 years, there is a lot of useful code written. Chances are that your existing project is either written in Objective-C entirely or most of the project is written in Objective-C. No worries, here are the steps to migrate it to Swift seamlessly:</p>
+
+<h5 id="commit-to-the-swift-migration-as-a-team">Commit to the Swift migration as a team</h5>
+<div class="left-align">
+<a target="_blank" href="https://www.amazon.com/gp/product/0385528752/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0385528752&amp;linkCode=as2&amp;tag=howtoprogramb-20&amp;linkId=47210f7dd43a00a4e662ed2e85cb6129"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=US&amp;ASIN=0385528752&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=howtoprogramb-20" /></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=howtoprogramb-20&amp;l=am2&amp;o=1&amp;a=0385528752" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+</div>
+
+<p>Hopefully, you’re on the team with like-minded innovative app developers. If not, there is some work that needs to be done. Depending on your team, you may hold a team meeting where you bring your Swift migration proposal. Come prepared with a detailed plan (we’ll go over that in a bit). If you follow the <a href="/why-throwing-more-features-at-the-product-doesnt-work">Agile Methodology</a>, the best place to bring it up is a retrospective meeting. If you have some old school developers on the team, have a casual conversation with each of them separately. Tell them about your plan and ask them for their opinion. They will feel invested in the outcome. A great book on the topic is <a href="https://www.amazon.com/gp/product/0385528752/ref=as_li_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;camp=1789&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=0385528752&amp;linkId=b6b63d68a2b2afdb94968948f614f4ef" target="_blank">Switch: How to Change Things When Change Is Hard</a>.</p>
+
+<h5 id="start-writing-tests-and-new-code-in-swift">Start writing tests and new code in Swift</h5>
+<p>Migrating the entire Objective-C codebase to Swift in one shot doesn’t make sense. The benefit of re-writing things in Swift is to improve your code and to make a solid foundation for future changes. If there is some solid Objective-C code in the app that works well and you don’t have to modify it, it doesn’t make sense to re-write it. Focus on new code. The two obvious candidates are your new tests and new code files. Set up your <a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html" target="_blank">Objective-C bridging header</a>, start writing new files and in Swift and just reuse the existing Objective-C code. Create <a href="https://developer.apple.com/library/content/documentation/Swift/Conceptual/Swift_Programming_Language/Extensions.html" target="_blank">Swift Extensions</a> for an already existing Objective-C class if it makes sense.</p>
+
+<h5 id="if-youre-modifying-an-objective-c-file-convert-it-to-swift">If you’re modifying an Objective-C file, convert it to Swift</h5>
+<p>If your files are small in size, converting an Objective-C file to Swift may be a straightforward talk as you’re in it. I do it pretty frequently and it’s a great way to make progress on the Swift migration without sacrificing feature velocity.</p>
+
+<h4 id="final-words">Final words</h4>
+<p>It’s the best time to be an iOS mobile app developer. Swift is a fantastic programming language and the mobile app industry is a great place to be in. There are new exciting mobile apps built every day. In order to make this world better, we need a better language. So leave the legacy behind and innovate!</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Test Driven Development with Xcode</title>
 	  <link>//test-driven-development-with-xcode/</link>
 	  <author>Alex Tamoykin</author>
