@@ -18,9 +18,9 @@
 	  <pubDate>2016-11-27T00:00:00-08:00</pubDate>
 	  <guid>//why-throwing-more-features-at-the-product-doesnt-work</guid>
 	  <description><![CDATA[
-	     <p>You’ve been working on your product very hard. You’re excited to launch it and to tell the world about it. There is a lot of interesting product ideas that you incorporated into your product. You keep thinking: “Just one last feature and it will be perfect!”. Finally, you push the button, the product is live but it doesn’t perform the way you expected. Sounds familiar ? After reading this post, you’ll learn a better way that delivers a <em>better product faster</em>.</p>
+	     <p>You’ve been working on your product very hard. You’re excited to launch it. There is a lot of interesting product ideas that you incorporated into your product. You keep thinking: “Just one last feature and it will be perfect!”. Finally, you push the button, the product is live but it doesn’t perform the way you expected. Sounds familiar ? After reading this post, you’ll learn a better way to deliver a <em>better product faster</em>.</p>
 
-<h4 id="what-is-the-problem-with-adding-a-lot-of-features">What is the problem with adding a lot of features</h4>
+<h4 id="why-adding-a-lot-of-features-slows-you-down">Why adding a lot of features slows you down</h4>
 <p>If your awesome product has all features in the word, it’s exactly where the problem is. More features come at the cost of the following things:</p>
 
 <ol>
@@ -29,7 +29,7 @@
   <li>Building a product gets harder the more features you add to it. User experience gets confusing.</li>
 </ol>
 
-<h4 id="why-using-the-agile-methodology">Why using the agile methodology</h4>
+<h4 id="agile-methodology-to-the-rescue">Agile methodology to the rescue</h4>
 <p>The process of planning ahead for a complete product is called <a href="https://en.wikipedia.org/wiki/Waterfall_model" target="_blank">Waterfall</a> which is best illustrated in a classic comic from <a href="http://projectcartoon.com" target="_blank">project cartoon</a>:</p>
 
 <p><img src="/assets/images/waterfall_comic.jpg" alt="Waterfall comic" /></p>
@@ -64,7 +64,7 @@
 <p>This is one of the most important parts of Agile. The team gets together at the end of the iteration to discuss what worked, what didn’t so we can iterate on the process itself. Retrospective meetings are a safe place to express your thoughts so the team can improve.</p>
 
 <h4 id="conclusion">Conclusion</h4>
-<p>Using the right tool for the job is key. We learned how the Waterfall process is different from Agile/Scrum. Which methodology is right for you is your choice. In some cases, it may be appropriate to go with a waterfall process if your product cycle is very long in your industry. For most of the tech startups, I recommend going with Agile since things move quickly and you need to invent and innovate.</p>
+<p>Using the right tool for the job is key. The Waterfall process is very different from Agile/Scrum. Which methodology is right for you is your choice. In some cases, it may be appropriate to go with a waterfall process if your product cycle is very long in your industry. For most of the tech startups, I recommend going with Agile since things move quickly and you need to invent and innovate.</p>
 
 	  ]]></description>
 	</item>
