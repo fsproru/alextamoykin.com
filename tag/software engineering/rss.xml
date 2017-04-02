@@ -12,6 +12,53 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Why Nothing Makes Me Happier Than Deleting Code</title>
+	  <link>//why-nothing-makes-me-happier-than-deleting-code</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2017-04-02T00:00:00-07:00</pubDate>
+	  <guid>//why-nothing-makes-me-happier-than-deleting-code</guid>
+	  <description><![CDATA[
+	     <blockquote>
+  <p>Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away. - Antoine de Saint-Exupery</p>
+</blockquote>
+
+<h3 id="what">What</h3>
+<p>Wait, what? How can deleting code make you happy? Aren’t software engineers paid to write code? Great software engineers are hired to build great products. It indeed involves writing code and deleting unnecessary code makes writing new code even easier. This post explains how to leverage code deletion to your advantage as a software engineer.</p>
+
+<h3 id="why">Why</h3>
+<p>Deleting code benefits you, your team and your product. Here is why:</p>
+
+<ul>
+  <li>It makes your product easier to use.</li>
+  <li>It reduces code complexity, lowers compile times, and lowers test suite run time.</li>
+  <li>It makes developers happier. Less code, fewer problems.</li>
+</ul>
+
+<p><img src="/assets/images/less_code_fewer_problems.jpg" alt="Less Code Fewer Problems" /></p>
+
+<h3 id="how">How</h3>
+
+<h4 id="focus-on-the-core-experience">Focus on the core experience.</h4>
+<p>It’s easy to get distracted by a new shiny feature of a competitor. It’s tempting to implement <a href="/why-throwing-more-features-at-the-product-doesnt-work">more and more features</a> to enhance core user experience. At the end of the days, your core experience has to work. This is what users will come back in your app for. More additional features will distract your user from core experience which you don’t want to do.</p>
+
+<h4 id="use-analytics-to-determine-what-users-actually-use-delete-the-rest">Use analytics to determine what users actually use, delete the rest.</h4>
+<p>If you don’t have analytics in your app, you make your product and business decisions based on assumptions. In order to make a real difference in your product development, choose your direction on actual metrics. This way you can see the effect of every feature you ship. Take a look at how the app is used. It may turn out that some portions of the app or a website aren’t used as much. At this point, you can either delete it to simplify the user experience. Alternatively, it gives you a chance to rebuild the under-performing areas of the app if it makes sense to do so.</p>
+
+<h4 id="if-you-dont-need-it-delete-it">If you don’t need it, delete it.</h4>
+<p>Over and over again, I hear the concern about leaving existing code in place just in case we need it in the future. The truth is, you don’t need it most of the time. Even if you’ll need it in the future, your system will change so significantly over time so you’ll need to rewrite it anyway. At the end of the days, if you need your old code, your version control system will help you with that. This mentality goes well with the <a href="https://en.wikipedia.org/wiki/You_aren't_gonna_need_it" target="_blank">YAGNI principle</a>.</p>
+
+<h4 id="stick-to-the-kiss-principlehttpsenwikipediaorgwikikissprincipletargetblank">Stick to the <a href="https://en.wikipedia.org/wiki/KISS_principle" target="_blank">KISS principle</a>.</h4>
+<p>Keeping things simple is the best thing you can do when building complex systems. Even if building extra capabilities for your product is a more exciting thing to do from a software development perspective, no one benefits from an over-engineered system. Complex systems are hard to use, hard to maintain and it’s prone to bugs. Keep your code simple and always seek opportunities to simplify already complicated pieces of your software architecture. It will pay big dividends over time.</p>
+
+<p><img src="/assets/images/kiss.gif" alt="Kiss" /></p>
+
+<h3 id="final-words">Final words</h3>
+<p>At the end of the days, it doesn’t really matter how much code you write. What matters is how fast you can build quality software that drives the business towards success. It’s not fun to be a part of failing startup with great technology that doesn’t help the business. Nor it’s fun to be at the growing business and not being able to iterate fast because of high technical debt. In order to maintain the right balance, you need to determine what’s important for the business. Make important things work really well and leave the rest behind.</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>5 Steps To Hire Best Software Engineers. 0 to 100 real quick!</title>
 	  <link>//5-steps-to-hire-best-software-engineers-0-to-100-real-quick</link>
 	  <author>Alex Tamoykin</author>
