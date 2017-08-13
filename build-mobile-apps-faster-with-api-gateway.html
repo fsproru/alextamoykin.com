@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [[! Page Meta ]] -->
+    <title>Build Mobile Apps Faster with AWS API Gateway</title>
+    <meta name="description" content="Alex Tamoykin - Building world-class software, teams, and products." />
+    <meta name="google-site-verification" content="horxITIYTI7rrUZ219n23sjKtiQOm96bz4eOBWqWbIM" />
+    <meta name="msvalidate.01" content="4C14E46D36C2AA9FF97482F0DF51F36E" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+        <link rel="canonical" href="/" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="Alex Tamoykin" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Alex Tamoykin" />
+    <meta property="og:description" content="Building world-class software, teams, and products." />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/assets/images/cover1.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alex Tamoykin" />
+    <meta name="twitter:description" content="Building world-class software, teams, and products." />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image:src" content="/assets/images/cover1.jpg" />
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "Alex Tamoykin",
+    "url": "/",
+    "image": "/assets/images/cover1.jpg",
+    "description": "Building world-class software, teams, and products."
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="Alex Tamoykin" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+        <li class="nav-about " role="presentation"><a href="/author/fsproru">About</a></li>
+        <li class="nav-fables " role="presentation"><a href="/tag/7-days-of-ruby">7 Days of Ruby</a></li>
+        <li class="nav-speeches " role="presentation"><a href="/tag/7-days-of-rails">Rails in 7 Days</a></li>
+        <li class="nav-speeches " role="presentation"><a href="/tag/book">Books</a></li>
+    </ul>
+    <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        <!-- < default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: url(/assets/images/night.jpg) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/"><img src="/assets/images/logo.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-speeches">
+
+        <header class="post-header">
+            <h1 class="post-title">Build Mobile Apps Faster with AWS API Gateway</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>Alex Tamoykin</a> -->
+            <time class="post-date" datetime="2017-08-12">12 Aug 2017</time>
+                <!-- [[tags prefix=" on "]] -->
+                
+                on
+                
+                    
+                       <a href='/tag/software engineering'>Software engineering</a>,
+                    
+                
+                    
+                       <a href='/tag/mobile'>Mobile</a>
+                    
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+
+            <p>As developers, we want to make sure we add the most value to our products. One of the main ways to add value to a mobile app is making a great UI. After reading this post, you’ll learn how to automate a common task of JSON parsing so you can focus on building a great UI (which is more fun to do anyway 😉)</p>
+
+<h3 id="why-we-care-about-parsing-json-data">Why we care about parsing JSON data</h3>
+
+<p>The answer is simple. Most apps are API powered. In order to make our apps useful, we need to fetch data either from our own back end API or from an external web service. A typical networking architecture for a mobile app looks like this:</p>
+
+<p><img src="/assets/images/typical_networking_architecture.jpeg" alt="Typical Networking Architecture" async="true" /></p>
+
+<p>The data is usually provided by a back end API. Which is consumed by our mobile app over HTTPS. Inside the iOS app, we have a request object responsible for sending and receiving network requests. Once the data is fetched from the network, it’s parsed from JSON and mapped to your model object. After the model object is ready, it can be used by a view controller. This data is now can be displayed in our UI.</p>
+
+<p>As you can see, even a typical networking architecture is complex. There are 4 moving pieces that require integration between each other. The more moving pieces we have in the system, the more potential bugs we have in the app.</p>
+
+<p>Imagine the world where our networking architecture is simplified and it looks like this:</p>
+
+<p><img src="/assets/images/simplified_networking_architecture.jpeg" alt="Simplified Networking Architecture" async="true" /></p>
+
+<p>This architecture is simpler, the request and the JSON parsing components go away completely. Both of these components that you had to code yourself previously are replaced by an auto-generated API Gateway package. The only thing you have to do is to integrate this package with your view controller.</p>
+
+<h3 id="what-is-api-gateway">What is API Gateway</h3>
+
+<p>Before we dive into technicalities of integrating AWS API Gateway into your app, let’s figure out what API Gateway is. API Gateway is an architecture pattern. It allows a client (in our case a mobile app) to request data from a single location (an API Gateway). Instead of requesting multiple pieces of data from different places, API gateway takes our request and figures out which service request the data from. It allows for the micro services architecture on the back end. As an added benefit, both sides (the client and the server) can be changed independently of each other. Which leads to faster release cycles and faster product delivery.</p>
+
+<p>Amazon Web Services (AWS) has its own implementation of the API Gateway pattern called AWS API Gateway. Here is how it looks:</p>
+
+<p><img src="/assets/images/api_gateway_ui.png" alt="AWS API Gateway" async="true" /></p>
+
+<p>There is a web interface available where you can define your API. You can define resources and methods like in any REST API. AWS API Gateway also has an API of its own available as an <a href="https://docs.aws.amazon.com/apigateway/api-reference/" target="_blank">HTTP API</a>. You can also access it from a <a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/" target="_blank">command line tool</a>.</p>
+
+<p>The best part about AWS API Gateway is that you can generate a client side SDK. This SDK allows you to hit the API you defined and parse a response automatically.</p>
+
+<p><img src="/assets/images/api_gateway_generate_sdk.png" alt="Generate AWS API Gateway SDK" async="true" /></p>
+
+<p>As you can see, there are several options. You can generate an SDK for your Android app, a Javascript website, iOS in Objective-C (<a href="/objective-c-is-dead-why-and-how-to-build-mobile-apps-in-swift">if you’re still stuck in the 90s</a>), iOS in Swift, and Java SDK.</p>
+
+<h3 id="how-to-integrate-aws-api-gateway-sdk-into-your-mobile-app">How to integrate AWS API Gateway SDK into your mobile app.</h3>
+
+<p>In order to integrate the auto-generated SDK into your mobile app, you’ll need to write a little bit of code. Once you set up the initial infrastructure, updating it to support new endpoints is trivial. The code below is in Swift which you can use for your iOS app. Integrating it into an Android, Javascript or a Java app is similar.</p>
+
+<h4 id="back-end-api-type-protocol">Back End API Type protocol</h4>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">protocol</span> <span class="kt">BackEndAPIType</span> <span class="p">{</span>
+  <span class="kd">func</span> <span class="nf">createUser</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">NetworkResult</span><span class="o">&lt;</span><span class="kt">User</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span>
+  <span class="o">...</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Let’s start with defining a protocol for our back end API. All our API classes will implement this protocol. In our example, it has just one function that creates a user with a name and a completion block. A completion block accepts NetworkResult. NetworkResult is a generic enum specialized with a type of our model (in our case User). Let’s dive into the NetworkResult next.</p>
+
+<h4 id="network-result">Network Result</h4>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">enum</span> <span class="kt">NetworkResult</span><span class="o">&lt;</span><span class="kt">ModelResult</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="nf">success</span><span class="p">(</span><span class="kt">ModelResult</span><span class="p">)</span>
+  <span class="k">case</span> <span class="nf">failure</span><span class="p">(</span><span class="kt">BackEndAPIError</span><span class="p">)</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>NetworkResult is an enum with two cases: success and failure. The success case has an associated value of our result model. A failure case has an associated value of a BackEndAPIError which we define next.</p>
+
+<h4 id="back-end-api-error">Back End API Error</h4>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">enum</span> <span class="kt">BackEndAPIError</span><span class="p">:</span> <span class="kt">Error</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="n">missingData</span>
+  <span class="k">case</span> <span class="n">mockConfiguration</span>
+  <span class="k">case</span> <span class="nf">other</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The BackEndAPIError enum implements the Error protocol. You can define your custom errors here. For example, return the missingData error if your request came back with no data. If none of the common cases apply, return the other case with an associated value of the error coming from the back end. Now, most of our networking infrastructure pieces are defined, let’s start making concrete implementations of the BackEndAPIType protocol.</p>
+
+<h4 id="live-back-end-api">Live Back End API</h4>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">LiveBackEndAPI</span><span class="p">:</span> <span class="kt">BackEndAPIType</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">client</span><span class="p">:</span> <span class="kt">MyBackEndAPIClient</span>
+
+  <span class="nf">init</span><span class="p">(</span><span class="nv">apiKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">baseURL</span><span class="p">:</span> <span class="kt">URL</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">client</span><span class="p">:</span> <span class="kt">MyBackEndAPIClient</span> <span class="o">=</span> <span class="kt">MyBackEndAPIClient</span><span class="o">.</span><span class="nf">default</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">client</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">apiKey</span> <span class="o">=</span> <span class="n">apiKey</span> <span class="p">{</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">apiKey</span> <span class="o">=</span> <span class="n">apiKey</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">baseURL</span> <span class="o">=</span> <span class="n">baseURL</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">endpoint</span> <span class="o">=</span> <span class="kt">AWSEndpoint</span><span class="p">(</span><span class="nv">region</span><span class="p">:</span> <span class="n">client</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">regionType</span><span class="p">,</span> <span class="nv">service</span><span class="p">:</span> <span class="o">.</span><span class="kt">APIGateway</span><span class="p">,</span> <span class="nv">url</span><span class="p">:</span> <span class="n">baseURL</span><span class="p">)</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">baseURL</span> <span class="o">=</span> <span class="n">baseURL</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">endpoint</span> <span class="o">=</span> <span class="n">endpoint</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">func</span> <span class="nf">createUser</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">NetworkResult</span><span class="o">&lt;</span><span class="kt">User</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">client</span><span class="o">.</span><span class="nf">userPost</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">continueWith</span> <span class="p">{</span> <span class="n">task</span> <span class="k">in</span>
+      <span class="k">self</span><span class="o">.</span><span class="nf">processExpectingData</span><span class="p">(</span><span class="nv">task</span><span class="p">:</span> <span class="n">task</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="n">completion</span><span class="p">)</span>
+      <span class="k">return</span> <span class="kc">nil</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">private</span> <span class="kd">private</span> <span class="kd">func</span> <span class="n">processExpectingData</span><span class="o">&lt;</span><span class="kt">Model</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">task</span><span class="p">:</span> <span class="kt">AWSTask</span><span class="o">&lt;</span><span class="kt">Model</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">NetworkResult</span><span class="o">&lt;</span><span class="kt">Model</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">error</span> <span class="p">{</span>
+      <span class="nf">completion</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="o">.</span><span class="nf">other</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="n">error</span><span class="p">)))</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">result</span> <span class="p">{</span>
+      <span class="nf">completion</span><span class="p">(</span><span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nf">completion</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="o">.</span><span class="n">missingData</span><span class="p">))</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The first implementation of the BackEndAPIType protocol is LiveBackEndAPI. As you might’ve guessed by its name, this class makes live requests to the server. LiveBackEndAPI holds the reference to the client class coming from the AWS API Gateway SDK (it’s named MyBackEndAPIClient in our case). If you have multiple environments (like development, staging, production), you can define a different set of keys for each environment and pass it inside the initializer to configure it appropriately. Once LiveBackEndAPI is initialized, we can call the AWS API Gateway provided function called userPost on the client object. It will make a real HTTP request and give us back an AWSTask class containing either an error or a result. If your request is successful, your result will contain a fully instantiated model (in our case a User) with its fields mapped to the values from the payload.</p>
+
+<h4 id="mock-back-end-api">Mock Back End API</h4>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">MockBackEndAPI</span><span class="p">:</span> <span class="kt">BackEndAPIType</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">createUser</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">NetworkResult</span><span class="o">&lt;</span><span class="kt">User</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nf">completeWithMockUser</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="n">completion</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">private</span> <span class="kd">func</span> <span class="nf">completeWithMockUser</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">NetworkResult</span><span class="o">&lt;</span><span class="kt">User</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">user</span> <span class="o">=</span> <span class="kt">User</span><span class="p">()</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nf">assertionFailure</span><span class="p">(</span><span class="s">"Failed to create a mock version of a model. Make sure the mock models are used correctly."</span><span class="p">)</span>
+      <span class="nf">completion</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="o">.</span><span class="n">mockConfiguration</span><span class="p">))</span>
+      <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="nf">completion</span><span class="p">(</span><span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="n">user</span><span class="p">))</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The second concrete implementation of our BackEndAPIType protocol is MockBackEndAPI. It doesn’t make live requests and it’s used primarily in automated tests (both UI and unit tests) and for local development. It’s very useful to use a mock API for writing a robust and a repeatable test suite. You also get a benefit of being able to develop against a non-functioning or even non-existent back end API.</p>
+
+<h4 id="default-api">Default API</h4>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">struct</span> <span class="kt">BackEndAPI</span> <span class="p">{</span>
+  <span class="kd">static</span> <span class="k">let</span> <span class="nv">APIKey</span> <span class="o">=</span> <span class="s">"super_secure_key"</span>
+  <span class="kd">static</span> <span class="k">let</span> <span class="nv">baseURL</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://api.example.com"</span><span class="p">)</span>
+
+ <span class="kd">static</span> <span class="k">var</span> <span class="nv">defaultAPI</span><span class="p">:</span> <span class="kt">BackEndAPIType</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="kt">ProcessInfo</span><span class="o">.</span><span class="n">isRunningTests</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kt">MockBackEndAPI</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">liveBackEnd</span> <span class="o">=</span> <span class="kt">LiveBackEndAPI</span><span class="p">(</span><span class="nv">apiKey</span><span class="p">:</span> <span class="kt">APIKey</span><span class="p">,</span> <span class="nv">baseURL</span><span class="p">:</span> <span class="n">baseURL</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">liveBackEnd</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The final piece of our network infrastructure is BackEndAPI. It has a static property called defaultAPI which returns us an instance of MockBackEndAPI or a LiveBackEndAPI depending on whether the process runs inside tests or not. The isRunningTests property is specific to each project. There are multiple ways of figuring out whether your process is running inside a test. One of the options is detecting an XCTest class inside the process environment or setting an environment variable of your own.</p>
+
+<h3 id="thats-it">That’s it</h3>
+
+<p><img src="/assets/images/funny_dog_2.jpg" alt="That's it" async="true" /></p>
+
+<p>As you saw, we didn’t have to write any JSON parsing code (which is tedious to write). If you update your API, you just export a new SDK, add it to your app and integrate the new endpoints with your app. It involves significantly less effort and allows you to move faster.</p>
+
+<h3 id="should-you-use-api-gateway-for-your-project">Should you use API Gateway for your project?</h3>
+
+<p>It depends. I’m a firm believer in the value of working code. If there is already an existing API in your project, even if this code is old, as long as you don’t have to touch it, there is no need to rewrite it. What you can try is migrating towards using API Gateway gradually. You can try one endpoint, see how it goes and then migrate the rest.</p>
+
+<p>On the other hand, if you’re starting on a new greenfield project I would definitely give API Gateway a shot. Especially if you’re looking to implement the micro services architecture on the back end. AWS API Gateway also integrates well with AWS Lambda, which is their severless product allowing for cost efficient request execution.</p>
+
+<h3 id="final-words">Final words</h3>
+
+<p><img src="/assets/images/focus_on_what_matters_most.jpg" alt="Focus on what matters most" async="true" /></p>
+
+<p>We covered a lot of things in this post. We found out why consuming data is important since most apps are API powered. We went over the API Gateway pattern and learned how we can simplify our app’s networking architecture to take advantage of AWS API Gateway.</p>
+
+<p>I want to leave you with one takeaway. As software engineers, we play a crucial role in human society. We build tech products which millions of people use every day. In order to continue to do so, we have to focus on what matters most. In mobile apps, the most value is in the user facing UI and the data. The plumbing in between is important and the UI and the data are more important. Using API Gateway is only one of the ways of achieving it. Your project may have a different way of delivering the most value. Let it be your challenge,  think about the ways to focus on what matters most.</p>
+
+<h3 id="more-info">More Info</h3>
+
+<ul>
+  <li>You can learn more about <a href="https://aws.amazon.com/api-gateway/" target="_blank">AWS API Gateway here</a>.</li>
+  <li>It was great presenting this talk at <a href="https://www.meetup.com/CocoaHeads-LA/events/241390659/" target="_blank">CocoaHeads LA</a>. Come join us on <a href="https://www.meetup.com/CocoaHeads-LA/" target="_blank">meetup.com</a>.</li>
+  <li>Here the <a href="https://speakerdeck.com/fsproru/build-mobile-apps-faster-with-aws-api-gateway" target="_blank">slides</a> and the video recording. Enjoy!</li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WZyiLTgmmzc" frameborder="0" allowfullscreen=""></iframe>
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/fsproru" style="background-image: url(/assets/images/alex_tamoykin_profile_pic_small.jpg)"><span class="hidden">Alex Tamoykin's Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/fsproru">Alex Tamoykin</a></h4>
+
+                
+                    <p> Alex started coding in the 5th grade of elementary school. He is an award winning software engineer and a hands on technical leader with over a decade of industry experience.</p>
+                
+            </section>
+
+            <!-- /author  -->
+
+            <!-- subscribe -->
+            <section class="primary-action">
+              <a href="http://eepurl.com/OvBfP" target="_blank"><button>SUBSCRIBE</button></a>
+
+            </section>
+
+            <!-- add Disqus Comments -->
+            
+
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/delete_key.jpg)" href="/why-nothing-makes-me-happier-than-deleting-code">
+            <section class="post">
+                <h2>Why Nothing Makes Me Happier Than Deleting Code</h2>
+                <p>Perfection is achieved, not when there is nothing more to add, but when there is...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">Alex Tamoykin</a> &copy; 2017</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-45185368-3', 'auto');
+            ga('require', 'outboundLinkTracker');
+            ga('send', 'pageview');
+     </script>
+     <script async src="/assets/js/autotrack.js"></script>
+
+</body>
+</html>

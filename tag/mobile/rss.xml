@@ -12,6 +12,189 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Build Mobile Apps Faster with AWS API Gateway</title>
+	  <link>//build-mobile-apps-faster-with-api-gateway</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2017-08-12T00:00:00-07:00</pubDate>
+	  <guid>//build-mobile-apps-faster-with-api-gateway</guid>
+	  <description><![CDATA[
+	     <p>As developers, we want to make sure we add the most value to our products. One of the main ways to add value to a mobile app is making a great UI. After reading this post, you’ll learn how to automate a common task of JSON parsing so you can focus on building a great UI (which is more fun to do anyway 😉)</p>
+
+<h3 id="why-we-care-about-parsing-json-data">Why we care about parsing JSON data</h3>
+
+<p>The answer is simple. Most apps are API powered. In order to make our apps useful, we need to fetch data either from our own back end API or from an external web service. A typical networking architecture for a mobile app looks like this:</p>
+
+<p><img src="/assets/images/typical_networking_architecture.jpeg" alt="Typical Networking Architecture" async="true" /></p>
+
+<p>The data is usually provided by a back end API. Which is consumed by our mobile app over HTTPS. Inside the iOS app, we have a request object responsible for sending and receiving network requests. Once the data is fetched from the network, it’s parsed from JSON and mapped to your model object. After the model object is ready, it can be used by a view controller. This data is now can be displayed in our UI.</p>
+
+<p>As you can see, even a typical networking architecture is complex. There are 4 moving pieces that require integration between each other. The more moving pieces we have in the system, the more potential bugs we have in the app.</p>
+
+<p>Imagine the world where our networking architecture is simplified and it looks like this:</p>
+
+<p><img src="/assets/images/simplified_networking_architecture.jpeg" alt="Simplified Networking Architecture" async="true" /></p>
+
+<p>This architecture is simpler, the request and the JSON parsing components go away completely. Both of these components that you had to code yourself previously are replaced by an auto-generated API Gateway package. The only thing you have to do is to integrate this package with your view controller.</p>
+
+<h3 id="what-is-api-gateway">What is API Gateway</h3>
+
+<p>Before we dive into technicalities of integrating AWS API Gateway into your app, let’s figure out what API Gateway is. API Gateway is an architecture pattern. It allows a client (in our case a mobile app) to request data from a single location (an API Gateway). Instead of requesting multiple pieces of data from different places, API gateway takes our request and figures out which service request the data from. It allows for the micro services architecture on the back end. As an added benefit, both sides (the client and the server) can be changed independently of each other. Which leads to faster release cycles and faster product delivery.</p>
+
+<p>Amazon Web Services (AWS) has its own implementation of the API Gateway pattern called AWS API Gateway. Here is how it looks:</p>
+
+<p><img src="/assets/images/api_gateway_ui.png" alt="AWS API Gateway" async="true" /></p>
+
+<p>There is a web interface available where you can define your API. You can define resources and methods like in any REST API. AWS API Gateway also has an API of its own available as an <a href="https://docs.aws.amazon.com/apigateway/api-reference/" target="_blank">HTTP API</a>. You can also access it from a <a href="http://docs.aws.amazon.com/cli/latest/reference/apigateway/" target="_blank">command line tool</a>.</p>
+
+<p>The best part about AWS API Gateway is that you can generate a client side SDK. This SDK allows you to hit the API you defined and parse a response automatically.</p>
+
+<p><img src="/assets/images/api_gateway_generate_sdk.png" alt="Generate AWS API Gateway SDK" async="true" /></p>
+
+<p>As you can see, there are several options. You can generate an SDK for your Android app, a Javascript website, iOS in Objective-C (<a href="/objective-c-is-dead-why-and-how-to-build-mobile-apps-in-swift">if you’re still stuck in the 90s</a>), iOS in Swift, and Java SDK.</p>
+
+<h3 id="how-to-integrate-aws-api-gateway-sdk-into-your-mobile-app">How to integrate AWS API Gateway SDK into your mobile app.</h3>
+
+<p>In order to integrate the auto-generated SDK into your mobile app, you’ll need to write a little bit of code. Once you set up the initial infrastructure, updating it to support new endpoints is trivial. The code below is in Swift which you can use for your iOS app. Integrating it into an Android, Javascript or a Java app is similar.</p>
+
+<h4 id="back-end-api-type-protocol">Back End API Type protocol</h4>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">protocol</span> <span class="kt">BackEndAPIType</span> <span class="p">{</span>
+  <span class="kd">func</span> <span class="nf">createUser</span><span class="p">(</span>
+    <span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span>
+    <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">NetworkResult</span><span class="o">&lt;</span><span class="kt">User</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span>
+  <span class="o">...</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Let’s start with defining a protocol for our back end API. All our API classes will implement this protocol. In our example, it has just one function that creates a user with a name and a completion block. A completion block accepts NetworkResult. NetworkResult is a generic enum specialized with a type of our model (in our case User). Let’s dive into the NetworkResult next.</p>
+
+<h4 id="network-result">Network Result</h4>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">enum</span> <span class="kt">NetworkResult</span><span class="o">&lt;</span><span class="kt">ModelResult</span><span class="o">&gt;</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="nf">success</span><span class="p">(</span><span class="kt">ModelResult</span><span class="p">)</span>
+  <span class="k">case</span> <span class="nf">failure</span><span class="p">(</span><span class="kt">BackEndAPIError</span><span class="p">)</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>NetworkResult is an enum with two cases: success and failure. The success case has an associated value of our result model. A failure case has an associated value of a BackEndAPIError which we define next.</p>
+
+<h4 id="back-end-api-error">Back End API Error</h4>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">enum</span> <span class="kt">BackEndAPIError</span><span class="p">:</span> <span class="kt">Error</span> <span class="p">{</span>
+  <span class="k">case</span> <span class="n">missingData</span>
+  <span class="k">case</span> <span class="n">mockConfiguration</span>
+  <span class="k">case</span> <span class="nf">other</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="kt">Error</span><span class="p">)</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The BackEndAPIError enum implements the Error protocol. You can define your custom errors here. For example, return the missingData error if your request came back with no data. If none of the common cases apply, return the other case with an associated value of the error coming from the back end. Now, most of our networking infrastructure pieces are defined, let’s start making concrete implementations of the BackEndAPIType protocol.</p>
+
+<h4 id="live-back-end-api">Live Back End API</h4>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">LiveBackEndAPI</span><span class="p">:</span> <span class="kt">BackEndAPIType</span> <span class="p">{</span>
+  <span class="k">let</span> <span class="nv">client</span><span class="p">:</span> <span class="kt">MyBackEndAPIClient</span>
+
+  <span class="nf">init</span><span class="p">(</span><span class="nv">apiKey</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">baseURL</span><span class="p">:</span> <span class="kt">URL</span><span class="p">?</span> <span class="o">=</span> <span class="kc">nil</span><span class="p">,</span> <span class="nv">client</span><span class="p">:</span> <span class="kt">MyBackEndAPIClient</span> <span class="o">=</span> <span class="kt">MyBackEndAPIClient</span><span class="o">.</span><span class="nf">default</span><span class="p">())</span> <span class="p">{</span>
+    <span class="k">self</span><span class="o">.</span><span class="n">client</span> <span class="o">=</span> <span class="n">client</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">apiKey</span> <span class="o">=</span> <span class="n">apiKey</span> <span class="p">{</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">apiKey</span> <span class="o">=</span> <span class="n">apiKey</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">baseURL</span> <span class="o">=</span> <span class="n">baseURL</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">endpoint</span> <span class="o">=</span> <span class="kt">AWSEndpoint</span><span class="p">(</span><span class="nv">region</span><span class="p">:</span> <span class="n">client</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">regionType</span><span class="p">,</span> <span class="nv">service</span><span class="p">:</span> <span class="o">.</span><span class="kt">APIGateway</span><span class="p">,</span> <span class="nv">url</span><span class="p">:</span> <span class="n">baseURL</span><span class="p">)</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">baseURL</span> <span class="o">=</span> <span class="n">baseURL</span>
+      <span class="k">self</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">configuration</span><span class="o">.</span><span class="n">endpoint</span> <span class="o">=</span> <span class="n">endpoint</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">func</span> <span class="nf">createUser</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">NetworkResult</span><span class="o">&lt;</span><span class="kt">User</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span> <span class="p">{</span>
+    <span class="n">client</span><span class="o">.</span><span class="nf">userPost</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="n">name</span><span class="p">)</span><span class="o">.</span><span class="n">continueWith</span> <span class="p">{</span> <span class="n">task</span> <span class="k">in</span>
+      <span class="k">self</span><span class="o">.</span><span class="nf">processExpectingData</span><span class="p">(</span><span class="nv">task</span><span class="p">:</span> <span class="n">task</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="n">completion</span><span class="p">)</span>
+      <span class="k">return</span> <span class="kc">nil</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
+  <span class="kd">private</span> <span class="kd">private</span> <span class="kd">func</span> <span class="n">processExpectingData</span><span class="o">&lt;</span><span class="kt">Model</span><span class="o">&gt;</span><span class="p">(</span><span class="nv">task</span><span class="p">:</span> <span class="kt">AWSTask</span><span class="o">&lt;</span><span class="kt">Model</span><span class="o">&gt;</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">NetworkResult</span><span class="o">&lt;</span><span class="kt">Model</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="k">let</span> <span class="nv">error</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">error</span> <span class="p">{</span>
+      <span class="nf">completion</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="o">.</span><span class="nf">other</span><span class="p">(</span><span class="nv">error</span><span class="p">:</span> <span class="n">error</span><span class="p">)))</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="k">let</span> <span class="nv">result</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">result</span> <span class="p">{</span>
+      <span class="nf">completion</span><span class="p">(</span><span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nf">completion</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="o">.</span><span class="n">missingData</span><span class="p">))</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The first implementation of the BackEndAPIType protocol is LiveBackEndAPI. As you might’ve guessed by its name, this class makes live requests to the server. LiveBackEndAPI holds the reference to the client class coming from the AWS API Gateway SDK (it’s named MyBackEndAPIClient in our case). If you have multiple environments (like development, staging, production), you can define a different set of keys for each environment and pass it inside the initializer to configure it appropriately. Once LiveBackEndAPI is initialized, we can call the AWS API Gateway provided function called userPost on the client object. It will make a real HTTP request and give us back an AWSTask class containing either an error or a result. If your request is successful, your result will contain a fully instantiated model (in our case a User) with its fields mapped to the values from the payload.</p>
+
+<h4 id="mock-back-end-api">Mock Back End API</h4>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">class</span> <span class="kt">MockBackEndAPI</span><span class="p">:</span> <span class="kt">BackEndAPIType</span> <span class="p">{</span>
+    <span class="kd">func</span> <span class="nf">createUser</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">((</span><span class="kt">NetworkResult</span><span class="o">&lt;</span><span class="kt">User</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nf">completeWithMockUser</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="n">name</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="n">completion</span><span class="p">)</span>
+  <span class="p">}</span>
+
+  <span class="kd">private</span> <span class="kd">func</span> <span class="nf">completeWithMockUser</span><span class="p">(</span><span class="nv">name</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="p">((</span><span class="kt">NetworkResult</span><span class="o">&lt;</span><span class="kt">User</span><span class="o">&gt;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">))</span> <span class="p">{</span>
+    <span class="k">guard</span> <span class="k">let</span> <span class="nv">user</span> <span class="o">=</span> <span class="kt">User</span><span class="p">()</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="nf">assertionFailure</span><span class="p">(</span><span class="s">"Failed to create a mock version of a model. Make sure the mock models are used correctly."</span><span class="p">)</span>
+      <span class="nf">completion</span><span class="p">(</span><span class="o">.</span><span class="nf">failure</span><span class="p">(</span><span class="o">.</span><span class="n">mockConfiguration</span><span class="p">))</span>
+      <span class="k">return</span>
+    <span class="p">}</span>
+    <span class="n">user</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+    <span class="nf">completion</span><span class="p">(</span><span class="o">.</span><span class="nf">success</span><span class="p">(</span><span class="n">user</span><span class="p">))</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The second concrete implementation of our BackEndAPIType protocol is MockBackEndAPI. It doesn’t make live requests and it’s used primarily in automated tests (both UI and unit tests) and for local development. It’s very useful to use a mock API for writing a robust and a repeatable test suite. You also get a benefit of being able to develop against a non-functioning or even non-existent back end API.</p>
+
+<h4 id="default-api">Default API</h4>
+
+<figure class="highlight"><pre><code class="language-swift" data-lang="swift"><span class="kd">struct</span> <span class="kt">BackEndAPI</span> <span class="p">{</span>
+  <span class="kd">static</span> <span class="k">let</span> <span class="nv">APIKey</span> <span class="o">=</span> <span class="s">"super_secure_key"</span>
+  <span class="kd">static</span> <span class="k">let</span> <span class="nv">baseURL</span> <span class="o">=</span> <span class="kt">URL</span><span class="p">(</span><span class="nv">string</span><span class="p">:</span> <span class="s">"https://api.example.com"</span><span class="p">)</span>
+
+ <span class="kd">static</span> <span class="k">var</span> <span class="nv">defaultAPI</span><span class="p">:</span> <span class="kt">BackEndAPIType</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="kt">ProcessInfo</span><span class="o">.</span><span class="n">isRunningTests</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="kt">MockBackEndAPI</span><span class="p">()</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">let</span> <span class="nv">liveBackEnd</span> <span class="o">=</span> <span class="kt">LiveBackEndAPI</span><span class="p">(</span><span class="nv">apiKey</span><span class="p">:</span> <span class="kt">APIKey</span><span class="p">,</span> <span class="nv">baseURL</span><span class="p">:</span> <span class="n">baseURL</span><span class="p">)</span>
+      <span class="k">return</span> <span class="n">liveBackEnd</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>The final piece of our network infrastructure is BackEndAPI. It has a static property called defaultAPI which returns us an instance of MockBackEndAPI or a LiveBackEndAPI depending on whether the process runs inside tests or not. The isRunningTests property is specific to each project. There are multiple ways of figuring out whether your process is running inside a test. One of the options is detecting an XCTest class inside the process environment or setting an environment variable of your own.</p>
+
+<h3 id="thats-it">That’s it</h3>
+
+<p><img src="/assets/images/funny_dog_2.jpg" alt="That's it" async="true" /></p>
+
+<p>As you saw, we didn’t have to write any JSON parsing code (which is tedious to write). If you update your API, you just export a new SDK, add it to your app and integrate the new endpoints with your app. It involves significantly less effort and allows you to move faster.</p>
+
+<h3 id="should-you-use-api-gateway-for-your-project">Should you use API Gateway for your project?</h3>
+
+<p>It depends. I’m a firm believer in the value of working code. If there is already an existing API in your project, even if this code is old, as long as you don’t have to touch it, there is no need to rewrite it. What you can try is migrating towards using API Gateway gradually. You can try one endpoint, see how it goes and then migrate the rest.</p>
+
+<p>On the other hand, if you’re starting on a new greenfield project I would definitely give API Gateway a shot. Especially if you’re looking to implement the micro services architecture on the back end. AWS API Gateway also integrates well with AWS Lambda, which is their severless product allowing for cost efficient request execution.</p>
+
+<h3 id="final-words">Final words</h3>
+
+<p><img src="/assets/images/focus_on_what_matters_most.jpg" alt="Focus on what matters most" async="true" /></p>
+
+<p>We covered a lot of things in this post. We found out why consuming data is important since most apps are API powered. We went over the API Gateway pattern and learned how we can simplify our app’s networking architecture to take advantage of AWS API Gateway.</p>
+
+<p>I want to leave you with one takeaway. As software engineers, we play a crucial role in human society. We build tech products which millions of people use every day. In order to continue to do so, we have to focus on what matters most. In mobile apps, the most value is in the user facing UI and the data. The plumbing in between is important and the UI and the data are more important. Using API Gateway is only one of the ways of achieving it. Your project may have a different way of delivering the most value. Let it be your challenge,  think about the ways to focus on what matters most.</p>
+
+<h3 id="more-info">More Info</h3>
+
+<ul>
+  <li>You can learn more about <a href="https://aws.amazon.com/api-gateway/" target="_blank">AWS API Gateway here</a>.</li>
+  <li>It was great presenting this talk at <a href="https://www.meetup.com/CocoaHeads-LA/events/241390659/" target="_blank">CocoaHeads LA</a>. Come join us on <a href="https://www.meetup.com/CocoaHeads-LA/" target="_blank">meetup.com</a>.</li>
+  <li>Here the <a href="https://speakerdeck.com/fsproru/build-mobile-apps-faster-with-aws-api-gateway" target="_blank">slides</a> and the video recording. Enjoy!</li>
+</ul>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WZyiLTgmmzc" frameborder="0" allowfullscreen=""></iframe>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Objective-C Is Dead, Why and How To Build Mobile Apps in Swift.</title>
 	  <link>//objective-c-is-dead-why-and-how-to-build-mobile-apps-in-swift</link>
 	  <author>Alex Tamoykin</author>
