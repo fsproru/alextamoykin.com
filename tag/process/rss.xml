@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>alextamoykin.com</title>
+   
+   <link>http://alextamoykin.com/</link>
+   <description>Building world-class software, teams, and products.</description>
+   <language>en-us</language>
+   <managingEditor> Alex Tamoykin</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>5 Rules of Managing Technical Debt. How to Keep Moving Fast Today and Tomorrow.</title>
+	  <link>//5-rules-of-managing-technical-debt-how-to-keep-moving-fast-today-and-tomorrow</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2017-09-03T00:00:00-07:00</pubDate>
+	  <guid>//5-rules-of-managing-technical-debt-how-to-keep-moving-fast-today-and-tomorrow</guid>
+	  <description><![CDATA[
+	     <p>If you’re a nontechnical person, you probably heard the terms like <a href="https://www.agilealliance.org/project-management-and-technical-debt/" target="_blank">technical debt</a>, refactoring, and a hack before. Knowing what is technical debt helps you work productively with software engineers. This post explains what technical debt is and how to manage it efficiently.</p>
+
+<h3 id="what-is-technical-debt">What is Technical Debt</h3>
+<p>Technical debt is similar to credit card debt. You can spend some extra money now with a credit card. If you won’t pay it back shortly, you’ll be charged interest. If you don’t pay it off for a long time, the amount you owe increases drastically. This decreases your credit score which is hard to recover from.</p>
+
+<p>Taking on technical debt in software product development is very similar to it. In order to accomplish a certain feature faster in the short term, a developer can apply a hack. If the hack is not replaced with a well made out solution, the code around it decays over time. In addition to it, software is built on top of other software. We all use libraries and operating systems. Technologies change and the system needs maintenance updates as time goes by, even if there are no new features being developed. If maintenance updates are not addressed, it also increases your technical debt.</p>
+
+<p><img src="/assets/images/credit_cards.jpg" alt="Credit Card Debt" /></p>
+
+<h3 id="why-taking-on-more-technical-debt-slows-you-down">Why Taking on More Technical Debt Slows You Down</h3>
+<p>As you apply more hacks, your future development gets slower, you have more bugs in the product, and you get closer to the point when you need to start over. I’ve seen several companies in the past abandoning and rewriting their entire application from scratch since they were not able to make meaningful progress anymore.</p>
+
+<h3 id="how-to-manage-technical-debt">How to Manage Technical Debt</h3>
+
+<h4 id="get-on-the-same-page-with-engineers-and-stakeholders">Get on the same page with engineers and stakeholders</h4>
+<p>It’s crucially important for everyone on your engineering team and for stakeholders to understand what the implications of endlessly taking on technical debt. Set up and maintain high code standards and high test coverage on your engineering team. Make sure that stakeholders understand the technical debt concept and how it affects speed and quality of the product. Aligning everyone’s expectations goes a long way.</p>
+
+<h4 id="pay-it-off-right-after-you-introduced-it">Pay it off right after you introduced it</h4>
+<p>Every system has technical debt. Sometimes we need to focus on short-term goals. In this case, it’s ok to introduce technical debt <em>if and only if</em> you can pay it off right after you introduced it. The companies that ignore this important fact and continue to what seems like “moving quickly” will eventually slow down to a halt.</p>
+
+<h4 id="revisit-your-architecture-regularly">Revisit your architecture regularly</h4>
+<p>What worked several months ago will not necessarily work now. Especially in startups where businesses grow and change fast, it’s important to revisit decisions made in the past. Take your time to <a href="/why-nothing-makes-me-happier-than-deleting-code">refactor (or better yet, delete) code that no longer makes sense</a> in order to accomplish the needs of today. Bring it up with your team as a part of your <a href="/why-throwing-more-features-at-the-product-doesnt-work">retrospectives</a> and make action items to make sure it gets done.</p>
+
+<p><img src="/assets/images/make_it_rain.gif" alt="Make It Rain" /></p>
+
+<h4 id="pay-off-big-debt-incrementally">Pay off big debt incrementally</h4>
+<p>When we deal with legacy systems, it may be bigger than a task of one software engineer to re-factor it. In this case, make a plan on how you want it to look and change it one piece at the time. It’s important to maintain the vision of what you want this legacy system to be at the end.</p>
+
+<h4 id="leave-the-codebase-in-a-better-place-than-when-you-started">Leave the codebase in a better place than when you started</h4>
+<p>I can’t emphasize it enough. All that matters if everyone makes incremental progress towards making the codebase better. It’s impractical to stop feature development to get rid of all technical debt. Maintaining the right balance between feature delivery and paying off technical debt is the key.</p>
+
+<h3 id="final-words">Final Words</h3>
+<p>Every system out there has technical debt. Managing it effectively is a skill that can be learned. Technical debt is a risk. It’s best to avoid risk and sometimes you have to take it. As long as the team is disciplined about paying it off, it’s ok. At the end of the days, we all want to ship quality product and managing technical debt is a part of it.</p>
+
+<p><em>Photos are provided by <a href="https://www.flickr.com/photos/p_valdivieso/" target="_blank">p_valdivieso</a> and <a href="https://www.flickr.com/photos/smemon" target="_blank">smemon</a></em></p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

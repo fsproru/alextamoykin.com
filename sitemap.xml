@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://alextamoykin.com///5-rules-of-managing-technical-debt-how-to-keep-moving-fast-today-and-tomorrow</loc>
+<lastmod>2017-09-03T00:00:00-07:00</lastmod>
+</url>
+<url>
 <loc>http://alextamoykin.com///build-mobile-apps-faster-with-api-gateway</loc>
 <lastmod>2017-08-12T00:00:00-07:00</lastmod>
 </url>
@@ -260,6 +264,9 @@
 <loc>http://alextamoykin.com///tag/management/</loc>
 </url>
 <url>
+<loc>http://alextamoykin.com///tag/process/</loc>
+</url>
+<url>
 <loc>http://alextamoykin.com///author/fsproru/</loc>
 </url>
 <url>
@@ -279,6 +286,9 @@
 </url>
 <url>
 <loc>http://alextamoykin.com///author/fsproru/page7/</loc>
+</url>
+<url>
+<loc>http://alextamoykin.com///author/fsproru/page8/</loc>
 </url>
 <url>
 <loc>http://alextamoykin.com///page2/</loc>

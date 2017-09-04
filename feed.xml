@@ -8,6 +8,21 @@
     
       
       <item>
+        <title>5 Rules of Managing Technical Debt. How to Keep Moving Fast Today and Tomorrow.</title>
+        
+          <description>&lt;p&gt;If you’re a nontechnical person, you probably heard the terms like &lt;a href=&quot;https://www.agilealliance.org/project-management-and-technical-debt/&quot; target=&quot;_blank&quot;&gt;technical debt&lt;/a&gt;, refactoring, and a hack before. Knowing what is technical debt helps you work productively with software engineers. This post explains what technical debt is and how to manage it efficiently.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 03 Sep 2017 00:00:00 -0700</pubDate>
+        <link>
+        http://alextamoykin.com//5-rules-of-managing-technical-debt-how-to-keep-moving-fast-today-and-tomorrow</link>
+        <guid isPermaLink="true">http://alextamoykin.com//5-rules-of-managing-technical-debt-how-to-keep-moving-fast-today-and-tomorrow</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Build Mobile Apps Faster with AWS API Gateway</title>
         
           <description>&lt;p&gt;As developers, we want to make sure we add the most value to our products. One of the main ways to add value to a mobile app is making a great UI. After reading this post, you’ll learn how to automate a common task of JSON parsing so you can focus on building a great UI (which is more fun to do anyway 😉)&lt;/p&gt;
