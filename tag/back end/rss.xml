@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<channel>
+   
+      <title>alextamoykin.com</title>
+   
+   <link>http://alextamoykin.com/</link>
+   <description>Building world-class software, teams, and products.</description>
+   <language>en-us</language>
+   <managingEditor> Alex Tamoykin</managingEditor>
+   <atom:link href="rss" rel="self" type="application/rss+xml" />
+   
+	<item>
+	  <title>Serverless Microservices with AWS Lambda. How to Build a Robust and Cost Effective Back End product.</title>
+	  <link>//serverless-microservices-on-aws-lambda</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2017-10-15T00:00:00-07:00</pubDate>
+	  <guid>//serverless-microservices-on-aws-lambda</guid>
+	  <description><![CDATA[
+	     <p>You probably heard a lot of hype about the serverless technology like AWS Lambda and microservices. After reading this blog post, you’ll know about pros and cons of using serverless microservices. You’ll also know how to implement an infinitely scalable back end using microservices on AWS Lambda.</p>
+
+<h3 id="why-bother-with-serverless-microservices">Why bother with serverless microservices</h3>
+<p>Before we dive into reasons behind using serverless microservices, we need to understand the difference between microservices and a monolith.</p>
+
+<h4 id="what-is-a-monolith">What is a Monolith</h4>
+<p><img src="/assets/images/monolith.jpg" alt="Monolith" async="true" /></p>
+
+<p>A monolith is a single back end application. All code is usually located inside a single repository. The entire back end application usually runs on a single server. Even though it’s quicker to build a monolith back end in a short term with frameworks like <a href="http://rubyonrails.org/" target="_blank">Ruby on Rails</a>, <a href="https://www.djangoproject.com/" target="_blank">Django</a> or similar, it has some disadvantages in the long run. As you probably guessed, it’s harder to have multiple developers work in the same code repository as it grows bigger. The biggest disadvantage is resiliency, if there is an issue in a part of the app, the whole back end is down and your app or a website is unusable.</p>
+
+<h4 id="what-are-microservices">What are Microservices</h4>
+<p><img src="/assets/images/lights.jpg" alt="Microservices" async="true" /></p>
+
+<p>The <a href="https://en.wikipedia.org/wiki/Microservices" target="_blank">microservices</a> architecture solves these problems. The entire back end consists of multiple small services communicating with each other over HTTP or through a messaging system like <a href="https://www.rabbitmq.com/" target="_blank">RabbitMQ</a>, <a href="https://aws.amazon.com/sqs/" target="_blank">AWS SQS</a> or similar. Microservices take some time to set up. Once the core architecture is set up, you get the advantages like easy work parallelization and increased resiliency. Each developer can work on its own microservice without causing code conflicts with another developer. Each developer can develop a domain expertise allowing to develop features quicker and have a greater sense of ownership. In addition to the increased speed of development, if one microservice is down, the whole system is unaffected. Most of your app or a website functions as normal even though a small part has a problem. This way, there is no interruption of service and your business is better overall because of that.</p>
+
+<h4 id="what-is-serverless">What is serverless</h4>
+<p>Serverless is a concept that is developed recently. A traditional back end system is deployed and ran on a server or a group of servers. The advantage of a traditional server approach is that you have control over your own servers and the infrastructure behind it. One of the main disadvantages is an increased cost. Not only you have to hire <a href="https://en.wikipedia.org/wiki/DevOps" target="_blank">DevOps</a> or infrastructure engineers to build and maintain the infrastructure, you also pay for idle servers. Serverless technology solves these problems. With serverless pattern, you use a service that runs your code and maintains the infrastructure behind it. You only pay for the time it takes to process each request. AWS has a service for it called <a href="https://aws.amazon.com/lambda/" target="_blank">AWS Lambda</a>, Microsoft offers similar <a href="https://azure.microsoft.com/en-us/services/functions/" target="_blank">Azure Functions</a>, Google Cloud has <a href="https://cloud.google.com/functions/" target="_blank">Cloud Functions</a>.</p>
+
+<h3 id="how-to-implement-serverless-microservices-on-aws-lambda">How to implement serverless microservices on AWS Lambda</h3>
+<p>As you can see, serverless microservices offer increased resiliency, faster speed of development at a lower infrastructure cost.
+Let’s figure out how to implement it on AWS Lambda.</p>
+
+<h4 id="create-a-lambda-role-in-iam">Create a lambda role in IAM</h4>
+<p>In order to run your lambda on AWS, you’ll need to create a role in IAM and assign permissions to it. Go to IAM, select Roles, click “Create new role”. Attach a policy based on what resources your lambda needs to access. AWSLambdaBasicExecutionRole should work for a very basic case.</p>
+
+<h4 id="write-your-lambda">Write your lambda</h4>
+<p>Go to AWS console and choose the Lambda service, click “create function”. You can either choose from existing templates or chose to “Author from scratch”. Choose API Gateway as a trigger and click the “Next” button. As you can see on the next screen, a typical lambda consists of one function named handler. Here is an example:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">exports</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="s1">'Hello from Lambda'</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>Implement your business logic inside the handler function. Once the work is done, call the callback function. Pass null as a first parameter to your callback to indicate success. The second argument is the data returned by the function. If you would like to return a failure, return an error object as a first parameter instead. Here is an example of a lambda function indicating a failure.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">exports</span><span class="p">.</span><span class="nx">handler</span> <span class="o">=</span> <span class="p">(</span><span class="nx">event</span><span class="p">,</span> <span class="nx">context</span><span class="p">,</span> <span class="nx">callback</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="nx">callback</span><span class="p">(</span><span class="k">new</span> <span class="nb">Error</span><span class="p">(</span><span class="s2">"Execution Failed"</span><span class="p">);</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>It’s important to note that you have to call the callback function to tell the system that your lambda is done. If you don’t do so, the function keeps running unless it times out. Catch your errors and call your callback explicitly to handle errors.</p>
+
+<p>After you finished implementing your business logic, choose a Role that you created in IAM previously and hit “Next”.</p>
+
+<h4 id="api-gateway">API Gateway</h4>
+<p>AWS API Gateway is another service from AWS that helps us to receive an HTTP request. It also helps us to connect the request with our lambda for later processing. If you didn’t read the post on <a href="/build-mobile-apps-faster-with-api-gateway">developing mobile apps faster with AWS API Gateway</a>, I highly recommend it. You’ll know how to simplify even more of your infrastructure to move even faster.</p>
+
+<p>Go to the AWS API Gateway service. If you chose an existing API when you created your lambda, your lambda will be connected to the existing API. If you didn’t have any API before, a new API will be created. From here, you can customize your request, response, headers, etc. You can also create new endpoints and connect them with new lambdas. Every time a request comes in, your lambda will be invoked automatically.</p>
+
+<h4 id="lambda-environments">Lambda Environments</h4>
+<p>If you have multiple environments, you will need to create multiple versions of your lambda corresponding to each environment. <a href="https://www.npmjs.com/package/node-lambda" target="_blank">node-lambda npm package</a> handles it out of the box if you specify the –environment parameter. node-lambda also helps you automate the deployment of your lambdas. This way you can develop and test your lambda locally. You can use your version control system. It also allows you to deploy your lambdas to AWS with a single command and your changes will be available in seconds.</p>
+
+<p>Now that you have several versions of your lambda, let’s say hello-world-development and hello-world-staging, you can connect it to the same API using stage variables. Go to your API on AWS API Gateway, click on Stages. For each one of your stages, select your stage, go to the “Stage Variables” tab and create a stage variable named “environment”. For the development stage, set the environment stage variable value to “development”, set it to “staging” for the staging stage. Repeat the same for all your stages.</p>
+
+<p>The last step is configuring the lambda name based on the value of the stage variable named “environment”. Go to your AWS API Gateway, create a new resource and a method, choose the Lambda integration type. In the “Lambda Function” field, specify the name of your function followed by -${stageVariables.environment}. For example, if the name of your lambda is hello-world, enter hello-world-${stageVariables.environment}.</p>
+
+<p><img src="/assets/images/connecting_lambda_with_api_gateway.png" alt="Connecting Lambda with API Gateway" async="true" /></p>
+
+<p>Next, you’ll be prompted by an alert explaining how to grant a permission to execute your lambda with all possible values of your stage variables. Copy the command from this alert, replace ${stageVariables.environment} with your environment name. Run this command from the terminal to grant permissions. Repeat for each environment name.</p>
+
+<p><img src="/assets/images/lambda_allow_permissions.png" alt="Grant permissions for each lambda environment" async="true" /></p>
+
+<h4 id="warm-up-times">Warm up times</h4>
+<p>Another thing to take into consideration is warm up times. Since a lambda is ephemeral it’s not running all the time like traditional servers. The very first request usually takes several seconds to warm up any lambda. Subsequent requests are processed quickly. If you develop a real-time API with AWS Lambda, consider setting up Cloud Watch triggers to keep real-time lambdas always warm.</p>
+
+<h3 id="final-words">Final words</h3>
+<p>Serverless microservices is a cost effective way to develop a resilient back end faster. It takes a little work up front to set it up. Once it’s set up, you start developing your lambdas which are isolated and “infinitely” scalable. This way you can spend more time developing your business logic instead of supporting the infrastructure behind it.</p>
+
+<p>The main takeaway is that you have to think about your application requirements today and tomorrow. I’ve seen so many companies implementing a monolith infrastructure in a hurry, getting stuck with it later, scratching it and starting over again. In order to set yourself up for success, your system needs to be extensible so you can change the pieces of it without affecting the whole system. Microservices is one way of doing it. Think about how you can make your system modular on your project.</p>
+
+<p><em>Thanks to <a href="https://www.flickr.com/photos/otubo" target="_blank">otubo</a>, <a href="https://www.flickr.com/photos/timparkinson" target="_blank">timparkinson</a>, and <a href="https://www.flickr.com/photos/kwanie" target="_blank">kwanie</a> for providing awesome images.</em></p>
+
+	  ]]></description>
+	</item>
+
+
+</channel>
+</rss>

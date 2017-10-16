@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://alextamoykin.com///serverless-microservices-on-aws-lambda</loc>
+<lastmod>2017-10-15T00:00:00-07:00</lastmod>
+</url>
+<url>
 <loc>http://alextamoykin.com///5-rules-of-managing-technical-debt-how-to-keep-moving-fast-today-and-tomorrow</loc>
 <lastmod>2017-09-03T00:00:00-07:00</lastmod>
 </url>
@@ -291,24 +295,6 @@
 <loc>http://alextamoykin.com///tag/process/</loc>
 </url>
 <url>
-<loc>http://alextamoykin.com///page2/</loc>
-</url>
-<url>
-<loc>http://alextamoykin.com///page3/</loc>
-</url>
-<url>
-<loc>http://alextamoykin.com///page4/</loc>
-</url>
-<url>
-<loc>http://alextamoykin.com///page5/</loc>
-</url>
-<url>
-<loc>http://alextamoykin.com///page6/</loc>
-</url>
-<url>
-<loc>http://alextamoykin.com///page7/</loc>
-</url>
-<url>
-<loc>http://alextamoykin.com///page8/</loc>
+<loc>http://alextamoykin.com///tag/back%2520end/</loc>
 </url>
 </urlset>
