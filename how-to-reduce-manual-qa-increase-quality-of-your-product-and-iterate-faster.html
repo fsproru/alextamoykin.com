@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- [[! Document Settings ]] -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- [[! Page Meta ]] -->
+    <title>How to Reduce Manual QA, Increase Product Quality and Iterate Faster</title>
+    <meta name="description" content="Alex Tamoykin - Building world-class software, teams, and products." />
+    <meta name="google-site-verification" content="horxITIYTI7rrUZ219n23sjKtiQOm96bz4eOBWqWbIM" />
+    <meta name="msvalidate.01" content="4C14E46D36C2AA9FF97482F0DF51F36E" />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" >
+
+    <!-- [[! Styles'n'Scripts ]] -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/screen.css" />
+    <link rel="stylesheet" type="text/css"
+          href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/syntax.css" />
+
+    <!-- [[! highlight.js ]] -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/styles/default.min.css">
+    <style>.hljs { background: none; }</style>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.3.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- [[! Ghost outputs important style and meta data with this tag ]] -->
+        <link rel="canonical" href="/" />
+    <meta name="referrer" content="origin" />
+    <link rel="next" href="/page2/" />
+
+    <meta property="og:site_name" content="Alex Tamoykin" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Alex Tamoykin" />
+    <meta property="og:description" content="Building world-class software, teams, and products." />
+    <meta property="og:url" content="/" />
+    <meta property="og:image" content="/assets/images/cover1.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Alex Tamoykin" />
+    <meta name="twitter:description" content="Building world-class software, teams, and products." />
+    <meta name="twitter:url" content="/" />
+    <meta name="twitter:image:src" content="/assets/images/cover1.jpg" />
+
+    <script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "Website",
+    "publisher": "Alex Tamoykin",
+    "url": "/",
+    "image": "/assets/images/cover1.jpg",
+    "description": "Building world-class software, teams, and products."
+}
+    </script>
+
+    <meta name="generator" content="Jekyll 3.0.0" />
+    <link rel="alternate" type="application/rss+xml" title="Alex Tamoykin" href="/feed.xml" />
+
+
+</head>
+<body class="home-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
+        <li class="nav-about " role="presentation"><a href="/author/fsproru">About</a></li>
+        <li class="nav-fables " role="presentation"><a href="/tag/7-days-of-ruby">7 Days of Ruby</a></li>
+        <li class="nav-speeches " role="presentation"><a href="/tag/7-days-of-rails">Rails in 7 Days</a></li>
+        <li class="nav-speeches " role="presentation"><a href="/tag/book">Books</a></li>
+    </ul>
+    <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        <!-- [[! Everything else gets inserted here ]] -->
+        <!-- < default -->
+
+<!-- The comment above "< default" means - insert everything in this file into -->
+    <!-- the [body] of the default.hbs template, which contains our header/footer. -->
+
+<!-- Everything inside the #post tags pulls data from the post -->
+<!-- #post -->
+
+<header class="main-header post-head " style="background-image: url(/assets/images/wind_turbine.jpeg) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/"><img src="/assets/images/logo.png" alt="Blog Logo" /></a>
+        
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        
+    </nav>
+</header>
+
+<main class="content" role="main">
+
+    <article class="post tag-speeches">
+
+        <header class="post-header">
+            <h1 class="post-title">How to Reduce Manual QA, Increase Product Quality and Iterate Faster</h1>
+            <section class="post-meta">
+            <!-- <a href='/'>Alex Tamoykin</a> -->
+            <time class="post-date" datetime="2017-11-12">12 Nov 2017</time>
+                <!-- [[tags prefix=" on "]] -->
+                
+                on
+                
+                    
+                       <a href='/tag/software engineering'>Software engineering</a>,
+                    
+                
+                    
+                       <a href='/tag/process'>Process</a>,
+                    
+                
+                    
+                       <a href='/tag/management'>Management</a>,
+                    
+                
+                    
+                       <a href='/tag/product management'>Product management</a>,
+                    
+                
+                    
+                       <a href='/tag/project management'>Project management</a>
+                    
+                
+                
+            </section>
+        </header>
+
+        <section class="post-content">
+
+            <p>Product development is a very complex task involving ideation, product and project management, design, software engineering and testing. As you develop more features, manually testing every feature becomes impossible over time. The number of bugs increases and the development cycle slows down. This post demonstrates how to automate your quality assurance efforts to increase the quality of your product and iterate faster.</p>
+
+<h3 id="why-reduce-manual-qa">Why reduce manual QA</h3>
+<p>Let’s take a look at a typical software development cycle with only manual QA.</p>
+
+<p><img src="/assets/images/development_cycle_with_manual_qa.jpg" alt="Software Development Cycle with Manual QA" async="true" /></p>
+
+<p>Let’s say you have two teams, a software development team, and a QA team. Software engineers only write application code, the QA team tests the developed product. Once a new release is developed under phase 1, the software goes to the QA team. The QA team executes manual tests by going through the user interface and making sure the product works right in phase 2. If a bug is found in phase 3, the QA team tells the development team how to reproduce the bug. Sometimes a product manager is involved to prioritize bug fixes to go in certain releases. As you can see, it’s a complex process involving communication between developers and QA engineers on a regular basis. In addition to it, there are only so many manual tests that a human can execute per day.</p>
+
+<p><strong>Manual QA doesn’t scale well.</strong> As I mentioned previously, what happens after you develop more and more features, a number of manual tests increases and teams usually make one of the following decisions. They either hire more QA staff (which may be challenging for startups with limited capital) or execute fewer tests. Unfortunately, most of the companies I’ve seen go with the second approach which causes bugs, loss of customers, and lost revenue.</p>
+
+<p>There is another way, have computers execute tests for you.</p>
+
+<h3 id="what-are-automated-tests">What are automated tests</h3>
+<p>When you write a piece of software, you want to make sure it works correctly. Let’s say, you implemented a login screen in your mobile app. After you’re done with your task, you may go ahead, stand up the app and try logging into the system. After you move on to the next feature, you test the next feature is a similar way. As you develop more features, you can’t possibly test all features you developed to date. It will simply take you too much time to test every feature manually every time you change the code. What ends up happening is that you break previously developed functionality without even realizing it.</p>
+
+<p>That’s where automated tests come in. An automated test is a piece of code that executes your manual test. You write it once and execute it with one command any number of times you want. In the example of the login screen, you write a test that stands up the app and taps into a field with an invisible finger, enters some information and checks that the user is successfully logged in.</p>
+
+<p><img src="/assets/images/development_cycle_with_automated_qa.jpg" alt="Software Development Cycle with Automated QA" async="true" /></p>
+
+<p>As you can see from the following diagram, all 3 steps of software development happen during the same development phase. It involves fewer people, it lowers communication overhead, and increases quality (computers are more consitent at running tests than humans).</p>
+
+<h3 id="how-to-automate-your-tests">How to automate your tests</h3>
+
+<ul>
+  <li>
+    <h4 id="product-managers-to-provide-clear-requirements">Product Managers to provide clear requirements</h4>
+    <p>Developing and trying to automate an undefined product is very expensive. If requirements constantly change, both, the application code and automated tests need to be constantly rewritten. In addition to it, it’s tough to identify the best testing strategy if you don’t know what kind of product you’re building. Make sure your product manager provides clear acceptance criteria for every user story.</p>
+  </li>
+  <li>
+    <h4 id="engineers-write-unit-and-integration-tests">Engineers write unit and integration tests</h4>
+    <p>The problem with a manual test is that you need to have a human executing it every single time which is expensive. If you automate your test, you spend a little more effort upfront by writing it. Then, you have your <a href="https://en.wikipedia.org/wiki/Continuous_integration" target="_blank">continuous integration</a> servers running tests for you as many times and as often as you would like.</p>
+  </li>
+  <li>
+    <h4 id="dont-automate-every-single-thing">Don’t automate every single thing</h4>
+    <p>It’s a delicate balance between what makes sense to automate and what doesn’t. You have to compare a time cost and a benefit. In some cases, an integration test gives you the most bang for the buck. In some cases, it’s easier to test an isolated piece of logic with a unit test instead.</p>
+  </li>
+  <li>
+    <h4 id="qa-engineers-test-interactions-between-systems">QA engineers test interactions between systems</h4>
+    <p>If your product consists of multiple systems (like a mobile front end, a web front end, multiple back-end services, etc), it’s important to test all pieces altogether. Software engineers make sure every system is functioning correctly. However, it doesn’t really matter if each piece works as expected if the system as a whole doesn’t work. Cross-functional tests are the toughest to write. Make sure you automate the tests you execute most often manually first to be more efficient.</p>
+  </li>
+</ul>
+
+<h3 id="final-words">Final words</h3>
+<p>Automated tests are a great way to increase quality and iterate faster. If you keep your tests healthy, you can ship your software to production at any time. It allows your business to move quicker, iterate and learn faster. Writing automated tests is an important skill for every software engineer. It takes some time to develop and it pays off big time. Every system is different. That’s why you need to constantly challenge yourself with writing fewer tests that cover more functionality.</p>
+
+
+        </section>
+
+        <footer class="post-footer">
+
+            <!-- Everything inside the #author tags pulls data from the author -->
+            <!-- #author-->
+
+            
+            <figure class="author-image">
+                <a class="img" href="/author/fsproru" style="background-image: url(/assets/images/alex_tamoykin_profile_pic_small.jpg)"><span class="hidden">Alex Tamoykin's Picture</span></a>
+            </figure>
+            
+
+            <section class="author">
+                <h4><a href="/author/fsproru">Alex Tamoykin</a></h4>
+
+                
+                    <p> Alex started coding in the 5th grade of elementary school. He is an award winning software engineer and a hands on technical leader with over a decade of industry experience.</p>
+                
+            </section>
+
+            <!-- /author  -->
+
+            <!-- subscribe -->
+            <section class="primary-action">
+              <a href="http://eepurl.com/OvBfP" target="_blank"><button>SUBSCRIBE</button></a>
+
+            </section>
+
+            <!-- add Disqus Comments -->
+            
+
+        </footer>
+
+    </article>
+
+</main>
+
+<aside class="read-next">
+
+    <!-- [[! next_post ]] -->
+    
+    <!-- [[! /next_post ]] -->
+    <!-- [[! prev_post ]] -->
+    
+        <a class="read-next-story prev " style="background-image: url(/assets/images/lights_3.jpg)" href="/serverless-microservices-on-aws-lambda">
+            <section class="post">
+                <h2>Serverless Microservices with AWS Lambda. How to Build a Robust and Cost Effective Back End product.</h2>
+                <p>You probably heard a lot of hype about the serverless technology like AWS Lambda and...</p>
+            </section>
+        </a>
+    
+    <!-- [[! /prev_post ]] -->
+</aside>
+
+<!-- /post -->
+
+
+        <footer class="site-footer clearfix">
+          <section class="copyright"><a href="/">Alex Tamoykin</a> &copy; 2017</section>
+          <section class="poweredby">Proudly published with <a href="https://jekyllrb.com/">Jekyll</a> using <a href="https://github.com/biomadeira/jasper">Jasper</a></section>
+        </footer>
+    </div>
+    <!-- [[! Ghost outputs important scripts and data with this tag ]] -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- [[! The main JavaScript file for Casper ]] -->
+    <script type="text/javascript" src="/assets/js/jquery.fitvids.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js"></script>
+
+    <!-- Add Google Analytics  -->
+        <!-- Google Analytics Tracking code -->
+     <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-45185368-3', 'auto');
+            ga('require', 'outboundLinkTracker');
+            ga('send', 'pageview');
+     </script>
+     <script async src="/assets/js/autotrack.js"></script>
+
+</body>
+</html>

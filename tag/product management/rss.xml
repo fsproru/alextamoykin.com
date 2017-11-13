@@ -12,6 +12,62 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>How to Reduce Manual QA, Increase Product Quality and Iterate Faster</title>
+	  <link>//how-to-reduce-manual-qa-increase-quality-of-your-product-and-iterate-faster</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2017-11-12T00:00:00-08:00</pubDate>
+	  <guid>//how-to-reduce-manual-qa-increase-quality-of-your-product-and-iterate-faster</guid>
+	  <description><![CDATA[
+	     <p>Product development is a very complex task involving ideation, product and project management, design, software engineering and testing. As you develop more features, manually testing every feature becomes impossible over time. The number of bugs increases and the development cycle slows down. This post demonstrates how to automate your quality assurance efforts to increase the quality of your product and iterate faster.</p>
+
+<h3 id="why-reduce-manual-qa">Why reduce manual QA</h3>
+<p>Let’s take a look at a typical software development cycle with only manual QA.</p>
+
+<p><img src="/assets/images/development_cycle_with_manual_qa.jpg" alt="Software Development Cycle with Manual QA" async="true" /></p>
+
+<p>Let’s say you have two teams, a software development team, and a QA team. Software engineers only write application code, the QA team tests the developed product. Once a new release is developed under phase 1, the software goes to the QA team. The QA team executes manual tests by going through the user interface and making sure the product works right in phase 2. If a bug is found in phase 3, the QA team tells the development team how to reproduce the bug. Sometimes a product manager is involved to prioritize bug fixes to go in certain releases. As you can see, it’s a complex process involving communication between developers and QA engineers on a regular basis. In addition to it, there are only so many manual tests that a human can execute per day.</p>
+
+<p><strong>Manual QA doesn’t scale well.</strong> As I mentioned previously, what happens after you develop more and more features, a number of manual tests increases and teams usually make one of the following decisions. They either hire more QA staff (which may be challenging for startups with limited capital) or execute fewer tests. Unfortunately, most of the companies I’ve seen go with the second approach which causes bugs, loss of customers, and lost revenue.</p>
+
+<p>There is another way, have computers execute tests for you.</p>
+
+<h3 id="what-are-automated-tests">What are automated tests</h3>
+<p>When you write a piece of software, you want to make sure it works correctly. Let’s say, you implemented a login screen in your mobile app. After you’re done with your task, you may go ahead, stand up the app and try logging into the system. After you move on to the next feature, you test the next feature is a similar way. As you develop more features, you can’t possibly test all features you developed to date. It will simply take you too much time to test every feature manually every time you change the code. What ends up happening is that you break previously developed functionality without even realizing it.</p>
+
+<p>That’s where automated tests come in. An automated test is a piece of code that executes your manual test. You write it once and execute it with one command any number of times you want. In the example of the login screen, you write a test that stands up the app and taps into a field with an invisible finger, enters some information and checks that the user is successfully logged in.</p>
+
+<p><img src="/assets/images/development_cycle_with_automated_qa.jpg" alt="Software Development Cycle with Automated QA" async="true" /></p>
+
+<p>As you can see from the following diagram, all 3 steps of software development happen during the same development phase. It involves fewer people, it lowers communication overhead, and increases quality (computers are more consitent at running tests than humans).</p>
+
+<h3 id="how-to-automate-your-tests">How to automate your tests</h3>
+
+<ul>
+  <li>
+    <h4 id="product-managers-to-provide-clear-requirements">Product Managers to provide clear requirements</h4>
+    <p>Developing and trying to automate an undefined product is very expensive. If requirements constantly change, both, the application code and automated tests need to be constantly rewritten. In addition to it, it’s tough to identify the best testing strategy if you don’t know what kind of product you’re building. Make sure your product manager provides clear acceptance criteria for every user story.</p>
+  </li>
+  <li>
+    <h4 id="engineers-write-unit-and-integration-tests">Engineers write unit and integration tests</h4>
+    <p>The problem with a manual test is that you need to have a human executing it every single time which is expensive. If you automate your test, you spend a little more effort upfront by writing it. Then, you have your <a href="https://en.wikipedia.org/wiki/Continuous_integration" target="_blank">continuous integration</a> servers running tests for you as many times and as often as you would like.</p>
+  </li>
+  <li>
+    <h4 id="dont-automate-every-single-thing">Don’t automate every single thing</h4>
+    <p>It’s a delicate balance between what makes sense to automate and what doesn’t. You have to compare a time cost and a benefit. In some cases, an integration test gives you the most bang for the buck. In some cases, it’s easier to test an isolated piece of logic with a unit test instead.</p>
+  </li>
+  <li>
+    <h4 id="qa-engineers-test-interactions-between-systems">QA engineers test interactions between systems</h4>
+    <p>If your product consists of multiple systems (like a mobile front end, a web front end, multiple back-end services, etc), it’s important to test all pieces altogether. Software engineers make sure every system is functioning correctly. However, it doesn’t really matter if each piece works as expected if the system as a whole doesn’t work. Cross-functional tests are the toughest to write. Make sure you automate the tests you execute most often manually first to be more efficient.</p>
+  </li>
+</ul>
+
+<h3 id="final-words">Final words</h3>
+<p>Automated tests are a great way to increase quality and iterate faster. If you keep your tests healthy, you can ship your software to production at any time. It allows your business to move quicker, iterate and learn faster. Writing automated tests is an important skill for every software engineer. It takes some time to develop and it pays off big time. Every system is different. That’s why you need to constantly challenge yourself with writing fewer tests that cover more functionality.</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Why Nothing Makes Me Happier Than Deleting Code</title>
 	  <link>//why-nothing-makes-me-happier-than-deleting-code</link>
 	  <author>Alex Tamoykin</author>
