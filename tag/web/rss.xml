@@ -12,6 +12,50 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Developer Ethics. 5 Ways To Apply Your Unique Skill To Make A Difference</title>
+	  <link>//developer-ethics-apply-your-unique-skill-to-make-a-difference</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2018-03-11T00:00:00-08:00</pubDate>
+	  <guid>//developer-ethics-apply-your-unique-skill-to-make-a-difference</guid>
+	  <description><![CDATA[
+	     <p>As software engineers, we develop products affecting lives of millions of people every single day. This post helps you make better product and engineering decisions.</p>
+
+<h2 id="software-development-is-a-unique-skill-to-have">Software development is a unique skill to have</h2>
+
+<p>Software engineering is really hard. It may look easy on the surface, especially after doing a couple of online courses. It is relatively straightforward to build software by following a template like with <a href="http://rubyonrails.org/" target="_blank">Ruby on Rails</a>. However, no solution is perfect. Sooner or later you’ll need to deviate from the template and things get much more complicated. That’s where you need to know  <a href="https://en.wikipedia.org/wiki/Data_structure" target="_blank">data structures</a>, <a href="https://en.wikipedia.org/wiki/Big_O_notation" target="_blank">Bog O notation</a>, <a href="https://en.wikipedia.org/wiki/Software_architecture" target="_blank">software architecture</a>, and many more other things. It takes a lifetime to master all these concepts. In addition to it, software changes rapidly. Technologies that are used to be relevant 5 years ago are no longer relevant. You need to keep up with it in order to stay current. In order to really succeed in software development, the person needs to be detail oriented. That’s why there are many software developers on the job market and there are not that many good ones. If you have this unique skill to write software, you should use it wisely. In wrong hands, your software can overcharge, miss lead, or sometimes even kill people. With big power, comes great responsibility.</p>
+
+<p><img src="https://media.giphy.com/media/fItgT774J3nWw/200w_d.gif" alt="Master Yoda" async="true" /></p>
+
+<h2 id="how-to-apply-your-skill">How to apply your skill</h2>
+
+<h3 id="align-with-the-company-mission">1) Align with the company mission</h3>
+
+<p>If you’re not aligned with your company’s mission, you’re simply wasting your time. Make sure the company you work for does something you believe in. This way, you make better product decisions, you’re more engaged, and more productive. It is also better for your career since you grow as a software engineer faster at the company you’re aligned with.</p>
+
+<h3 id="keep-code-standards-high">2) Keep code standards high</h3>
+
+<p>It’s important to keep the right balance between quality and speed of delivery. We all have deadlines and milestones. Even at crunch time, keep in mind that cutting corners will backfire on you sooner or later. A bug in a system may cost you wasted developer hours, money, customers or sometimes even people’s lives. Make sure your software is solid, write automated tests, do code reviews, etc. Engineering best practices are here for a reason. That being said, sometimes you have to introduce <a href="/5-rules-of-managing-technical-debt-how-to-keep-moving-fast-today-and-tomorrow">technical debt</a>. Make sure to pay it off.</p>
+
+<h3 id="respect-privacy">3) Respect Privacy</h3>
+
+<p>Be mindful of customer data and security. Encrypt sensitive data and personally identifiable information. Put yourself in the shoes of a real customer before implementing your feature.</p>
+
+<h3 id="improve-human-society">4) Improve Human Society</h3>
+
+<p>Think about what your product does besides just making money. Is it improving people lives? Does it make us human beings better? If the answer to these question is yes, you’re in a good place. Make sure you maintain the right balance between doing good and making money. There is always a way to make both things work.</p>
+
+<h3 id="share-the-knowledge">5) Share the knowledge</h3>
+
+<p>Go beyond coding during the day and getting a paycheck. Chances are you’re using free <a href="https://opensource.org/" target="_blank">Open Source</a> packages like <a href="https://nodejs.org/" target="_blank">Node.js</a> or even <a href="https://en.wikipedia.org/wiki/Linux" target="_blank">Linux</a>. Give back to the community. There are many different ways to do it ranging from making open source contributions to writing a blog post or doing a talk at a local <a href="https://meetup.com/" target="_blank">meetup</a>. Together, we can accomplish a lot more.</p>
+
+<h2 id="final-words">Final Words</h2>
+
+<p>I hope this post inspires you to do great things. Since an early age, I always believed in improving human society using technology. Humans can build tools. It’s what got humankind this far. Software is a great tool most of us use every day. Enough talk. So go ahead and build something great.</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>10 Steps to become a Senior Software Engineer</title>
 	  <link>//10-steps-to-become-a-senior-software-engineer/</link>
 	  <author>Alex Tamoykin</author>

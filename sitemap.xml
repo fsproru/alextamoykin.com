@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://alextamoykin.com///developer-ethics-apply-your-unique-skill-to-make-a-difference</loc>
+<lastmod>2018-03-11T00:00:00-08:00</lastmod>
+</url>
+<url>
 <loc>http://alextamoykin.com///how-to-reduce-manual-qa-increase-quality-of-your-product-and-iterate-faster</loc>
 <lastmod>2017-11-12T00:00:00-08:00</lastmod>
 </url>
@@ -324,5 +328,8 @@
 </url>
 <url>
 <loc>http://alextamoykin.com///page8/</loc>
+</url>
+<url>
+<loc>http://alextamoykin.com///page9/</loc>
 </url>
 </urlset>
