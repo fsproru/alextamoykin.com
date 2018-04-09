@@ -190,6 +190,12 @@ Let’s figure out how to implement it on AWS Lambda.</p>
 <h4 id="warm-up-times">Warm up times</h4>
 <p>Another thing to take into consideration is warm up times. Since a lambda is ephemeral it’s not running all the time like traditional servers. The very first request usually takes several seconds to warm up any lambda. Subsequent requests are processed quickly. If you develop a real-time API with AWS Lambda, consider setting up Cloud Watch triggers to keep real-time lambdas always warm.</p>
 
+<h3 id="updates">Updates</h3>
+
+<p>Technology evolves quickly and I highly recommend looking into <a href="https://serverless.com" target="_blank">Serverless Framework</a>. Check out the talk I gave at <a href="https://js.la" target="_blank">js.la</a> which has some updated info on serverless:</p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/PpXIAcwDQI0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+
 <h3 id="final-words">Final words</h3>
 <p>Serverless microservices is a cost effective way to develop a resilient back end faster. It takes a little work up front to set it up. Once it’s set up, you start developing your lambdas which are isolated and “infinitely” scalable. This way you can spend more time developing your business logic instead of supporting the infrastructure behind it.</p>
 
