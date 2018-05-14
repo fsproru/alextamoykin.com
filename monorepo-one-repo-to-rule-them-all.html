@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>Developer Ethics. 5 Ways To Apply Your Unique Skill To Make A Difference - Alex Tamoykin</title>
+    <title>Monorepo. One Repo To Rule Them All. - Alex Tamoykin</title>
     <meta name="description" content="Alex Tamoykin - Building world-class software, teams, and products." />
     <meta name="google-site-verification" content="horxITIYTI7rrUZ219n23sjKtiQOm96bz4eOBWqWbIM" />
     <meta name="msvalidate.01" content="4C14E46D36C2AA9FF97482F0DF51F36E" />
@@ -91,7 +91,7 @@
 <!-- Everything inside the #post tags pulls data from the post -->
 <!-- #post -->
 
-<header class="main-header post-head " style="background-image: url(/assets/images/coding.jpeg) ">
+<header class="main-header post-head " style="background-image: url(/assets/images/monolith2.jpeg) ">
     <nav class="main-nav  overlay  clearfix">
         <a class="blog-logo" href="/"><img src="/assets/images/logo.png" alt="Blog Logo" /></a>
         
@@ -105,28 +105,16 @@
     <article class="post tag-speeches">
 
         <header class="post-header">
-            <h1 class="post-title">Developer Ethics. 5 Ways To Apply Your Unique Skill To Make A Difference</h1>
+            <h1 class="post-title">Monorepo. One Repo To Rule Them All.</h1>
             <section class="post-meta">
             <!-- <a href='/'>Alex Tamoykin</a> -->
-            <time class="post-date" datetime="2018-03-11">11 Mar 2018</time>
+            <time class="post-date" datetime="2018-05-13">13 May 2018</time>
                 <!-- [[tags prefix=" on "]] -->
                 
                 on
                 
                     
-                       <a href='/tag/career'>Career</a>,
-                    
-                
-                    
-                       <a href='/tag/mobile'>Mobile</a>,
-                    
-                
-                    
-                       <a href='/tag/software engineering'>Software engineering</a>,
-                    
-                
-                    
-                       <a href='/tag/web'>Web</a>
+                       <a href='/tag/software engineering'>Software engineering</a>
                     
                 
                 
@@ -135,39 +123,56 @@
 
         <section class="post-content">
 
-            <p>As software engineers, we develop products affecting lives of millions of people every single day. This post helps you make better product and engineering decisions.</p>
+            <p>You start having more applications as your system grows. Even if you started with something like a mobile app, you’ll need a backend for it as well as an admin portal (which is usually a website). As engineers, we’re taught to <a href="/serverless-microservices-on-aws-lambda">modularize our software</a>. This article challenges this principal proposing putting all our apps is a single repository for greater efficiency. Keep on reading to learn how.</p>
 
-<h2 id="software-development-is-a-unique-skill-to-have">Software development is a unique skill to have</h2>
+<h2 id="what-is-a-monorepo">What is a monorepo</h2>
+<p>Imagine you have a mobile app, an admin website, and your backend. Traditionally, each one of these apps lives inside its own code repository. On the other hand, you can have all your apps in a single code repository called the monorepo. This way, all apps are located in a single repo that shares the same changelog.</p>
 
-<p>Software engineering is really hard. It may look easy on the surface, especially after doing a couple of online courses. It is relatively straightforward to build software by following a template like with <a href="http://rubyonrails.org/" target="_blank">Ruby on Rails</a>. However, no solution is perfect. Sooner or later you’ll need to deviate from the template and things get much more complicated. That’s where you need to know  <a href="https://en.wikipedia.org/wiki/Data_structure" target="_blank">data structures</a>, <a href="https://en.wikipedia.org/wiki/Big_O_notation" target="_blank">Big O notation</a>, <a href="https://en.wikipedia.org/wiki/Software_architecture" target="_blank">software architecture</a>, and many more other things. It takes a lifetime to master all these concepts. In addition to it, software changes rapidly. Technologies that are used to be relevant 5 years ago are no longer relevant. You need to keep up with it in order to stay current. In order to really succeed in software development, the person needs to be detail oriented. That’s why there are many software developers on the job market and there are not that many good ones. If you have this unique skill to write software, you should use it wisely. In wrong hands, your software can overcharge, miss lead, or sometimes even kill people. With big power, comes great responsibility.</p>
+<h2 id="monorepo-advantages">Monorepo Advantages</h2>
+<p>As you probably heard <a href="https://cacm.acm.org/magazines/2016/7/204032-why-google-stores-billions-of-lines-of-code-in-a-single-repository/fulltext" target="_blank">Google</a> and <a href="https://code.facebook.com/posts/218678814984400/scaling-mercurial-at-facebook/" target="_blank">Facebook</a> use a monorepo for their projects. There are numerous reasons for it. At the end of the days, it all comes down to efficiency. Managing your code in a single repository is easier than managing it in multiple repositories. Here is an example:</p>
 
-<p><img src="https://media.giphy.com/media/fItgT774J3nWw/200w_d.gif" alt="Master Yoda" async="true" /></p>
+<h3 id="developer-efficiency">1. Developer Efficiency</h3>
+<p>If you need to make a change across all three apps in separate repositories, you’ll need to make the following steps:</p>
 
-<h2 id="how-to-apply-your-skill">How to apply your skill</h2>
+<ol>
+  <li>Make a change in the app.</li>
+  <li>Create a pull request to review the app code.</li>
+  <li>Make a change on the backend.</li>
+  <li>Create a pull request to review your backend code.</li>
+  <li>Make a change on the website.</li>
+  <li>Create another pull request to review your web code.</li>
+  <li>Merge all three.</li>
+</ol>
 
-<h3 id="align-with-the-company-mission">1) Align with the company mission</h3>
+<p>When you have all apps in a single repository, the need for making different pull requests goes away. This way, you make all changes in one pull request, have your code reviewed once and move on.</p>
 
-<p>If you’re not aligned with your company’s mission, you’re simply wasting your time. Make sure the company you work for does something you believe in. This way, you make better product decisions, you’re more engaged, and more productive. It is also better for your career since you grow as a software engineer faster at the company you’re aligned with.</p>
+<h3 id="simplified-versioning">2. Simplified Versioning</h3>
+<p>If your apps are all in different code repositories, each app has to have a different version. Maintaining and matching these versions can be tedious. Monorepo solves this problem by simply having all apps in a single repository.</p>
 
-<h3 id="keep-code-standards-high">2) Keep code standards high</h3>
+<h3 id="easier-code-sharing">3. Easier Code Sharing</h3>
+<p>Monorepo simplifies code sharing which is beneficial to the health of the codebase overall. Shared code is easier to maintain since the change in a shared component propagates to all places that use it. In addition to it, it’s just easier to move things around and extract the code into reusable components in a monorepo. In case of multiple repositories, you need to extract your code into a different repository and create multiple pull requests to use it in separate projects.</p>
 
-<p>It’s important to keep the right balance between quality and speed of delivery. We all have deadlines and milestones. Even at crunch time, keep in mind that cutting corners will backfire on you sooner or later. A bug in a system may cost you wasted developer hours, money, customers or sometimes even people’s lives. Make sure your software is solid, write automated tests, do code reviews, etc. Engineering best practices are here for a reason. That being said, sometimes you have to introduce <a href="/5-rules-of-managing-technical-debt-how-to-keep-moving-fast-today-and-tomorrow">technical debt</a>. Make sure to pay it off.</p>
+<p><img src="/assets/images/corn_sharing.gif" alt="Sharing" async="true" /></p>
 
-<h3 id="respect-privacy">3) Respect Privacy</h3>
+<h2 id="how-to-implement-a-monorepo-in-your-project">How to implement a monorepo in your project</h2>
+<p>Depending on your technical stack, there are tools out there (like <a href="https://github.com/lerna/lerna" target="_blank">Learna</a> for the Javascript world)
+which help you to implement the monorepo structure efficiently. That being said, you don’t have to use these tools if you don’t see fit. It is possible to implement monorepo yourself if it’s the best thing to do. Either way, you’ll need to deal with the following things:</p>
 
-<p>Be mindful of customer data and security. Encrypt sensitive data and personally identifiable information. Put yourself in the shoes of a real customer before implementing your feature.</p>
+<h3 id="continuous-integration">1. Continuous Integration</h3>
+<p>Since all projects are inside a single repository, you now need to determine which project has changed on each code push. If you’re using git, you can see what files are changed with the following command:</p>
 
-<h3 id="improve-human-society">4) Improve Human Society</h3>
+<figure class="highlight"><pre><code class="language-shell" data-lang="shell"><span class="gp">$ </span>git diff commitSha1..commitSha2 --name-only</code></pre></figure>
 
-<p>Think about what your product does besides just making money. Is it improving people lives? Does it make us human beings better? If the answer to these question is yes, you’re in a good place. Make sure you maintain the right balance between doing good and making money. There is always a way to make both things work.</p>
+<p>Then you can detect the project name in the diff with the tools like <em>grep</em>. This will help you to determine which project is changed so you can run the build just for this project and/or it’s dependencies. This technique allows you to keep your builds fast instead of re-running all projects on every single change which doesn’t scale well.</p>
 
-<h3 id="share-the-knowledge">5) Share the knowledge</h3>
+<h3 id="deployment">2. Deployment</h3>
+<p>Once you determine which project is changed, you can deploy just the projects that changed or the projects that rely on the changed project. Depending on your system, you’ll need to have different jobs dependent on each other. If you use <a href="https://circleci.com/" target="_blank">CircleCI</a>, it supports specifying dependencies between jobs out of the box in the version 2.0 using <a href="https://circleci.com/docs/2.0/workflows/" target="_blank">workflows</a>. Other CI/CD systems have similar capabilities.</p>
 
-<p>Go beyond coding during the day and getting a paycheck. Chances are you’re using free <a href="https://opensource.org/" target="_blank">Open Source</a> packages like <a href="https://nodejs.org/" target="_blank">Node.js</a> or even <a href="https://en.wikipedia.org/wiki/Linux" target="_blank">Linux</a>. Give back to the community. There are many different ways to do it ranging from making open source contributions to writing a blog post or doing a talk at a local <a href="https://meetup.com/" target="_blank">meetup</a>. Together, we can accomplish a lot more.</p>
+<h3 id="documentation">3. Documentation</h3>
+<p>Once all your apps are in the same repo, it’s easy to lose track of your documentation. Make sure you maintain the accurate and up to date documentation for each app. It should be crystal clear where the documentation for each app is. This way each developer can get each app up and running quickly and get to implementing features.</p>
 
-<h2 id="final-words">Final Words</h2>
-
-<p>I hope this post inspires you to do great things. Since an early age, I always believed in improving human society using technology. Humans can build tools. It’s what got humankind this far. Software is a great tool most of us use every day. Enough talk. So go ahead and build something great.</p>
+<h2 id="final-words">Final words</h2>
+<p>Time and time again I realize that you have to always challenge the status quo. Things move quickly, technologies evolve, so as our users. What worked yesterday is not necessarily what works today. Monorepo is one of the examples of it. Challenging the status quo is how we innovate and build better products. So, go ahead, challenge the way you do things, there is always a better way.</p>
 
 
         </section>
@@ -212,20 +217,13 @@
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/monolith2.jpeg)" href="/monorepo-one-repo-to-rule-them-all">
-            <section class="post">
-                <h2>Monorepo. One Repo To Rule Them All.</h2>
-                <p>You start having more applications as your system grows. Even if you started with something...</p>
-            </section>
-        </a>
-    
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/wind_turbine.jpeg)" href="/how-to-reduce-manual-qa-increase-quality-of-your-product-and-iterate-faster">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/coding.jpeg)" href="/developer-ethics-apply-your-unique-skill-to-make-a-difference">
             <section class="post">
-                <h2>How to Reduce Manual QA, Increase Product Quality and Iterate Faster</h2>
-                <p>Product development is a very complex task involving ideation, product and project management, design, software...</p>
+                <h2>Developer Ethics. 5 Ways To Apply Your Unique Skill To Make A Difference</h2>
+                <p>As software engineers, we develop products affecting lives of millions of people every single day....</p>
             </section>
         </a>
     

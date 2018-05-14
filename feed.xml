@@ -8,6 +8,21 @@
     
       
       <item>
+        <title>Monorepo. One Repo To Rule Them All.</title>
+        
+          <description>&lt;p&gt;You start having more applications as your system grows. Even if you started with something like a mobile app, you’ll need a backend for it as well as an admin portal (which is usually a website). As engineers, we’re taught to &lt;a href=&quot;/serverless-microservices-on-aws-lambda&quot;&gt;modularize our software&lt;/a&gt;. This article challenges this principal proposing putting all our apps is a single repository for greater efficiency. Keep on reading to learn how.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Sun, 13 May 2018 00:00:00 -0700</pubDate>
+        <link>
+        http://alextamoykin.com//monorepo-one-repo-to-rule-them-all</link>
+        <guid isPermaLink="true">http://alextamoykin.com//monorepo-one-repo-to-rule-them-all</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Developer Ethics. 5 Ways To Apply Your Unique Skill To Make A Difference</title>
         
           <description>&lt;p&gt;As software engineers, we develop products affecting lives of millions of people every single day. This post helps you make better product and engineering decisions.&lt;/p&gt;
