@@ -8,6 +8,21 @@
     
       
       <item>
+        <title>Do You Have To Become a Manager To Advance As a Software Engineer?</title>
+        
+          <description>&lt;p&gt;The short answer is no. Some people say you have to become a manager in order to advance in your career as a software engineer. This is not necessarily true. It depends on what company your work for, the type of work you do, and your personal preference. After reading this post, you’ll know the path to advance as a software engineer regardless of becoming a manager or not.&lt;/p&gt;
+
+</description>
+        
+        <pubDate>Fri, 10 Aug 2018 00:00:00 -0700</pubDate>
+        <link>
+        http://alextamoykin.com//do-you-have-to-become-a-manager-to-advance-as-a-software-engineer</link>
+        <guid isPermaLink="true">http://alextamoykin.com//do-you-have-to-become-a-manager-to-advance-as-a-software-engineer</guid>
+      </item>
+      
+    
+      
+      <item>
         <title>Monorepo. One Repo To Rule Them All.</title>
         
           <description>&lt;p&gt;You start having more applications as your system grows. Even if you started with something like a mobile app, you’ll need a backend for it as well as an admin portal (which is usually a website). As engineers, we’re taught to &lt;a href=&quot;/serverless-microservices-on-aws-lambda&quot;&gt;modularize our software&lt;/a&gt;. This article challenges this principal proposing putting all our apps is a single repository for greater efficiency. Keep on reading to learn how.&lt;/p&gt;

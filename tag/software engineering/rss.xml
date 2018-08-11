@@ -12,6 +12,51 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Do You Have To Become a Manager To Advance As a Software Engineer?</title>
+	  <link>//do-you-have-to-become-a-manager-to-advance-as-a-software-engineer</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2018-08-10T00:00:00-07:00</pubDate>
+	  <guid>//do-you-have-to-become-a-manager-to-advance-as-a-software-engineer</guid>
+	  <description><![CDATA[
+	     <p>The short answer is no. Some people say you have to become a manager in order to advance in your career as a software engineer. This is not necessarily true. It depends on what company your work for, the type of work you do, and your personal preference. After reading this post, you’ll know the path to advance as a software engineer regardless of becoming a manager or not.</p>
+
+<h3 id="why-advancing-in-your-career-benefits-everyone">Why advancing in your career benefits everyone</h3>
+
+<p>When you grow, you’re able to deliver a better quality product, your company gets better as a result of that. In addition to it, you solve harder challenges, <a href="/software-engineer-salary-dollar-dollar-bill-yall">make more money</a>, have more impact at the company, and it’s more fun!</p>
+
+<h3 id="how">How</h3>
+
+<p>In technology companies (i.e. companies where technology plays a major part in product development) engineering management recognizes the value of growing their engineers regardless of them becoming managers or not. Here comes a typical engineering ladder:</p>
+
+<p><img src="/assets/images/engineering_ladder_diagram.png" alt="Typical Engineering Ladder" async="true" /></p>
+
+<p>Different companies have different levels and ladders. Underlying principals stay the same. The goal of the ladder is to provide a framework for engineers to grow within the company.</p>
+
+<p>As you can see, all engineers start from Software Engineer I and make it’s way to Staff Software Engineer. A Staff Software engineer demonstrates a great level of individual contributions in addition to leading moderate size projects and teams. At this point, the engineer has a choice of focusing on management skills or technical skills. If the engineer decides to take the management track, the engineer becomes an Engineering Manager, then a Director of Engineering, VP of Engineering, and CTO. All management related roles include growing the team, hiring, people management, resource planning, and so on.</p>
+
+<div class="right-align">
+<a target="_blank" href="https://www.amazon.com/gp/product/1594484805/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1594484805&amp;linkCode=as2&amp;tag=howtoprogramb-20&amp;linkId=40f71fdebcea2a56f8f674b048a6c765"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=US&amp;ASIN=1594484805&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=howtoprogramb-20" /></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=howtoprogramb-20&amp;l=am2&amp;o=1&amp;a=1594484805" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+</div>
+
+<p>One of the basic principals of people management is keeping the team motivated. I highly recommend reading the book called <a href="https://www.amazon.com/gp/product/1594484805/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=1594484805&amp;linkId=d1dced0c8f563243a3ff97864a66a382" target="_blank">Drive by Daniel Pink.</a>. It’s a great book talking about what drives us as human beings. You want to make sure to provide people on your team with autonomy, mastery, and purpose to keep your teammates motivated. It goes over the reasons behind it with some case studies and some suggestions on implementing it at your workplace. Another good read is the all-time classic called <a href="https://www.amazon.com/gp/product/0321934113/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=0321934113&amp;linkId=df3daf1e07ef06b56ad51bbbaa32511a" target="_blank">Peopleware</a>.</p>
+
+<p>Alternatively, the engineer has a choice of staying on the technical track to become a Principal Software Engineer and then a Senior Principal Software Engineer. In this role, the engineer makes technological and architectural contributions across the entire company and improves engineering performance as a result of that.</p>
+
+<div class="right-align">
+<a target="_blank" href="https://www.amazon.com/gp/product/0134032802/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0134032802&amp;linkCode=as2&amp;tag=howtoprogramb-20&amp;linkId=993a83c211014757e438477ed1087438"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=US&amp;ASIN=0134032802&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=howtoprogramb-20" /></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=howtoprogramb-20&amp;l=am2&amp;o=1&amp;a=0134032802" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+</div>
+<p>It’s important to note that a Principal Software Engineer also has to have some managerial skills since the impact of this person’s work spans across the entire organization. There are numerous books on the subject. My favorite is <a href="https://www.amazon.com/gp/product/0134032802/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=0134032802&amp;linkId=46a5776c76ddec05de77943cb1798fba" target="_blank">The Art of Scalability</a>. It starts by describing different functions of the technical organization, how they are all connected together, and how it connects with technology. It’s interesting to note that even though the technology aspect is quite hard to implement, it’s connecting technology with business functions of the organization is what gives the best results.</p>
+
+<p>No matter which way you go, as long as you grow within the company, you’ll have more impact, bring more value and you’ll get paid more. At the end of the days, it’s just a personal preference. If you like coding and you’re not a big fan of people management, you can safely stick to the technical track. If you’re passionate about hiring, mentoring, and people management then talk to your manager about getting on the management track when the right time comes.</p>
+
+<h3 id="final-words">Final words</h3>
+
+<p>We spend so much of our life working on products. You want to make sure you’re happy at your workplace. Talk to your manager about your long-term career goals and plans. Everybody wins when you grow. Work hard, have fun and the right things will happen.</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Monorepo. One Repo To Rule Them All.</title>
 	  <link>//monorepo-one-repo-to-rule-them-all</link>
 	  <author>Alex Tamoykin</author>
@@ -656,58 +701,6 @@ Let’s figure out how to implement it on AWS Lambda.</p>
 
 <h4 id="final-words">Final words</h4>
 <p>It’s the best time to be an iOS mobile app developer. Swift is a fantastic programming language and the mobile app industry is a great place to be in. There are new exciting mobile apps built every day. In order to make this world better, we need a better language. So leave the legacy behind and innovate!</p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>Why Developer Athletes Get The Best Engineering Jobs</title>
-	  <link>//why-developer-athletes-get-the-best-engineering-jobs</link>
-	  <author>Alex Tamoykin</author>
-	  <pubDate>2016-11-13T00:00:00-08:00</pubDate>
-	  <guid>//why-developer-athletes-get-the-best-engineering-jobs</guid>
-	  <description><![CDATA[
-	     <h3 id="who-is-a-developer-athlete">Who is a developer athlete</h3>
-
-<p>Let’s first define a developer athlete. As I previously outlined in the <a href="/10-steps-to-become-a-senior-software-engineer/">10 Steps To Become a Senior Software Engineer post</a>, you can become very efficient at computer programming, then what ? Once you know your techstack in and out, it’s time to expand your horizons and become a developer athlete. A developer athlete can dive into any techstack and be productive very fast by building on existing experience in computer engineering.</p>
-
-<h3 id="why-would-you-want-to-be-a-developer-athlete">Why would you want to be a developer athlete</h3>
-
-<p>A developer athlete is a generalist computer software engineer. These kind of players are much more valuable on the team because of the following reasons:</p>
-
-<ol>
-  <li>Techstacks change frequently. The whole entire techstack changes completely every 5 years. I went through several techstack changes in my career.</li>
-  <li>The company (especially a startup) changes it’s course frequently. In order to stay agile, you have to be open to solving different problems and to using new tools. Developer athletes occupy the best engineering jobs and get the best <a href="/software-engineer-salary-dollar-dollar-bill-yall">software engineer salary</a>.</li>
-  <li>Operating in one techstack becomes boring over time. Great players become bored from doing the same thing over and over again. They branch out into a different technology to keep themselves engaged at work.</li>
-</ol>
-
-<h3 id="how-do-you-become-an-athlete">How do you become an athlete</h3>
-
-<p><img src="/assets/images/cat_workout.gif" alt="Cat workout" /></p>
-
-<h4 id="demonstrate-the-can-do-anything-attitude">1. Demonstrate the “can do anything” attitude</h4>
-
-<p>You have to get outside of your comfort zone and to be open to diving into any technology. It sounds crazy, and you’ll be surprised how far apart it puts you against your competition. You make your team a lot stronger and lot more resilient by being able to deliver quality work in any techstack. It is true that you don’t go deep into a specific technology and it doesn’t matter as much since you’re already an expert in one techstack. At some point, your team will lose an engineer and the ability to jump in and help out is crucial for the business.</p>
-
-<h4 id="pay-attention-to-the-basics">2. Pay attention to the basics</h4>
-
-<blockquote>
-  <p>Focus on fundamentals, the rest will change anyway</p>
-</blockquote>
-
-<p>As you get comfortable with changing techstacks, you’ll see that fundamentals stay the same in every single one of them. Whether you’re a web developer writing your next project in Javascript or doing app development in Swift, the fundamentals are the same. All programs are compiled into machine code that gets executed on a processor. It’s true that you don’t have to worry as much about some low level aspects like memory management when using high level programming languages. You still need to understand what happens under the hood in order to build software that performs well.</p>
-
-<h4 id="stay-open-minded">3. Stay open minded</h4>
-
-<p>One phrase that I often hear from junior developers is: “I hate language X and I will never do it.”. Never say never. If you would like to step up your game, you need to appreciate a particular technology for it’s strengths. You’ll also need to know it’s weaknesses. Even though a lot of people “hate” PHP, we wouldn’t be here without it. Most of the software problems that I’ve seen are not about the language you use, it’s about your architecture.</p>
-
-<h4 id="stay-current">4. Stay current</h4>
-
-<p>I learn at least one new programming language and one new framework a year. I picked up Swift 3.0 as a language and Android as a whole new platform this year. Once you master the fundamentals and become efficient at one techstack, you’ll start recognizing patterns. It helps you to take your learning speed onto the whole another level where you can pick up pretty much any techstack quickly. The key here is to pay attention to tech industry dynamics and play around with new technologies. You never know, it may be the best tool for the job on your next project.</p>
-
-<h4 id="exercise-eat-and-sleep-well">5. Exercise, eat and sleep well</h4>
-
-<p>As you grow, your responsibilities grow with it so as the impact of your decisions. The ability to be present in a high stakes meeting or the ability to focus while coding is key. Think of yourself as an athlete that needs rest before the next race. Your brain needs rest while sleeping. Your body needs an exercise and the right nutrition to operate well. All these systems are connected and it affects your ability to execute during the day.</p>
 
 	  ]]></description>
 	</item>

@@ -12,6 +12,51 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
+	  <title>Do You Have To Become a Manager To Advance As a Software Engineer?</title>
+	  <link>//do-you-have-to-become-a-manager-to-advance-as-a-software-engineer</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2018-08-10T00:00:00-07:00</pubDate>
+	  <guid>//do-you-have-to-become-a-manager-to-advance-as-a-software-engineer</guid>
+	  <description><![CDATA[
+	     <p>The short answer is no. Some people say you have to become a manager in order to advance in your career as a software engineer. This is not necessarily true. It depends on what company your work for, the type of work you do, and your personal preference. After reading this post, you’ll know the path to advance as a software engineer regardless of becoming a manager or not.</p>
+
+<h3 id="why-advancing-in-your-career-benefits-everyone">Why advancing in your career benefits everyone</h3>
+
+<p>When you grow, you’re able to deliver a better quality product, your company gets better as a result of that. In addition to it, you solve harder challenges, <a href="/software-engineer-salary-dollar-dollar-bill-yall">make more money</a>, have more impact at the company, and it’s more fun!</p>
+
+<h3 id="how">How</h3>
+
+<p>In technology companies (i.e. companies where technology plays a major part in product development) engineering management recognizes the value of growing their engineers regardless of them becoming managers or not. Here comes a typical engineering ladder:</p>
+
+<p><img src="/assets/images/engineering_ladder_diagram.png" alt="Typical Engineering Ladder" async="true" /></p>
+
+<p>Different companies have different levels and ladders. Underlying principals stay the same. The goal of the ladder is to provide a framework for engineers to grow within the company.</p>
+
+<p>As you can see, all engineers start from Software Engineer I and make it’s way to Staff Software Engineer. A Staff Software engineer demonstrates a great level of individual contributions in addition to leading moderate size projects and teams. At this point, the engineer has a choice of focusing on management skills or technical skills. If the engineer decides to take the management track, the engineer becomes an Engineering Manager, then a Director of Engineering, VP of Engineering, and CTO. All management related roles include growing the team, hiring, people management, resource planning, and so on.</p>
+
+<div class="right-align">
+<a target="_blank" href="https://www.amazon.com/gp/product/1594484805/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=1594484805&amp;linkCode=as2&amp;tag=howtoprogramb-20&amp;linkId=40f71fdebcea2a56f8f674b048a6c765"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=US&amp;ASIN=1594484805&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=howtoprogramb-20" /></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=howtoprogramb-20&amp;l=am2&amp;o=1&amp;a=1594484805" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+</div>
+
+<p>One of the basic principals of people management is keeping the team motivated. I highly recommend reading the book called <a href="https://www.amazon.com/gp/product/1594484805/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=1594484805&amp;linkId=d1dced0c8f563243a3ff97864a66a382" target="_blank">Drive by Daniel Pink.</a>. It’s a great book talking about what drives us as human beings. You want to make sure to provide people on your team with autonomy, mastery, and purpose to keep your teammates motivated. It goes over the reasons behind it with some case studies and some suggestions on implementing it at your workplace. Another good read is the all-time classic called <a href="https://www.amazon.com/gp/product/0321934113/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=0321934113&amp;linkId=df3daf1e07ef06b56ad51bbbaa32511a" target="_blank">Peopleware</a>.</p>
+
+<p>Alternatively, the engineer has a choice of staying on the technical track to become a Principal Software Engineer and then a Senior Principal Software Engineer. In this role, the engineer makes technological and architectural contributions across the entire company and improves engineering performance as a result of that.</p>
+
+<div class="right-align">
+<a target="_blank" href="https://www.amazon.com/gp/product/0134032802/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0134032802&amp;linkCode=as2&amp;tag=howtoprogramb-20&amp;linkId=993a83c211014757e438477ed1087438"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=US&amp;ASIN=0134032802&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=howtoprogramb-20" /></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=howtoprogramb-20&amp;l=am2&amp;o=1&amp;a=0134032802" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+</div>
+<p>It’s important to note that a Principal Software Engineer also has to have some managerial skills since the impact of this person’s work spans across the entire organization. There are numerous books on the subject. My favorite is <a href="https://www.amazon.com/gp/product/0134032802/ref=as_li_qf_asin_il_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=0134032802&amp;linkId=46a5776c76ddec05de77943cb1798fba" target="_blank">The Art of Scalability</a>. It starts by describing different functions of the technical organization, how they are all connected together, and how it connects with technology. It’s interesting to note that even though the technology aspect is quite hard to implement, it’s connecting technology with business functions of the organization is what gives the best results.</p>
+
+<p>No matter which way you go, as long as you grow within the company, you’ll have more impact, bring more value and you’ll get paid more. At the end of the days, it’s just a personal preference. If you like coding and you’re not a big fan of people management, you can safely stick to the technical track. If you’re passionate about hiring, mentoring, and people management then talk to your manager about getting on the management track when the right time comes.</p>
+
+<h3 id="final-words">Final words</h3>
+
+<p>We spend so much of our life working on products. You want to make sure you’re happy at your workplace. Talk to your manager about your long-term career goals and plans. Everybody wins when you grow. Work hard, have fun and the right things will happen.</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
 	  <title>Developer Ethics. 5 Ways To Apply Your Unique Skill To Make A Difference</title>
 	  <link>//developer-ethics-apply-your-unique-skill-to-make-a-difference</link>
 	  <author>Alex Tamoykin</author>

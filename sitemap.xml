@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://alextamoykin.com///do-you-have-to-become-a-manager-to-advance-as-a-software-engineer</loc>
+<lastmod>2018-08-10T00:00:00-07:00</lastmod>
+</url>
+<url>
 <loc>http://alextamoykin.com///monorepo-one-repo-to-rule-them-all</loc>
 <lastmod>2018-05-13T00:00:00-07:00</lastmod>
 </url>
@@ -205,6 +209,9 @@
 <loc>http://alextamoykin.com///author/fsproru/page8/</loc>
 </url>
 <url>
+<loc>http://alextamoykin.com///author/fsproru/page9/</loc>
+</url>
+<url>
 <loc>http://alextamoykin.com///tag/7-days-of-ruby/</loc>
 </url>
 <url>
@@ -239,6 +246,9 @@
 </url>
 <url>
 <loc>http://alextamoykin.com///tag/career/</loc>
+</url>
+<url>
+<loc>http://alextamoykin.com///tag/career/page2/</loc>
 </url>
 <url>
 <loc>http://alextamoykin.com///tag/software%2520engineering/</loc>
@@ -311,29 +321,5 @@
 </url>
 <url>
 <loc>http://alextamoykin.com///tag/back%2520end/</loc>
-</url>
-<url>
-<loc>http://alextamoykin.com///page2/</loc>
-</url>
-<url>
-<loc>http://alextamoykin.com///page3/</loc>
-</url>
-<url>
-<loc>http://alextamoykin.com///page4/</loc>
-</url>
-<url>
-<loc>http://alextamoykin.com///page5/</loc>
-</url>
-<url>
-<loc>http://alextamoykin.com///page6/</loc>
-</url>
-<url>
-<loc>http://alextamoykin.com///page7/</loc>
-</url>
-<url>
-<loc>http://alextamoykin.com///page8/</loc>
-</url>
-<url>
-<loc>http://alextamoykin.com///page9/</loc>
 </url>
 </urlset>
