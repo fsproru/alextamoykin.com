@@ -12,133 +12,6 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
-	  <title>10 Steps to become a Senior Software Engineer</title>
-	  <link>//why-you-should-start-learning-react-native-as-a-mobile-developer</link>
-	  <author>Alex Tamoykin</author>
-	  <pubDate>2020-03-22T15:55:16-07:00</pubDate>
-	  <guid>//why-you-should-start-learning-react-native-as-a-mobile-developer</guid>
-	  <description><![CDATA[
-	     <p>If your product needs to be in the hands of users using a mobile device, you should look into using React Native. React Native is a framework allowing you to have a single codebase powering both the iOS and the Android app. This way you have the same team working on both apps instead of hiring two different teams and keeping both apps in sync. That being said, it’s not a silver bullet, there are some gotchas. After reading this post, you’ll know when and how to use React Native for your mobile app.</p>
-
-<h2 id="what-is-react-native">What is React Native</h2>
-
-<p><a href="http://www.reactnative.com/" target="_blank">React Native</a> is a mobile framework allowing for building mobile apps with the Javascript language. The app follows the same convention of the React framework. Once the app is coded up, you can build two different distributions from a single codebase. In other words, you can have both, an iOS and an Android app done by the same developer (or a team of developers).</p>
-
-<h2 id="advantages-of-react-native">Advantages of React Native</h2>
-
-<p>Two apps for the price of one, sounds great right? That’s not exactly true, here is why:</p>
-
-<h3 id="apps-for-14-of-the-effort">2 apps for 1.4 of the effort</h3>
-
-<p>I wish it will be a real 2 for 1 and it’s not really the case. It’s more of 2 apps for 1.4 effort it would otherwise take you to build an individual app. Which is still a great win.</p>
-
-<h3 id="easier-to-maintain-the-app">Easier to maintain the app</h3>
-<p>In addition to building both apps faster with this technology, it’s easier to maintain both the iOS and the Android app. Both apps are powered by the same codebase and maintained by the same developer (or a team of developers). If you want to get really fancy, you can have your backend written in Node.js which allows you to utilize the same developer implementing each feature across the stack since it’s written in the same language.</p>
-
-<h2 id="disadvantages-of-react-native">Disadvantages of React Native</h2>
-
-<p>Even the advantages of using React Native sound exciting, you shouldn’t use it in every single project for the following reasons:</p>
-
-<h3 id="hard-to-access-native-features">Hard to access native features</h3>
-<p>When you need to fall back to the low level API like the animation framework to add some rich custom animations, you need to write native code. If you have two apps (iOS and Android), it means you need to write the native code for each platform (one in Swift/Objective-C, another one in Kotlin/Java). Writing native code requires the knowledge of two different languages and two different platforms which takes significant amount of time to learn. After you’re done writing your native components, you’ll need to integrate it back to the React Native app which is tricky. You’ll need to use a Javascript bridge between the two different runtimes (the Javascript runtime and the native runtime).</p>
-
-<h3 id="hard-to-parallelize-your-operations">Hard to parallelize your operations</h3>
-<p>The React Native app runs inside the Javascript interpreter. Even though Javascript support asynchronousity very well as a language, it doesn’t support native threads which native runtime does. If you need to do some work in the background or leverage multiple threads (in other words if you app needs to do some multitasking), you won’t be able to do it effectively in React Native. You’ll need to fallback to writing some native code which leads to the previous point.</p>
-
-<h3 id="dealing-with-different-size-devices-is-challenging">Dealing with different size devices is challenging</h3>
-<p>By having a single codebase powering both apps, you now need to support all possible screen sizes and dimensions. iOS has a set defined set of supported devices, Android on the other hand has a lot of variety. Writing your components in a way so it shows up nicely on each screen is a challenge. This is easier to achieve with two different native apps since you limit the possible screen sizes per each app.</p>
-
-<h2 id="when-you-should-use-react-native">When you should use React Native</h2>
-<p>Long story short, React Native is a great fit for utilitarian apps. It’s simple apps that don’t require a lot of advance UI features, no custom animations. In other words, I wouldn’t build the next Snapchat with it. On the other hand if you know you’ll need a not of advance UI for your product, you should consider building both apps natively. There is an option of doing most of the app in React Native and do just a little pieces of it natively as long as we need native functionality in a couple of places. That being said, you don’t want to end up in a situation where you started on one path and ended up completely on the other side.</p>
-
-<h2 id="final-words">Final Words</h2>
-<p>Technology evolves quickly. After working with technology for the most of my life, I came to a realization that the speed with which technology evolves also increases over time. We build new technologies on top of the existing ones and repeat it over and over again. As software engineers and entrepreneurs we should have a vision for the product which allows us to choose the right tool for the job. So go ahead and experiment with some new technology and see if it’s worth using it to take your product to the next level.</p>
-
-	  ]]></description>
-	</item>
-
-	<item>
-	  <title>Hidden Costs of Hiring a Software Engineer</title>
-	  <link>//hidden-costs-of-hiring-a-software-engineer</link>
-	  <author>Alex Tamoykin</author>
-	  <pubDate>2020-03-22T15:55:16-07:00</pubDate>
-	  <guid>//hidden-costs-of-hiring-a-software-engineer</guid>
-	  <description><![CDATA[
-	     <p>You did a lot of work interviewing candidates and you found the right person, congratulations! Your new software engineer will soon join the team and there are some things you should take care of before he/she comes on board. Each person has an extra cost in addition to their compensation. Knowing how much money you spend per new engineer helps you with hiring plans. Also, it makes product road-map planning process much easier. There are a lot of things to consider, but no worries, this post lists most of them.</p>
-
-<h4 id="compensation">Compensation</h4>
-<p>The highest item on almost every engineering budget is a <a href="/software-engineer-salary-dollar-dollar-bill-yall" target="_blank">software developer salary</a>. Good software engineers are well worth the money. You don’t want to be in a situation where you constantly have to clean up after a bad and cheaper engineer. It hurts morale and slows the team down. Find the right people and pay them what they’re worth.</p>
-
-<h4 id="recruitment-fees">Recruitment Fees</h4>
-<p>If you use external recruiters, they will most likely charge you from 15% to 25% of a developer annual salary. Good software engineers are not on the job market for a long time and the market is very competitive. It may be worth it for the right candidate. I recommend introducing an internal referral program where people receive a bonus when they refer a developer from their personal network.</p>
-
-<h4 id="furniture">Furniture</h4>
-
-<h5 id="desk">Desk</h5>
-<p>Your developers will spend most of their work day at the desk and you want to make sure they are comfortable. I recommend going with an adjustable desk. You can put it up or down depending on your preference and height. Since you spend most of the time typing in front of the computer, the key is to move around and a standing desk allows you to do so. There should be enough space on a table for a monitor, a laptop, a keyboard, a mouse / trackpad, etc. You can go very expensive with high-end models like <a href="https://www.geekdesk.com/" target="_blank">Geek Desk</a> or a simple <a href="http://www.ikea.com/us/en/catalog/products/S49084965/" target="_blank">standing desk from IKEA</a> will work just fine.</p>
-
-<h5 id="chair">Chair</h5>
-<p>I recommend going with an adjustable chair. It goes well with a standing desk setup. <a href="https://www.amazon.com/gp/product/B0030ZDZL8/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;camp=1789&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=B0030ZDZL8&amp;linkId=567c4bc5ba8004c9cbaa9b84523df305" target="_blank">A drafting stool from Boss Office</a> is a good enough choice or you can go with a <a href="https://www.amazon.com/gp/product/B000SMTJNO/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;camp=1789&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=B000SMTJNO&amp;linkId=accf3816166be8f2672dfe307b664e8b" target="_blank">cheaper option instead</a>.</p>
-
-<h4 id="hardware">Hardware</h4>
-<p>People have their own preferences and every project has different needs. I recommend going with a laptop and a monitor set up. It allows you to have enough real estate while working at your desk and using the same laptop at a meeting.</p>
-
-<div class="right-align">
-<a target="_blank" href="https://www.amazon.com/gp/product/B00XZGUL8W/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B00XZGUL8W&amp;linkCode=as2&amp;tag=howtoprogramb-20&amp;linkId=0974e0eeb4efad8a255d5b4334c45c6b"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=US&amp;ASIN=B00XZGUL8W&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=howtoprogramb-20" /></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=howtoprogramb-20&amp;l=am2&amp;o=1&amp;a=B00XZGUL8W" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-</div>
-
-<h5 id="laptop">Laptop</h5>
-<p>The best laptop out there is the latest <a href="https://www.amazon.com/gp/product/B00XZGUL8W/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;camp=1789&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=B00XZGUL8W&amp;linkId=20605e5b91ef2f18bba56d24526ad640" target="_blank">Mac Book Pro</a>. I usually choose the latest and greatest processor, RAM and of course a solid state drive. It will get you pretty far with this setup. You can set it up with the tools like <a href="https://github.com/pivotal-sprout/sprout-wrap" target="_blank">Sprout Wrap</a> to install the necessary development environment and applications. The top quality is the strength of Apple products that comes with a high price. That being said, you usually get what you paid for.</p>
-
-<p>You can get a similar Windows PC laptop if you choose to work under the Windows operating system. Installing Linux on either a Mac Book Pro or a PC is also an option. You can install <a href="https://www.ubuntu.com/desktop/developers" target="_blank">Ubuntu</a> side by side with the host operating system or use a virtual machine software like <a href="https://www.virtualbox.org/wiki/Downloads" target="_blank">Virtual Box</a> [Free] or <a href="http://www.parallels.com/" target="_blank">Parallels</a> [Paid].</p>
-
-<div class="right-align">
-<a target="_blank" href="https://www.amazon.com/gp/product/B016QO64FI/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=B016QO64FI&amp;linkCode=as2&amp;tag=howtoprogramb-20&amp;linkId=6dbcf43fe93648bae52df247ba719bd5"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=US&amp;ASIN=B016QO64FI&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=howtoprogramb-20" /></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=howtoprogramb-20&amp;l=am2&amp;o=1&amp;a=B016QO64FI" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
-</div>
-
-<h5 id="keyboard">Keyboard</h5>
-<p>The most durable keyboard that I found is the <a href="https://www.amazon.com/gp/product/B016QO64FI/ref=as_li_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;camp=1789&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=B016QO64FI&amp;linkId=1f7154e4a0a09ba7865c13746a4375dd" target="_blank">Apple Magic Keyboard</a>. The latest model removes all the hassle of Bluetooth pairing. The keys are lower so you’re able to type faster.</p>
-
-<h5 id="monitor">Monitor</h5>
-<p><a href="http://www.theverge.com/2016/6/23/12020510/apple-thunderbolt-display-discontinued" target="_blank">Apple discontinued its Cinema Display</a> so I recommend going with a <a href="https://www.amazon.com/gp/product/B00P0EQD1Q/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;camp=1789&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=B00P0EQD1Q&amp;linkId=f991852d45006247070bc4bd517584fb" target="_blank">Dell 27 inch monitor</a> instead.</p>
-
-<h5 id="mouse--trackpad--trackball">Mouse / Trackpad / Trackball</h5>
-<p>I’m a fan of <a href="https://www.amazon.com/gp/product/B016QO5YWC/ref=as_li_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;camp=1789&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=B016QO5YWC&amp;linkId=944323b2bd44eae76aa9297bfac7184e" target="_blank">Apple Magic Trackpad</a>. It supports force touch on a Mac plus it’s wide which is useful. It’s durable and it’s easy to pair it with your laptop over Bluetooth. Depending on your preferences, you may go with a mouse or a trackball. There are a plenty <a href="http://www.programmerfriendly.com/the-best-mouse-for-programming/" target="_blank">developer friendly mice and trackballs to choose from</a>.</p>
-
-<h4 id="software">Software</h4>
-<p>You want to make sure to account for major software. If you develop web apps, you may purchase some fonts and assets. If you develop for a proprietary system like Apple, Microsoft or Unity you often have to pay to develop on their platform. The price varies depending on your tools, team size, and services.</p>
-
-<h4 id="external-services">External Services</h4>
-<p>You will use a number of external services starting from your back end servers going all the way to localization services and more. Consider using an external service if it saves your software engineer time. Here are the most popular services that you may look into:</p>
-
-<h5 id="google-apps">Google Apps</h5>
-<p>Most of the companies are now running on <a href="https://goo.gl/6kjVau" target="_blank">Google G Suite</a> which provides you with a lot of services starting from Email, Calendar to Cloud Storage and Servers. If you would like your engineers to have a company email address, the easiest option is to use Google Apps for Business.</p>
-
-<h5 id="trello-pivotaltracker-or-jira">Trello, PivotalTracker or Jira</h5>
-<p>In a healthy company, there is always more work than you can handle. You’ll need to track it somewhere so you don’t forget. I prefer <a href="https://trello.com/alextamoykin/recommend" target="_blank">Trello</a> since it makes it simple to organize your project. They have a free plan and paid business plans with more features. If you need something more sophisticated, check out <a href="https://www.pivotaltracker.com/" target="_blank">PivotalTracker</a> or <a href="https://www.atlassian.com/software/jira" target="_blank">Jira</a>.</p>
-
-<div class="right-align">
-<img src="/assets/images/octocat.jpg" />
-</div>
-
-<h5 id="github-or-bitbucket">Github or Bitbucket</h5>
-<p>Using a version control system for your code is an industry best practice. <a href="https://github.com" target="_blank">Github</a> makes it easy to store your code and it provides tools for collaboration. If you’re short on budget, you can check out <a href="https://bitbucket.org" target="_blank">Bitbucket</a> to start with. They have unlimited private repositories with some limits with the number of users.</p>
-
-<h5 id="lastpass-or-1password">LastPass or 1Password</h5>
-<p>You want to make sure you keep your passwords safe and secure. Do not use the same password everywhere. You’ll get hacked at some point and you don’t want all your other sites to get hacked as well. Both <a href="https://lastpass.com/f?17171532" target="_blank">LastPass</a> and <a href="https://agilebits.com/" target="_blank">1Password</a> are good choices for a team of an individual.</p>
-
-<h4 id="team-events">Team events</h4>
-<p>I recommend taking the whole team out for an event every quarter. It keeps people re-energized. It’s a good chance to socialize outside of the office and celebrate major milestones, new developers, etc. You can get creative and choose a team building activity like an escape room or card racing, plus get the team out for dinner afterward. Have fun!</p>
-
-<p><img src="/assets/images/party.gif" alt="Party Hard" /></p>
-
-<h4 id="final-words">Final words</h4>
-<p>Your team is the most valuable asset you have at the company. A manager’s job is to set up engineers for success. Buying software, hardware or gear that saves your engineers time is well worth the money. Engineers have to work smart and so much of that depends on culture and morale. It may be as simple as buying your engineer coffee or lunch once in a while that keeps your engineers motivated.</p>
-
-	  ]]></description>
-	</item>
-
-	<item>
 	  <title>Unlock the power of Remote Workforce for Your Business</title>
 	  <link>//unlock-the-power-of-remote-workforce-for-your-business</link>
 	  <author>Alex Tamoykin</author>
@@ -147,7 +20,7 @@
 	  <description><![CDATA[
 	     <h1 id="what-is-remote-workforce">What is Remote Workforce</h1>
 
-<p>A traditional way to do business is to come to an office to do the work. In some industries like factory manufacturing, it’s the only option. That being said, with the current state of technology and especially for though workers like software engineers it’s no longer a requirement. With a high-performance laptop and an Internet connection, you can work from anywhere in the world, including your home office. Remote workforce unlocks limitless possibilities for your business like getting access to a larger and more cost-efficient pool of talent internationally.</p>
+<p>A traditional way to do business is to come to an office to do the work. In some industries like factory manufacturing, it’s the only option. That being said, with the current state of technology and especially for thought workers like software engineers, it’s no longer a requirement. With a high-performance laptop and an Internet connection, you can work from anywhere in the world, including your home office. Remote workforce unlocks limitless possibilities for your business like getting access to a larger and more cost-efficient pool of talent internationally.</p>
 
 <h1 id="why-remote-is-great">Why Remote is Great</h1>
 
@@ -731,6 +604,126 @@ Let’s figure out how to implement it on AWS Lambda.</p>
 </ul>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WZyiLTgmmzc" frameborder="0" allowfullscreen=""></iframe>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>Why Nothing Makes Me Happier Than Deleting Code</title>
+	  <link>//why-nothing-makes-me-happier-than-deleting-code</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2017-04-02T00:00:00-07:00</pubDate>
+	  <guid>//why-nothing-makes-me-happier-than-deleting-code</guid>
+	  <description><![CDATA[
+	     <blockquote>
+  <p>Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away. - Antoine de Saint-Exupery</p>
+</blockquote>
+
+<h3 id="what">What</h3>
+<p>Wait, what? How can deleting code make you happy? Aren’t software engineers paid to write code? Great software engineers are hired to build great products. It indeed involves writing code and deleting unnecessary code makes writing new code even easier. This post explains how to leverage code deletion to your advantage as a software engineer.</p>
+
+<h3 id="why">Why</h3>
+<p>Deleting code benefits you, your team and your product. Here is why:</p>
+
+<ul>
+  <li>It makes your product easier to use.</li>
+  <li>It reduces code complexity, lowers compile times, and lowers test suite run time.</li>
+  <li>It makes developers happier. Less code, fewer problems.</li>
+</ul>
+
+<p><img src="/assets/images/less_code_fewer_problems.jpg" alt="Less Code Fewer Problems" /></p>
+
+<h3 id="how">How</h3>
+
+<h4 id="focus-on-the-core-experience">Focus on the core experience.</h4>
+<p>It’s easy to get distracted by a new shiny feature of a competitor. It’s tempting to implement <a href="/why-throwing-more-features-at-the-product-doesnt-work">more and more features</a> to enhance core user experience. At the end of the days, your core experience has to work. This is what users will come back in your app for. More additional features will distract your user from core experience which you don’t want to do.</p>
+
+<h4 id="use-analytics-to-determine-what-users-actually-use-delete-the-rest">Use analytics to determine what users actually use, delete the rest.</h4>
+<p>If you don’t have analytics in your app, you make your product and business decisions based on assumptions. In order to make a real difference in your product development, choose your direction on actual metrics. This way you can see the effect of every feature you ship. Take a look at how the app is used. It may turn out that some portions of the app or a website aren’t used as much. At this point, you can either delete it to simplify the user experience. Alternatively, it gives you a chance to rebuild the under-performing areas of the app if it makes sense to do so.</p>
+
+<h4 id="if-you-dont-need-it-delete-it">If you don’t need it, delete it.</h4>
+<p>Over and over again, I hear the concern about leaving existing code in place just in case we need it in the future. The truth is, you don’t need it most of the time. Even if you’ll need it in the future, your system will change so significantly over time so you’ll need to rewrite it anyway. At the end of the days, if you need your old code, your version control system will help you with that. This mentality goes well with the <a href="https://en.wikipedia.org/wiki/You_aren't_gonna_need_it" target="_blank">YAGNI principle</a>.</p>
+
+<h4 id="stick-to-the-kiss-principlehttpsenwikipediaorgwikikissprincipletargetblank">Stick to the <a href="https://en.wikipedia.org/wiki/KISS_principle" target="_blank">KISS principle</a>.</h4>
+<p>Keeping things simple is the best thing you can do when building complex systems. Even if building extra capabilities for your product is a more exciting thing to do from a software development perspective, no one benefits from an over-engineered system. Complex systems are hard to use, hard to maintain and it’s prone to bugs. Keep your code simple and always seek opportunities to simplify already complicated pieces of your software architecture. It will pay big dividends over time.</p>
+
+<p><img src="/assets/images/kiss.gif" alt="Kiss" /></p>
+
+<h3 id="final-words">Final words</h3>
+<p>At the end of the days, it doesn’t really matter how much code you write. What matters is how fast you can build quality software that drives the business towards success. It’s not fun to be a part of failing startup with great technology that doesn’t help the business. Nor it’s fun to be at the growing business and not being able to iterate fast because of high technical debt. In order to maintain the right balance, you need to determine what’s important for the business. Make important things work really well and leave the rest behind.</p>
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>5 Steps To Hire Best Software Engineers. 0 to 100 real quick!</title>
+	  <link>//5-steps-to-hire-best-software-engineers-0-to-100-real-quick</link>
+	  <author>Alex Tamoykin</author>
+	  <pubDate>2017-02-05T00:00:00-08:00</pubDate>
+	  <guid>//5-steps-to-hire-best-software-engineers-0-to-100-real-quick</guid>
+	  <description><![CDATA[
+	     <div class="right-align">
+<a target="_blank" href="https://www.amazon.com/gp/product/0812993012/ref=as_li_tl?ie=UTF8&amp;camp=1789&amp;creative=9325&amp;creativeASIN=0812993012&amp;linkCode=as2&amp;tag=howtoprogramb-20&amp;linkId=2120756ab226e93d40edaaa7fb74a759"><img border="0" src="//ws-na.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;MarketPlace=US&amp;ASIN=0812993012&amp;ServiceVersion=20070822&amp;ID=AsinImage&amp;WS=1&amp;Format=_SL250_&amp;tag=howtoprogramb-20" /></a><img src="//ir-na.amazon-adsystem.com/e/ir?t=howtoprogramb-20&amp;l=am2&amp;o=1&amp;a=0812993012" width="1" height="1" border="0" alt="" style="border:none !important; margin:0px !important;" />
+</div>
+
+<h3 id="why">Why</h3>
+<p>Hiring is important. Your team is the most valuable asset of the company. Products come and go, markets and technologies change. The team is what makes a company a success! If you’re running a tech company, your software engineers are going to play a vital part in your success. This post explains how to hire best engineers.</p>
+
+<blockquote>
+  <p>If you give a good idea to a mediocre team, they will screw it up. If you give a mediocre idea to a brilliant team, they will either fix it or throw it away and come up with something better. - Ed Catmull. Co-Founder of Pixar and the author of <a href="https://www.amazon.com/gp/product/0812993012/ref=as_li_qf_sp_asin_il_tl?ie=UTF8&amp;tag=howtoprogramb-20&amp;camp=1789&amp;creative=9325&amp;linkCode=as2&amp;creativeASIN=0812993012&amp;linkId=4f4cc7ef29a896fb2d82c61b4f0a582a" target="_blank">Creativity, Inc</a></p>
+</blockquote>
+
+<h3 id="sourcing-candidates">1. Sourcing candidates</h3>
+<p>The first step, source a lot of candidates. Hiring pipeline is a funnel. There should be a lot of candidates at the very top of the funnel. Only the best engineers who are the right fit will get the offer. In my experience, from 10 engineers there is 1 decent engineer. Also, keep in mind that about 50% of candidates accept the offer. In order to find the right people, source a lot of candidates. Here are the places to look at:</p>
+
+<ul>
+  <li><strong>References.</strong> This is the most effective way to get candidates. If a person you trust recommends you an engineer whom he/she worked with before, you should contact this candidate as soon as possible. Great developers want to work with more great developers and this kind of candidates tend to fit well culturally.</li>
+  <li><strong>LinkedIn.</strong> Look at some top developer profiles on LinkedIn. On each profile, there is usually a section called “People Also Viewed” with even more profiles. You can click on each of them and then, rinse, repeat. Reach out to developers asking for their interest. You never know who is looking or who is ready to move on.</li>
+  <li><strong>Job Postings.</strong> Create a job posting on <a href="https://jobs.github.com/post#create" target="_blank">Github</a>, <a href="http://talent.stackoverflow.com/jobs/create?cw=1" target="_blank">StackOverflow</a> or <a href="https://angel.co/recruiting" target="_blank">Angel List</a>. Keep in mind, the market is hot, so make sure your posting looks attractive.</li>
+</ul>
+
+<h3 id="phone-screen">2. Phone screen</h3>
+<p>Now that you got in touch with your prospective candidates, schedule a phone screen with them. You’ll have to do a lot of phone screens so it’s important to keep it efficient. I usually do a 45-minute call which is broken down into 3 parts:</p>
+
+<ul>
+  <li><strong>Ice-breaker.</strong> I tell about the opportunity and ask questions about the resume. Starting with a question like “How much do you know about the company X ?” can save you some time so you can focus on filling the gaps. Then I ask a couple of questions about the resume. The key here is to keep your questions focused. In this case, you can verify whether they really have the experience listed.</li>
+  <li><strong>Simple coding exercise.</strong> I usually do interviews over a video chat like Google Hangout. I ask a candidate to share the screen and implement a simple coding challenge. The candidate is encouraged to ask questions and walk me through the implementation. This step is meant to be a conversation rather than coding in silence. Seeing a person code in real time reveals a lot of things like debugging skills, algorithm choices and communication skills.</li>
+  <li><strong>Finishing questions.</strong> This is where high-level architecture or framework knowledge questions go. At the end of the interview, I answer questions the candidate has for me.</li>
+</ul>
+
+<h3 id="in-house-interview">3. In-house interview</h3>
+
+<p><img src="/assets/images/job_interview_prank.gif" alt="Job interview prank" async="true" /></p>
+
+<blockquote>
+  <p>Be mindful about your and candidate’s time.</p>
+</blockquote>
+
+<p>Bring the candidate on-site to show them around the office and meet the team. Your team’s time is valuable, so is the candidate time. Some companies prefer to have a full day on-site interview. I usually keep it short with just two rounds of interviews with developers. Developers go in pairs. Make sure the team synced up before the interview and everybody knows which questions to answer. It’s important to probe for these things:</p>
+
+<ul>
+  <li><strong>Code quality.</strong> The most important thing is to figure out if they can write great quality code in a reasonable timeframe. It’s good to give a candidate a moderately complex problem and work with them on coding a solution. You want to make sure the candidate makes reasonable choices. It’s ok to make minor mistakes if they can see it and fix it. Keep in mind that the code you see during the interview will be the code you’ll see in your code base if the person gets hired.</li>
+  <li><strong>Cultural fit.</strong> Would you want to work next to this person every day? Does the candidate communicate well? Do you like the person’s attitude? If you’re interviewing a person, these are the questions to ask yourself.</li>
+</ul>
+
+<blockquote>
+  <p>Treat the candidate the same way you would like to be treated.</p>
+</blockquote>
+
+<p>Developer time is a finite resource. If it’s clear that the person is not a fit from the first pair of interviewers, tell the candidate so and stop the interview. Have you ever been in the interview where you didn’t hear anything back? It’s not fun to be in this situation so treat people the way you would like to be treated. Tell the candidate why it’s not the right fit and what they can improve. If you see the potential, tell the candidate that you would like to touch base in the next 6 to 12 months to see if the situation is improved. If you’re not comfortable delivering this feedback in person on the day of the interview then walk out the candidate and follow up the next day over the phone or email.</p>
+
+<p>On the other end, if the candidate made it to the end of the in-house interview, communicate to the candidate that the interview is finished. Tell the candidate that you’ll get back to him/her in the next couple of days.</p>
+
+<h3 id="references">4. References</h3>
+<p>Request at least 3 references and call each of them. Ask them about their experience working with the candidate. Ask what the person is good at and what he/she needs to improve. Keep in mind that it will take time since people have their own schedules. It’s important to move quickly. If you’re super excited about the candidate you can make an offer contingent on a reference check.</p>
+
+<h3 id="offer">5. Offer</h3>
+<p>You should be excited about the candidate you would like to hire. Get all participants in the room, have each interviewer to write down their outcome. Each person’s outcome should be unaffected by anybody’s opinion. Go around the room where each person reveals the score with the reasoning behind it. If there is a consensus in the room, it’s a pretty easy decision to make. If you’re on the fence, it may be tempting to bring the candidate for another round for more information. From my experience, you don’t get more information after the in-house interview. Make a decision with the information you have. If you’re not sure, the answer is no.</p>
+
+<p>Keep in mind, great software engineers are not on a job market for a long time. You have to move quick. After you know the outcome, communicate it to the candidate. If the answer is no, explain why politely. If the answer is yes, communicate it to the candidate and send the candidate an offer letter. Give a candidate some time to think and follow up on a decision. Good luck!</p>
+
+<h3 id="final-words">Final words</h3>
+<p>Hiring is a long play game. You should never hire people you don’t like. Even if you have a lot of work to do, it’s never worth it. Be patient and keep interviewing. Every person counts and hiring the right software engineer will greatly increase your chances of success!</p>
 
 	  ]]></description>
 	</item>

@@ -12,52 +12,6 @@
    <atom:link href="rss" rel="self" type="application/rss+xml" />
    
 	<item>
-	  <title>10 Steps to become a Senior Software Engineer</title>
-	  <link>//why-you-should-start-learning-react-native-as-a-mobile-developer</link>
-	  <author>Alex Tamoykin</author>
-	  <pubDate>2020-03-22T15:55:16-07:00</pubDate>
-	  <guid>//why-you-should-start-learning-react-native-as-a-mobile-developer</guid>
-	  <description><![CDATA[
-	     <p>If your product needs to be in the hands of users using a mobile device, you should look into using React Native. React Native is a framework allowing you to have a single codebase powering both the iOS and the Android app. This way you have the same team working on both apps instead of hiring two different teams and keeping both apps in sync. That being said, it’s not a silver bullet, there are some gotchas. After reading this post, you’ll know when and how to use React Native for your mobile app.</p>
-
-<h2 id="what-is-react-native">What is React Native</h2>
-
-<p><a href="http://www.reactnative.com/" target="_blank">React Native</a> is a mobile framework allowing for building mobile apps with the Javascript language. The app follows the same convention of the React framework. Once the app is coded up, you can build two different distributions from a single codebase. In other words, you can have both, an iOS and an Android app done by the same developer (or a team of developers).</p>
-
-<h2 id="advantages-of-react-native">Advantages of React Native</h2>
-
-<p>Two apps for the price of one, sounds great right? That’s not exactly true, here is why:</p>
-
-<h3 id="apps-for-14-of-the-effort">2 apps for 1.4 of the effort</h3>
-
-<p>I wish it will be a real 2 for 1 and it’s not really the case. It’s more of 2 apps for 1.4 effort it would otherwise take you to build an individual app. Which is still a great win.</p>
-
-<h3 id="easier-to-maintain-the-app">Easier to maintain the app</h3>
-<p>In addition to building both apps faster with this technology, it’s easier to maintain both the iOS and the Android app. Both apps are powered by the same codebase and maintained by the same developer (or a team of developers). If you want to get really fancy, you can have your backend written in Node.js which allows you to utilize the same developer implementing each feature across the stack since it’s written in the same language.</p>
-
-<h2 id="disadvantages-of-react-native">Disadvantages of React Native</h2>
-
-<p>Even the advantages of using React Native sound exciting, you shouldn’t use it in every single project for the following reasons:</p>
-
-<h3 id="hard-to-access-native-features">Hard to access native features</h3>
-<p>When you need to fall back to the low level API like the animation framework to add some rich custom animations, you need to write native code. If you have two apps (iOS and Android), it means you need to write the native code for each platform (one in Swift/Objective-C, another one in Kotlin/Java). Writing native code requires the knowledge of two different languages and two different platforms which takes significant amount of time to learn. After you’re done writing your native components, you’ll need to integrate it back to the React Native app which is tricky. You’ll need to use a Javascript bridge between the two different runtimes (the Javascript runtime and the native runtime).</p>
-
-<h3 id="hard-to-parallelize-your-operations">Hard to parallelize your operations</h3>
-<p>The React Native app runs inside the Javascript interpreter. Even though Javascript support asynchronousity very well as a language, it doesn’t support native threads which native runtime does. If you need to do some work in the background or leverage multiple threads (in other words if you app needs to do some multitasking), you won’t be able to do it effectively in React Native. You’ll need to fallback to writing some native code which leads to the previous point.</p>
-
-<h3 id="dealing-with-different-size-devices-is-challenging">Dealing with different size devices is challenging</h3>
-<p>By having a single codebase powering both apps, you now need to support all possible screen sizes and dimensions. iOS has a set defined set of supported devices, Android on the other hand has a lot of variety. Writing your components in a way so it shows up nicely on each screen is a challenge. This is easier to achieve with two different native apps since you limit the possible screen sizes per each app.</p>
-
-<h2 id="when-you-should-use-react-native">When you should use React Native</h2>
-<p>Long story short, React Native is a great fit for utilitarian apps. It’s simple apps that don’t require a lot of advance UI features, no custom animations. In other words, I wouldn’t build the next Snapchat with it. On the other hand if you know you’ll need a not of advance UI for your product, you should consider building both apps natively. There is an option of doing most of the app in React Native and do just a little pieces of it natively as long as we need native functionality in a couple of places. That being said, you don’t want to end up in a situation where you started on one path and ended up completely on the other side.</p>
-
-<h2 id="final-words">Final Words</h2>
-<p>Technology evolves quickly. After working with technology for the most of my life, I came to a realization that the speed with which technology evolves also increases over time. We build new technologies on top of the existing ones and repeat it over and over again. As software engineers and entrepreneurs we should have a vision for the product which allows us to choose the right tool for the job. So go ahead and experiment with some new technology and see if it’s worth using it to take your product to the next level.</p>
-
-	  ]]></description>
-	</item>
-
-	<item>
 	  <title>Developer Ethics. 5 Ways To Apply Your Unique Skill To Make A Difference</title>
 	  <link>//developer-ethics-apply-your-unique-skill-to-make-a-difference</link>
 	  <author>Alex Tamoykin</author>
